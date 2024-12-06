@@ -404,6 +404,12 @@
                                                 <th class="h-10 px-2 text-left">
                                                     <span
                                                         class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                                                        Brand
+                                                    </span>
+                                                </th>
+                                                <th class="h-10 px-2 text-left">
+                                                    <span
+                                                        class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
                                                         Kategori
                                                     </span>
                                                 </th>
@@ -427,6 +433,9 @@
                                                     class="border-b transition-colors hover:bg-gray-50 cursor-pointer hover:shadow">
                                                     <td class="p-2 px-4">
                                                         {{ $item->name }}
+                                                    </td>
+                                                    <td class="p-2">
+                                                        {{ $item->brand->name }}
                                                     </td>
                                                     <td class="p-2">
                                                         {{ $item->category->name }}

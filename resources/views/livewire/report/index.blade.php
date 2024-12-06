@@ -149,7 +149,7 @@
                                     <tr class="border-t">
                                         <td
                                             class="p-2 px-4 border-r border-gray-300 text-lg font-bold text-gray-800 bg-gray-100">
-                                            Total Pemasukan
+                                            Total Hutang
                                         </td>
                                         <td class="p-2 px-4 text-lg font-bold text-green-600 bg-gray-100">
                                             @currency($debt->sum('total'))
