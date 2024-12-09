@@ -53,54 +53,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $transaction = DB::table('transactions')
-            ->where('status', '!=', 'hutang')
-            ->where('created_at', '>=', now()->subDays(7))
-            ->select(
-                DB::raw('CAST(SUM(grand_total) AS SIGNED) AS total'),
-                DB::raw('DAYNAME(created_at) AS day'),
-                DB::raw('DATE(created_at) AS date')  // Add a date field to help with grouping and ordering
-            )
-            ->groupBy(DB::raw('DATE(created_at), DAYNAME(created_at)'))  // Group by both date and day name
-            ->orderBy('date', 'asc')  // Order by date
-            ->get();
-
-        $order = DB::table('orders')
-            ->where('created_at', '>=', now()->subDays(7))
-            ->select(
-                DB::raw('CAST(SUM(total) AS SIGNED) AS total'),
-                DB::raw('DAYNAME(created_at) AS day'),
-                DB::raw('DATE(created_at) AS date')  // Add a date field to help with grouping and ordering
-            )
-            ->groupBy(DB::raw('DATE(created_at), DAYNAME(created_at)'))  // Group by both date and day name
-            ->orderBy('date', 'asc')  // Order by date
-            ->get();
-
-
-
-        $first_chart = [
-            'income' => $transaction->pluck('total'),
-            'expense' => $order->pluck('total'),
-            'day' => $transaction->pluck('day'), // Mengambil nama hari untuk xAxis
-        ];
-
-        $sec_chart = [
-            'income' => $transaction->sum('total'),
-            'expense' => $order->sum('total'),
-        ];
-
-        return view('dashboard', [
-            'incomes' => Transaction::where('status', '!=', 'hutang')->sum('grand_total'),
-            'pemasukan' => Transaction::sum('grand_total'),
-            'debt' => Transaction::where('status', 'hutang')->sum('grand_total'),
-            'expense' => Order::sum('total'),
-            'customers' => Customer::all(),
-            'suppliers' => Supplier::all(),
-
-            'employees' => Employee::all(),
-            'goods' => Goods::all(),
-            'first_chart' => $first_chart,
-            'sec_chart' => $sec_chart,
-        ]);
+        return view('dashboard');
     }
 }

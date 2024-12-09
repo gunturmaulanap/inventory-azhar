@@ -24,7 +24,7 @@ class History extends Component
             'id' => $id
         ]);
     }
-    
+
 
     public function delete($id)
     {
@@ -49,6 +49,14 @@ class History extends Component
     public function render()
     {
         $data = Transaction::where('status', '!=', 'hutang')
+            ->when($this->search, function ($query) {
+                return $query->whereHas('customer', function ($subquery) {
+                    $subquery->where('name', 'like', '%' . $this->search . '%');
+                });
+            })
+            ->when($this->startDate && $this->endDate, function ($query) {
+                return $query->whereBetween('created_at', [$this->startDate, $this->endDate]);
+            })
             ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);
 
