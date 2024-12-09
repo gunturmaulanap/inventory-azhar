@@ -26,9 +26,9 @@
     {{-- Header Table (Filter Search, Per Page, Create Button) --}}
     <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-x-4">
-            <input wire:model="search"
+            {{-- <input wire:model="search"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
-                placeholder="Cari admin...">
+                placeholder="Cari admin..."> --}}
         </div>
         <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex flex-col">
@@ -84,7 +84,8 @@
                                         <option value=""></option>
                                         <option value="Full Day" {{ $status === 'Hadir' ? 'selected' : '' }}>Full Day
                                         </option>
-                                        <option value="Half Day" {{ $status === 'Izin' ? 'selected' : '' }}>Half Day</option>
+                                        <option value="Half Day" {{ $status === 'Izin' ? 'selected' : '' }}>Half Day
+                                        </option>
                                         <option value="Alpha" {{ $status === 'Alpha' ? 'selected' : '' }}>Alpha
                                         </option>
                                     </select>

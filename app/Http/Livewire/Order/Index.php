@@ -34,7 +34,7 @@ class Index extends Component
 
         $deleted = Order::find($id)->delete();
         if ($deleted) {
-            foreach($goods as $good) {
+            foreach ($goods as $good) {
                 Log::info('Debug event triggered: ', ['id' => $good->id]);
                 Goods::where('id', $good->id)->decrement('stock', $good->pivot->qty);
             }
@@ -44,7 +44,16 @@ class Index extends Component
 
     public function render()
     {
-        $orders = Order::orderBy('created_at', 'desc')
+        $orders = Order::when($this->search, function ($query) {
+            return $query->whereHas('supplier', function ($subquery) {
+                $subquery->where('name', 'like', '%' . $this->search . '%')
+                    ->orWhere('company', 'like', '%' . $this->search . '%');
+            });
+        })
+            ->when($this->startDate && $this->endDate, function ($query) {
+                return $query->whereBetween('created_at', [$this->startDate, $this->endDate]);
+            })
+            ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);
 
         return view('livewire.order.index', [
