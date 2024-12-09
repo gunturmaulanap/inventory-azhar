@@ -247,62 +247,6 @@
             }
         });
 
-        // Highcharts.chart('sec-chart', {
-        //     chart: {
-        //         type: 'area'
-        //     },
-        //     title: {
-        //         useHTML: true,
-        //         text: '',
-        //         align: 'left'
-        //     },
-        //     subtitle: {
-        //         text: '',
-        //         align: 'left'
-        //     },
-        //     accessibility: {
-        //         point: {
-        //             valueDescriptionFormat: '{index}. {point.category}, {point.y:,' +
-        //                 '.1f} billions, {point.percentage:.1f}%.'
-        //         }
-        //     },
-        //     yAxis: {
-        //         title: {
-        //             enabled: false
-        //         }
-        //     },
-        //     tooltip: {
-        //         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        //         pointFormat: '<tr><td style="color:{series.color};padding:0;font-size:12px">{series.name}</td>' +
-        //             '<td style="font-size: 10px">:</td>' +
-        //             '<td style="padding:0;padding-top:1px;font-size:15px"><b>&nbsp;{point.y}</b></td></tr>',
-        //         footerFormat: '</table>',
-        //         shared: true,
-        //         useHTML: true
-        //     },
-        //     // plotOptions: {
-        //     //     series: {
-        //     //         pointStart: 1990
-        //     //     },
-        //     //     area: {
-        //     //         stacking: 'percent',
-        //     //         marker: {
-        //     //             enabled: false
-        //     //         }
-        //     //     }
-        //     // },
-        //     series: [{
-        //         name: 'Pendapatan',
-        //         data: {!! json_encode($first_chart['income']) !!},
-        //     }, {
-        //         name: 'Pengeluaran',
-        //         data: {!! json_encode($first_chart['expense']) !!}
-        //     }],
-        //     credits: {
-        //         enabled: false
-        //     }
-        // });
-
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/api/sales-percentage-by-category') // Sesuaikan dengan route Anda
                 .then(response => response.json())
