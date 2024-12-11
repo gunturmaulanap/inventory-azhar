@@ -532,8 +532,11 @@
                                                         {{ $item->name }}
                                                     </td>
                                                     <td class="p-2">
-                                                        {{ $item->brand->name }}
-                                                    </td>
+                                                        @isset($item->brand)
+                                                            {{ $item->brand->name }}
+                                                        @else
+                                                            Tidak ada brand
+                                                        @endisset </td>
                                                     <td class="p-2">
                                                         {{ $item->category->name }}
                                                     </td>

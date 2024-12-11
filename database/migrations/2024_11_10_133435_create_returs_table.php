@@ -21,13 +21,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('goods_retur', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('retur_id')->constrained()->onDelete('cascade');
-            $table->foreignId('goods_id')->constrained()->onDelete('cascade');
-            $table->integer('qty');
-            $table->timestamps();
-        });
+        // Schema::create('goods_retur', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('retur_id')->constrained()->onDelete('cascade');
+        //     $table->foreignId('goods_id')->constrained()->onDelete('cascade');
+        //     $table->integer('qty');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -35,7 +35,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('goods_returs');
+        // Schema::dropIfExists('goods_returs');
         Schema::dropIfExists('returs');
     }
 };

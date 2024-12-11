@@ -64,9 +64,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('act_debt');
+        // Hapus tabel yang bergantung pada transactions terlebih dahulu
+        Schema::dropIfExists('act_debts');
         Schema::dropIfExists('retur_transactions');
         Schema::dropIfExists('goods_transaction');
         Schema::dropIfExists('transactions');
     }
+    
 };
