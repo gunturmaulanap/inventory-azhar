@@ -74,7 +74,7 @@ class Dashboard extends Component
         for ($i = 0; $i < 7; $i++) {
             $date = $startOfWeek->copy()->addDays($i);
             if ($date->month == $this->selectedMonth) { // Hanya ambil data dalam bulan yang dipilih
-                $labels[] = $date->translatedFormat('D');
+                $labels[] = $date->translatedFormat('D d');
                 $incomeData[] = $incomes->get($date->toDateString(), 0);
                 $expenseData[] = $expenses->get($date->toDateString(), 0);
             }
