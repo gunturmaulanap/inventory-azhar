@@ -4,105 +4,157 @@ namespace App\Http\Livewire;
 
 use App\Models\Goods;
 use App\Models\Order;
+use App\Models\retur;
 use Livewire\Component;
 use App\Models\Customer;
 use App\Models\Employee;
-use App\Models\retur;
 use App\Models\Supplier;
 use App\Models\Transaction;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class Dashboard extends Component
 {
     public $incomes, $pemasukan, $debt, $expense, $customers, $suppliers, $employees, $goods;
 
-    public $selectedMonth, $startDate, $endDate;
+    public $selectedWeek, $selectedMonth, $startDate, $endDate;
 
     public function mount()
     {
-        $this->incomes = Transaction::where('status', '!=', 'hutang')->sum('grand_total');
-        $this->pemasukan = Transaction::sum('grand_total');
-        $this->debt = Transaction::where('status', 'hutang')->sum('grand_total');
-        $this->expense = Order::sum('total');
         $this->customers = Customer::all();
         $this->suppliers = Supplier::all();
         $this->employees = Employee::all();
         $this->goods = Goods::all();
+
+        $this->selectedMonth = Carbon::now()->month;
+        $this->selectedWeek = Carbon::now()->weekOfMonth;
     }
-
-    public function getTransactions() {}
-
-    public function getOrders() {}
 
     public function render()
     {
-        $transaction =
-            DB::table('transactions')
-            ->where('status', '!=', 'hutang')
-            ->when($this->selectedMonth, function ($query) {
-                // Jika bulan dipilih, filter berdasarkan bulan tersebut
-                $startDate = now()->month($this->selectedMonth)->startOfMonth();
-                $endDate = now()->month($this->selectedMonth)->endOfMonth();
+        $data = $this->getChartData();
+        $donutChartData = $this->getDonutChartData();
 
-                return $query->whereBetween('created_at', [$startDate, $endDate]);
-            })
-            ->when($this->startDate && $this->endDate, function ($query) {
-                // Jika tanggal mulai dan tanggal akhir diisi, filter berdasarkan tanggal tersebut
-                return $query->whereBetween('created_at', [$this->startDate, $this->endDate]);
-            })
-            ->when(!$this->selectedMonth && !$this->startDate && !$this->endDate, function ($query) {
-                // Jika tidak ada input, ambil data dari 7 hari terakhir
-                return $query->where('created_at', '>=', now()->subDays(7));
-            })
-            ->select(
-                DB::raw('CAST(SUM(grand_total) AS SIGNED) AS total'),
-                DB::raw('DAYNAME(created_at) AS day'),
-                DB::raw('DATE(created_at) AS date')  // Add a date field to help with grouping and ordering
-            )
-            ->groupBy(DB::raw('DATE(created_at), DAYNAME(created_at)'))  // Group by both date and day name
-            ->orderBy('date', 'asc')  // Order by date
+        return view('livewire.dashboard', compact('data', 'donutChartData'));
+    }
+
+    public function getChartData()
+    {
+        // Menghitung awal dan akhir bulan
+        $startOfMonth = Carbon::create(Carbon::now()->year, $this->selectedMonth, 1);
+        $endOfMonth = $startOfMonth->copy()->endOfMonth();
+
+        // Menghitung awal dan akhir pekan dari bulan yang dipilih
+        $startOfWeek = $startOfMonth->copy()->addWeeks($this->selectedWeek)->startOfWeek();
+        $endOfWeek = $startOfWeek->copy()->endOfWeek();
+
+        // // Pastikan bahwa pekan yang dipilih berada dalam bulan yang dipilih
+        // if ($startOfWeek->month !== $this->selectedMonth) {
+        //     // Jika pekan awal berada di bulan yang berbeda, atur ulang ke pekan pertama bulan yang dipilih
+        //     $this->selectedWeek = 1; // Reset pekan ke 1 jika tidak valid
+        //     $startOfWeek = $startOfMonth->copy()->startOfWeek();
+        //     $endOfWeek = $startOfWeek->copy()->endOfWeek();
+        // }
+
+        $incomes = Transaction::where('status', '!=', 'hutang')
+            ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
+            ->groupBy(DB::raw('DATE(created_at)'))
+            ->selectRaw('DATE(created_at) as date, SUM(grand_total) as total')
+            ->pluck('total', 'date');
+
+        $expenses = Order::whereBetween('created_at', [$startOfWeek, $endOfWeek])
+            ->groupBy(DB::raw('DATE(created_at)'))
+            ->selectRaw('DATE(created_at) as date, SUM(total) as total')
+            ->pluck('total', 'date');
+
+        $labels = [];
+        $incomeData = [];
+        $expenseData = [];
+
+        for ($i = 0; $i < 7; $i++) {
+            $date = $startOfWeek->copy()->addDays($i);
+            if ($date->month == $this->selectedMonth) { // Hanya ambil data dalam bulan yang dipilih
+                $labels[] = $date->translatedFormat('D');
+                $incomeData[] = $incomes->get($date->toDateString(), 0);
+                $expenseData[] = $expenses->get($date->toDateString(), 0);
+            }
+        }
+
+        $this->incomes = Transaction::where('status', '!=', 'hutang')
+            ->whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
+        $this->pemasukan = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
+        $this->debt = Transaction::where('status', 'hutang')->whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
+        $this->expense = Order::whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('total');
+
+        return [
+            'labels' => $labels,
+            'incomeData' => $incomeData,
+            'expenseData' => $expenseData,
+        ];
+    }
+
+    public function getDonutChartData()
+    {
+        // Menghitung awal dan akhir bulan
+        $startOfMonth = Carbon::create(Carbon::now()->year, $this->selectedMonth, 1);
+        $endOfMonth = $startOfMonth->copy()->endOfMonth();
+
+        // Menghitung awal dan akhir pekan dari bulan yang dipilih
+        $startOfWeek = $startOfMonth->copy()->addWeeks($this->selectedWeek)->startOfWeek();
+        $endOfWeek = $startOfWeek->copy()->endOfWeek();
+
+        // // Pastikan bahwa pekan yang dipilih berada dalam bulan yang dipilih
+        // if ($startOfWeek->month !== $this->selectedMonth) {
+        //     // Jika pekan awal berada di bulan yang berbeda, atur ulang ke pekan pertama bulan yang dipilih
+        //     $this->selectedWeek = 1; // Reset pekan ke 1 jika tidak valid
+        //     $startOfWeek = $startOfMonth->copy()->startOfWeek();
+        //     $endOfWeek = $startOfWeek->copy()->endOfWeek();
+        // }
+
+        // Ambil semua transaksi dan barang yang terlibat
+        $salesData = Transaction::where('status', '!=', 'hutang')
+            ->whereBetween('created_at', [$startOfWeek, $endOfWeek])->with('goods.category')
+            ->has('goods')
             ->get();
 
-        $order =
-            DB::table('orders')
-            ->when($this->selectedMonth, function ($query) {
-                // Jika bulan dipilih, filter berdasarkan bulan tersebut
-                $startDate = now()->month($this->selectedMonth)->startOfMonth();
-                $endDate = now()->month($this->selectedMonth)->endOfMonth();
+        // Inisialisasi array untuk kategori dan jumlah
+        $categories = [];
 
-                return $query->whereBetween('created_at', [$startDate, $endDate]);
-            })
-            ->when($this->startDate && $this->endDate, function ($query) {
-                // Jika tanggal mulai dan tanggal akhir diisi, filter berdasarkan tanggal tersebut
-                return $query->whereBetween('created_at', [$this->startDate, $this->endDate]);
-            })
-            ->when(!$this->selectedMonth && !$this->startDate && !$this->endDate, function ($query) {
-                // Jika tidak ada input, ambil data dari 7 hari terakhir
-                return $query->where('created_at', '>=', now()->subDays(7));
-            })
-            ->select(
-                DB::raw('CAST(SUM(total) AS SIGNED) AS total'),
-                DB::raw('DAYNAME(created_at) AS day'),
-                DB::raw('DATE(created_at) AS date')  // Add a date field to help with grouping and ordering
-            )
-            ->groupBy(DB::raw('DATE(created_at), DAYNAME(created_at)'))  // Group by both date and day name
-            ->orderBy('date', 'asc')  // Order by date
-            ->get();
+        foreach ($salesData as $transaction) {
+            foreach ($transaction->goods as $good) {
+                $categoryName = $good->category->name;
 
-        $first_chart = [
-            'income' => $transaction->pluck('total'),
-            'expense' => $order->pluck('total'),
-            'day' => $transaction->pluck('day'), // Mengambil nama hari untuk xAxis
+                if (!isset($categories[$categoryName])) {
+                    $categories[$categoryName] = 0;
+                }
+                $categories[$categoryName] += $good->pivot->qty; // Menggunakan qty dari pivot
+            }
+        }
+
+        // Siapkan data untuk chart
+        $labels = array_keys($categories);
+        $data = array_values($categories);
+
+        return [
+            'labels' => $labels,
+            'data' => $data,
         ];
+    }
 
-        $sec_chart = [
-            'income' => $transaction->sum('total'),
-            'expense' => $order->sum('total'),
-        ];
 
-        return view('livewire.dashboard', [
-            'first_chart' => $first_chart,
-            'sec_chart' => $sec_chart,
-        ]);
+    public function updatedSelectedMonth()
+    {
+        $data = $this->getChartData();
+        $donut = $this->getDonutChartData();
+        // dd($data);
+        $this->emit('refreshChart', $data, $donut);
+    }
+
+    public function updatedSelectedWeek()
+    {
+        $data = $this->getChartData();
+        $donut = $this->getDonutChartData();
+        // dd($data);
+        $this->emit('refreshChart', $data, $donut);
     }
 }
