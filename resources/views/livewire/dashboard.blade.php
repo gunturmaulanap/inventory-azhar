@@ -1,12 +1,6 @@
 <div>
-    {{-- <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-x-4">
-            <!-- Input Search -->
-            <input wire:model.debounce.100ms="search"
-                class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
-                placeholder="Cari barang berdasarkan nama...">
-
-
             <!-- Dropdown Bulan -->
             <select wire:model="selectedMonth"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-40 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
@@ -18,29 +12,20 @@
                 @endforeach
             </select>
 
-
+            <!-- Dropdown Pekan -->
+            <select wire:model="selectedWeek"
+                class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-40 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
+                <option value="">Pilih Pekan</option>
+                @for ($i = 1; $i <= 4; $i++)
+                    <option value="{{ $i }}">Pekan {{ $i }}</option>
+                @endfor
+            </select>
         </div>
 
-        <div class="flex items-center gap-x-6 mt-4">
-            <!-- Input Tanggal Mulai -->
-            <label for="startDate" class="flex items-center gap-x-2 bg-gradient-to-r from-gray-200 rounded-s-md">
-                <span class="text-xs ps-2">Dari</span>
-                <input wire:model="startDate" type="date" id="startDate"
-                    class="flex rounded-r-md bg-white border-gray-300 px-3 py-1 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-            </label>
-
-            <!-- Input Tanggal Akhir -->
-            <label for="endDate" class="flex items-center gap-x-2 bg-gradient-to-r from-gray-200 rounded-s-md">
-                <span class="text-xs ps-2">Sampai</span>
-                <input wire:model="endDate" type="date" id="endDate"
-                    class="flex rounded-r-md bg-white border-gray-300 px-3 py-1 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-            </label>
-        </div>
-
-    </div> --}}
+    </div>
 
 
-    <div class="grid grid-cols-4 gap-4 px-4 mt-8 sm:grid-cols-2 sm:px-8">
+    <div class="grid grid-cols-4 gap-4 mt-8 sm:grid-cols-2">
         <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow pr-2 row-span-2">
             <div class="p-4 bg-green-400 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -70,7 +55,7 @@
             </div>
         </div>
     </div>
-    <div id="first-chart" class="w-full h-[250px] overflow-auto bg-gray-100 rounded-md mt-4"></div>
+    <canvas id="first-chart" class="w-full h-[250px] overflow-auto shadow p-4 rounded-md mt-4"></canvas>
     {{-- <div id="sec-chart" class="w-full h-[250px] overflow-auto bg-gray-100 rounded-md mt-4"></div> --}}
 
     <div class="grid grid-cols-4 gap-4 px-4 mt-8 sm:grid-cols-2 sm:px-8">
@@ -134,9 +119,7 @@
 
 
         <div class=" max-w-sm w-full rounded-sm  bg-white  shadow row-span-2">
-            <div class="py-6" id="donut-chart"></div>
-
-
+            <canvas class="w-full h-[250px] overflow-auto shadow p-4 rounded-md mt-4" id="donut-chart"></canvas>
         </div>
 
 
@@ -178,99 +161,81 @@
 </div>
 
 @push('scripts')
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    {{-- ---------------------- FIRST CHART ---------------------- --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const chart =
-                Highcharts.chart('first-chart', {
-                    chart: {
-                        type: 'column',
-                        scrollablePlotArea: {
-                            minWidth: 1000,
-                            scrollPositionX: 1
+        document.addEventListener('livewire:load', function() {
+            const ctx = document.getElementById('first-chart');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: @json($data['labels']),
+                    datasets: [{
+                        label: 'Pendapatan',
+                        data: @json($data['incomeData']),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Pengeluaran',
+                        data: @json($data['expenseData']),
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
                         }
                     },
-                    title: {
-                        text: 'Pendapatan dan Pengeluaran '
-                    },
-                    subtitle: {
-                        text: 'Berdasarkan Minggu ini'
-                    },
-                    xAxis: {
-                        categories: {!! json_encode($first_chart['day']) !!},
-                        crosshair: true,
-                    },
-                    yAxis: {
-                        title: {
-                            text: null
-                        }
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle'
-                    },
-                    tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr><td style="color:{series.color};padding:0;font-size:12px">{series.name}</td>' +
-                            '<td style="font-size: 10px">:</td>' +
-                            '<td style="padding:0;padding-top:1px;font-size:15px"><b>&nbsp;{point.y}</b></td></tr>',
-                        footerFormat: '</table>',
-                        shared: true,
-                        useHTML: true
-                    },
-                    plotOptions: {
-                        line: {
-                            dataLabels: {
-                                enabled: true,
-                            },
-                        }
-                    },
-                    series: [{
-                            name: 'Pendapatan',
-                            data: {!! json_encode($first_chart['income']) !!},
-                            color: 'blue',
-                        },
-                        {
-                            name: 'Pengeluaran',
-                            data: {!! json_encode($first_chart['expense']) !!},
-                            color: 'green',
-                        },
+                }
+            });
+
+            const ctxx = document.getElementById('donut-chart').getContext('2d');
+            const donutData = {
+                labels: @json($donutChartData['labels']),
+                datasets: [{
+                    label: 'Barang Terjual',
+                    data: @json($donutChartData['data']),
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 159, 64)'
                     ],
-                    credits: {
-                        enabled: false
-                    }
-                });
-        });
-
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/api/sales-percentage-by-category') // Sesuaikan dengan route Anda
-                .then(response => response.json())
-                .then(data => {
-                    Highcharts.chart('donut-chart', {
-                        chart: {
-                            type: 'pie'
+                    hoverOffset: 4
+                }]
+            };
+            const myDonutChart = new Chart(ctxx, {
+                type: 'doughnut',
+                data: donutData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
                         },
                         title: {
-                            text: 'Barang Terjual'
-                        },
-                        tooltip: {
-                            pointFormat: '{point.name}: <b>{point.y:.1f}%</b>'
-                        },
-                        series: [{
-                            name: 'Kategori',
-                            colorByPoint: true,
-                            data: data
-                        }],
-                        credits: {
-                            enabled: false
+                            display: false,
+                            text: 'Barang Terjual Berdasarkan Kategori'
                         }
-                    });
-                })
-                .catch(error => console.error('Error fetching data:', error));
+                    }
+                }
+            });
+
+            Livewire.on('refreshChart', function(data, donut) {
+                myChart.data.labels = data.labels;
+                myChart.data.datasets[0].data = data.incomeData;
+                myChart.data.datasets[1].data = data.expenseData;
+                myChart.update();
+
+                myDonutChart.data.labels = donut.labels;
+                myDonutChart.data.datasets[0].data = donut.data;
+                myDonutChart.update();
+            });
         });
     </script>
 @endpush
