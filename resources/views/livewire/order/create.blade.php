@@ -281,17 +281,22 @@
                                     <td class="p-4 px-2 text-center">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <div class="flex items-center rounded border border-gray-200">
+                                                <!-- Tombol Decrement -->
                                                 <button type="button" wire:click="decrement({{ $index }})"
-                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75">
+                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75 focus:outline-none">
                                                     &minus;
                                                 </button>
 
+                                                <!-- Input Jumlah -->
                                                 <input type="number" id="qty-{{ $index }}"
-                                                    wire:model="goodOrders.{{ $index }}.qty"
-                                                    class="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
+                                                    wire:model.lazy="goodOrders.{{ $index }}.qty"
+                                                   
+                                                class="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                                />
 
+                                                <!-- Tombol Increment -->
                                                 <button type="button" wire:click="increment({{ $index }})"
-                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75">
+                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75 focus:outline-none">
                                                     &plus;
                                                 </button>
                                             </div>
@@ -385,6 +390,13 @@
                                         <option value="">Semua</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <select wire:model="byBrand"
+                                        class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-18 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
+                                        <option value="">Semua</option>
+                                        @foreach ($brands as $brand)
+                                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

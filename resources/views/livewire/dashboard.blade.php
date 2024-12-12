@@ -4,18 +4,18 @@
             <!-- Dropdown Bulan -->
             <select wire:model="selectedMonth"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-40 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-                <option value="">Pilih Bulan</option>
+                <option value="{{ \Carbon\Carbon::now()->month }}">Pilih Bulan</option>
                 @foreach (range(1, 12) as $month)
                     <option value="{{ $month }}" @if ($month == now()->month) selected @endif>
                         {{ \Carbon\Carbon::create()->month($month)->translatedFormat('F') }}
                     </option>
                 @endforeach
             </select>
-
+        
             <!-- Dropdown Pekan -->
-            <select wire:model="selectedWeek"
+            <select wire:model.lazy="selectedWeek"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-40 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-                <option value="">Pilih Pekan</option>
+                <option value="{{ \Carbon\Carbon::now()->weekOfMonth }}" selected>Pilih Pekan</option>
                 @for ($i = 1; $i <= 4; $i++)
                     <option value="{{ $i }}">Pekan {{ $i }}</option>
                 @endfor

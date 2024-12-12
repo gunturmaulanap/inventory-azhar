@@ -30,7 +30,7 @@
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
                 placeholder="Cari admin...">
             <select wire:model="perPage"
-                class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-16 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
+                class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-20 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
                 <option value="10">10</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
