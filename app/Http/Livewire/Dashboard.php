@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\Goods;
 use App\Models\Order;
 use App\Models\retur;
@@ -40,21 +41,32 @@ class Dashboard extends Component
 
     public function getChartData()
     {
+        // Validasi nilai $this->selectedMonth
+        $selectedMonth = is_numeric($this->selectedMonth) && $this->selectedMonth >= 1 && $this->selectedMonth <= 12
+            ? (int) $this->selectedMonth
+            : Carbon::now()->month; // Gunakan bulan saat ini sebagai default jika tidak valid
+
+
+        $selectedWeek = is_numeric($this->selectedWeek) && $this->selectedWeek >= 0
+            ? (int) $this->selectedWeek
+            : Carbon::now()->weekOfMonth; // Default ke pekan saat ini jika tidak valid
+
+
         // Menghitung awal dan akhir bulan
-        $startOfMonth = Carbon::create(Carbon::now()->year, $this->selectedMonth, 1);
+        $startOfMonth = Carbon::create(Carbon::now()->year, $selectedMonth, 1);
         $endOfMonth = $startOfMonth->copy()->endOfMonth();
 
         // Menghitung awal dan akhir pekan dari bulan yang dipilih
         $startOfWeek = $startOfMonth->copy()->addWeeks($this->selectedWeek)->startOfWeek();
         $endOfWeek = $startOfWeek->copy()->endOfWeek();
 
-        // // Pastikan bahwa pekan yang dipilih berada dalam bulan yang dipilih
-        // if ($startOfWeek->month !== $this->selectedMonth) {
-        //     // Jika pekan awal berada di bulan yang berbeda, atur ulang ke pekan pertama bulan yang dipilih
-        //     $this->selectedWeek = 1; // Reset pekan ke 1 jika tidak valid
-        //     $startOfWeek = $startOfMonth->copy()->startOfWeek();
-        //     $endOfWeek = $startOfWeek->copy()->endOfWeek();
-        // }
+        // Pastikan pekan yang dipilih berada dalam bulan yang dipilih
+        if ($startOfWeek->month !== $selectedMonth) {
+            $selectedWeek = Carbon::now()->weekOfMonth; // Reset pekan ke pekan saat ini jika tidak valid
+            $startOfWeek = $startOfMonth->copy()->addWeeks($selectedWeek - 1)->startOfWeek();
+            $endOfWeek = $startOfWeek->copy()->endOfWeek();
+        }
+
 
         $incomes = Transaction::where('status', '!=', 'hutang')
             ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
@@ -73,7 +85,7 @@ class Dashboard extends Component
 
         for ($i = 0; $i < 7; $i++) {
             $date = $startOfWeek->copy()->addDays($i);
-            if ($date->month == $this->selectedMonth) { // Hanya ambil data dalam bulan yang dipilih
+            if ($date->month == $selectedMonth) { // Hanya ambil data dalam bulan yang dipilih
                 $labels[] = $date->translatedFormat('D d');
                 $incomeData[] = $incomes->get($date->toDateString(), 0);
                 $expenseData[] = $expenses->get($date->toDateString(), 0);
@@ -95,6 +107,8 @@ class Dashboard extends Component
 
     public function getDonutChartData()
     {
+
+
         // Menghitung awal dan akhir bulan
         $startOfMonth = Carbon::create(Carbon::now()->year, $this->selectedMonth, 1);
         $endOfMonth = $startOfMonth->copy()->endOfMonth();
@@ -140,21 +154,32 @@ class Dashboard extends Component
             'data' => $data,
         ];
     }
-
-
     public function updatedSelectedMonth()
     {
-        $data = $this->getChartData();
-        $donut = $this->getDonutChartData();
-        // dd($data);
-        $this->emit('refreshChart', $data, $donut);
+        // Validasi nilai bulan
+        $this->selectedMonth = is_numeric($this->selectedMonth) && $this->selectedMonth >= 1 && $this->selectedMonth <= 12
+            ? (int) $this->selectedMonth
+            : Carbon::now()->month; // Default ke bulan saat ini jika tidak valid
+
+        $this->refreshCharts();
     }
 
     public function updatedSelectedWeek()
     {
+        // Validasi nilai pekan
+        $this->selectedWeek = is_numeric($this->selectedWeek) && $this->selectedWeek >= 1 && $this->selectedWeek <= 4
+            ? (int) $this->selectedWeek
+            : Carbon::now()->weekOfMonth; // Default ke pekan saat ini jika tidak valid
+
+        $this->refreshCharts();
+    }
+
+    private function refreshCharts()
+    {
         $data = $this->getChartData();
         $donut = $this->getDonutChartData();
-        // dd($data);
+
+        // Emit event ke frontend untuk memperbarui chart
         $this->emit('refreshChart', $data, $donut);
     }
 }

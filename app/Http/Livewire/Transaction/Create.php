@@ -391,12 +391,15 @@ class Create extends Component
 
         $goods = Goods::when($this->search, function ($query) {
             $query->search($this->search); // menjalankan query search
+            
+        
         })->when($this->byCategory, function ($query) {
             $query->where('category_id', $this->byCategory); // menjalankan query by Category
         })
         ->when($this->byBrand, function ($query) {
             $query->where('brand_id', $this->byBrand); // menjalankan query by Category
         })
+        
             ->orderBy('created_at', 'desc')
             ->get();
 

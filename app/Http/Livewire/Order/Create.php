@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Order;
 use App\Models\Goods;
 use App\Models\Order;
 use Livewire\Component;
+use App\Models\Brand;
+
 use App\Models\Category;
 use App\Models\Supplier;
 use Livewire\WithFileUploads;
@@ -15,7 +17,7 @@ class Create extends Component
     use WithFileUploads;
 
     public $order, $supplier, $delivery = false;
-    public $searchSupplier, $search, $byCategory;
+    public $searchSupplier, $search, $byCategory, $byBrand;
     public $goodOrders = [];
     public $imagePreview;
 
@@ -134,14 +136,28 @@ class Create extends Component
 
     public function updatedGoodOrders($value, $propertyName)
     {
+        // Validasi setiap kali properti di-update
+        if (!is_numeric($value)) {
+            $this->dispatchBrowserEvent('validation-error', ['message' => 'Input harus berupa angka']);
+            $this->goodOrders[$propertyName] = 0; // Reset nilai jika salah
+        }
+
         $this->calculateSubtotal(explode('.', $propertyName)[0]);
     }
 
     public function calculateSubtotal($index)
     {
-        $this->goodOrders[$index]['subtotal'] = $this->goodOrders[$index]['cost'] * $this->goodOrders[$index]['qty'];
+        // Pastikan cost dan qty adalah angka
+        $cost = is_numeric($this->goodOrders[$index]['cost']) ? (float) $this->goodOrders[$index]['cost'] : 0;
+        $qty = is_numeric($this->goodOrders[$index]['qty']) ? (int) $this->goodOrders[$index]['qty'] : 0;
+
+        // Hitung subtotal
+        $this->goodOrders[$index]['subtotal'] = $cost * $qty;
+
+        // Hitung total
         $this->calculateTotal();
     }
+
 
     public function calculateTotal()
     {
@@ -268,15 +284,22 @@ class Create extends Component
         })->when($this->byCategory, function ($query) {
             $query->where('category_id', $this->byCategory); // menjalankan query by Category
         })
+        ->when($this->byBrand, function ($query) {
+            $query->where('brand_id', $this->byBrand); // menjalankan query by Category
+        })
             ->orderBy('created_at', 'desc')
             ->get();
 
         $categories = Category::all();
+        $brands = Brand::all();
+
 
         return view('livewire.order.create', [
             'suppliers' => $suppliers,
             'goods' => $goods,
             'categories' => $categories,
+            'brands' => $brands,
+
         ]);
     }
 }
