@@ -46,7 +46,7 @@ class GoodsSeeder extends Seeder
             ['name' => 'Reng Baja Ringan'],
             ['name' => 'Plat Eser'],
             ['name' => 'Strip Plat'],
-            ['name' => 'Rel'],
+            ['name' => 'Rel Anderson'],
             ['name' => 'Rel Laci'],
             ['name' => 'Rel Pintu'],
             ['name' => 'Lis Alumunium'],
@@ -145,7 +145,7 @@ class GoodsSeeder extends Seeder
             ['name' => 'Gendeng'],
             ['name' => 'Plastik Cor'],
             ['name' => 'Klep Kuningan'],
-            ['name' => 'Step Kuningan'],
+            ['name' => 'Stopkran Kuningan'],
             ['name' => 'Hak Buka'],
             ['name' => 'Korden'],
             ['name' => 'Kuas Lukis Eterna'],
@@ -5917,6 +5917,42 @@ class GoodsSeeder extends Seeder
                 'cost' => 339500, // 70% dari price
                 'unit' => 'roll',
             ],
+            [
+                'name' => 'Selang Mpoin Benang 1/2" (50 M)',
+                'category_id' => 24, // Selang Benang
+                'brand_id' => 37,    // Mpoin
+                'stock' => rand(25, 50),
+                'price' => 235000,
+                'cost' => 164500, // 70% dari price
+                'unit' => 'roll',
+            ],
+            [
+                'name' => 'Selang Mpoin Benang 5/8" (50 M)',
+                'category_id' => 24,
+                'brand_id' => 37,
+                'stock' => rand(25, 50),
+                'price' => 295000,
+                'cost' => 206500, // 70% dari price
+                'unit' => 'roll',
+            ],
+            [
+                'name' => 'Selang Mpoin Benang 3/4" (50 M)',
+                'category_id' => 24,
+                'brand_id' => 37,
+                'stock' => rand(25, 50),
+                'price' => 485000,
+                'cost' => 339500, // 70% dari price
+                'unit' => 'roll',
+            ],
+            [
+                'name' => 'Selang Mpoin Benang 1" (50 M)',
+                'category_id' => 24,
+                'brand_id' => 37,
+                'stock' => rand(25, 50),
+                'price' => 485000,
+                'cost' => 339500, // 70% dari price
+                'unit' => 'roll',
+            ],
 
             [
                 'name' => 'Selang Trilyun Superflex 1/2" (50 M)',
@@ -6179,7 +6215,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Rel Pintu Atas 3M Anderson',
-                'category_id' => 33, // Rel
+                'category_id' => 32, // Rel
                 'brand_id' => 60, // Brand tidak terdaftar
                 'stock' => rand(25, 50),
                 'price' => 285000,
@@ -6188,7 +6224,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Pintu Atas 4M Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 365000,
@@ -6197,7 +6233,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Pintu Bawah 2,5M Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 125000,
@@ -6206,7 +6242,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Belokan Atas 4M Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 185000,
@@ -6215,7 +6251,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Belokan Bawah 4M Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 165000,
@@ -6224,7 +6260,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Engsel Roda Atas Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -6233,7 +6269,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Engsel Roda Bawah Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6242,7 +6278,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Engsel Tengah Anderson',
-                'category_id' => 33,
+                'category_id' => 32,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 12500,
@@ -6251,7 +6287,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Laci 35CM 14 Inch Huben',
-                'category_id' => 34, // Rel Laci
+                'category_id' => 33, // Rel Laci
                 'brand_id' => 39,    // Huben
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6260,7 +6296,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Laci 45CM 18 Inch Huben',
-                'category_id' => 34,
+                'category_id' => 33,
                 'brand_id' => 39,
                 'stock' => rand(25, 50),
                 'price' => 30000,
@@ -6269,7 +6305,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Laci 50CM 20 Inch Huben',
-                'category_id' => 34,
+                'category_id' => 33,
                 'brand_id' => 39,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -6279,7 +6315,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Rel Pintu 180CM Soligen',
-                'category_id' => 35, // Rel Pintu
+                'category_id' => 34, // Rel Pintu
                 'brand_id' => 24,    // Soligen
                 'stock' => rand(25, 50),
                 'price' => 225000,
@@ -6288,7 +6324,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rel Pintu 210CM Soligen',
-                'category_id' => 35,
+                'category_id' => 34,
                 'brand_id' => 24,
                 'stock' => rand(25, 50),
                 'price' => 245000,
@@ -6297,7 +6333,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Alumunium 1/2 6M',
-                'category_id' => 36, // Lis Alumunium
+                'category_id' => 35, // Lis Alumunium
                 'brand_id' => 60, // Brand tidak terdaftar
                 'stock' => rand(25, 50),
                 'price' => 28500,
@@ -6306,7 +6342,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Alumunium 5/8 6M',
-                'category_id' => 36,
+                'category_id' => 35,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 30000,
@@ -6315,7 +6351,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Alumunium 3/4 6M',
-                'category_id' => 36,
+                'category_id' => 35,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -6324,7 +6360,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Alumunium 1 Inch 6M',
-                'category_id' => 36,
+                'category_id' => 35,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6334,7 +6370,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Lis Cor 6 CM Kecil 50CM',
-                'category_id' => 37, // Lis Cor
+                'category_id' => 36, // Lis Cor
                 'brand_id' => 60, // Brand tidak terdaftar
                 'stock' => rand(25, 50),
                 'price' => 6500,
@@ -6343,7 +6379,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Cor 8 CM Tanggung 50CM',
-                'category_id' => 37,
+                'category_id' => 36,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 8500,
@@ -6352,7 +6388,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Cor 10 CM Besar 50CM',
-                'category_id' => 37,
+                'category_id' => 36,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -6362,7 +6398,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Siku Lubang Abu-Abu Tipis 3M',
-                'category_id' => 38, // Siku Lubang
+                'category_id' => 37, // Siku Lubang
                 'brand_id' => 60, // Brand tidak terdaftar
                 'stock' => rand(25, 50),
                 'price' => 55000,
@@ -6371,7 +6407,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Siku Lubang Hammertone Motif 3M',
-                'category_id' => 38,
+                'category_id' => 37,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 65000,
@@ -6380,7 +6416,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Siku Lubang Putih Tebal 3M',
-                'category_id' => 38,
+                'category_id' => 37,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 75000,
@@ -6389,7 +6425,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Gypsum 5 CM 2M',
-                'category_id' => 39, // Lis Gypsum
+                'category_id' => 38, // Lis Gypsum
                 'brand_id' => 60, // Brand tidak terdaftar
                 'stock' => rand(25, 50),
                 'price' => 12500,
@@ -6398,7 +6434,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Gypsum 8 CM 2M',
-                'category_id' => 39,
+                'category_id' => 38,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -6407,7 +6443,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Gypsum 10 CM 2M',
-                'category_id' => 39,
+                'category_id' => 38,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 18000,
@@ -6416,7 +6452,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Gypsum 12 CM 2M',
-                'category_id' => 39,
+                'category_id' => 38,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6426,7 +6462,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Bak Cuci Piring VOLK 40X50CM tanpa meja',
-                'category_id' => 40, // Bak Cuci Piring
+                'category_id' => 39, // Bak Cuci Piring
                 'brand_id' => 58,    // VOLK
                 'stock' => rand(25, 50),
                 'price' => 135000,
@@ -6435,7 +6471,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bak Cuci Piring VOLK 40X75 CM',
-                'category_id' => 40,
+                'category_id' => 39,
                 'brand_id' => 58,
                 'stock' => rand(25, 50),
                 'price' => 165000,
@@ -6444,7 +6480,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bak Cuci Piring VOLK 45X96 CM',
-                'category_id' => 40,
+                'category_id' => 39,
                 'brand_id' => 58,
                 'stock' => rand(25, 50),
                 'price' => 185000,
@@ -6453,7 +6489,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bak Cuci Piring ROYAL 40X50 tanpa meja',
-                'category_id' => 40,
+                'category_id' => 39,
                 'brand_id' => 60, // Tidak ada informasi brand
                 'stock' => rand(25, 50),
                 'price' => 200000,
@@ -6462,7 +6498,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bak Cuci Piring ROYAL 45X85',
-                'category_id' => 40,
+                'category_id' => 39,
                 'brand_id' => 60, // Tidak ada informasi brand
                 'stock' => rand(25, 50),
                 'price' => 350000,
@@ -6471,7 +6507,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bak Cuci Piring EXIO 45X75',
-                'category_id' => 40,
+                'category_id' => 39,
                 'brand_id' => 60, // Tidak ada informasi brand
                 'stock' => rand(10, 25),
                 'price' => 1150000,
@@ -6480,7 +6516,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bak Cuci Piring HF 45X60',
-                'category_id' => 40,
+                'category_id' => 39,
                 'brand_id' => 60, // Tidak ada informasi brand
                 'stock' => rand(25, 50),
                 'price' => 635000,
@@ -6490,7 +6526,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Semen MU 200',
-                'category_id' => 42, // Semen MU
+                'category_id' => 40, // Semen MU
                 'brand_id' => 41,    // MU
                 'stock' => rand(25, 50),
                 'price' => 75000,
@@ -6499,7 +6535,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU 400',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 135000,
@@ -6508,7 +6544,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU 380',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 115000,
@@ -6517,7 +6553,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU Mortar',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 85000,
@@ -6526,7 +6562,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU NAT (Putih)',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6535,7 +6571,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU NAT (Cream)',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6544,7 +6580,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU NAT (Granit Grey)',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6553,7 +6589,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU NAT (X-tra Grey)',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6562,7 +6598,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen MU NAT (Hitam)',
-                'category_id' => 42,
+                'category_id' => 40,
                 'brand_id' => 41,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6572,7 +6608,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Hollo Gypsum 2X4 Biru 6M',
-                'category_id' => 43, // Holo Gypsum
+                'category_id' => 41, // Holo Gypsum
                 'brand_id' => 60,    // Tidak ada brand yang spesifik
                 'stock' => rand(25, 50),
                 'price' => 17500,
@@ -6581,7 +6617,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Hollo Gypsum 4X4 Biru 6M',
-                'category_id' => 43,
+                'category_id' => 41,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6590,7 +6626,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Hollo Gypsum 2X4 SNI 6M',
-                'category_id' => 43,
+                'category_id' => 41,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6599,7 +6635,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Hollo Gypsum 4X4 SNI 6M',
-                'category_id' => 43,
+                'category_id' => 41,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6609,7 +6645,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Pagar BRC Full 60X240 CM',
-                'category_id' => 44, // Pagar BRC Full
+                'category_id' => 42, // Pagar BRC Full
                 'brand_id' => 60,    // Tidak ada brand yang spesifik
                 'stock' => rand(25, 50),
                 'price' => 310000,
@@ -6618,7 +6654,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pagar BRC Full 90X240 CM',
-                'category_id' => 44,
+                'category_id' => 42,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 355000,
@@ -6627,7 +6663,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pagar BRC Full 120X240 CM',
-                'category_id' => 44,
+                'category_id' => 42,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 385000,
@@ -6637,7 +6673,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Cakar Ayam 50X50 BESI 8F',
-                'category_id' => 45, // Cakar Ayam
+                'category_id' => 43, // Cakar Ayam
                 'brand_id' => 60,    // Tidak ada brand spesifik
                 'stock' => rand(25, 50),
                 'price' => 135000,
@@ -6646,7 +6682,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cakar Ayam 50X50 BESI 10F',
-                'category_id' => 45,
+                'category_id' => 43,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 195000,
@@ -6655,7 +6691,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cakar Ayam 60X60 BESI 8F',
-                'category_id' => 45,
+                'category_id' => 43,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 185000,
@@ -6664,7 +6700,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cakar Ayam 60X60 BESI 10F',
-                'category_id' => 45,
+                'category_id' => 43,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 265000,
@@ -6673,7 +6709,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kloset Duduk TOTO CW 633',
-                'category_id' => 46, // Kloset Duduk
+                'category_id' => 44, // Kloset Duduk
                 'brand_id' => 57,    // TOTO
                 'stock' => rand(10, 25),
                 'price' => 1650000,
@@ -6682,7 +6718,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kloset Duduk INA MONOBLOK C23',
-                'category_id' => 46,
+                'category_id' => 44,
                 'brand_id' => 56,    // INA
                 'stock' => rand(10, 25),
                 'price' => 1550000,
@@ -6691,7 +6727,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kloset Duduk American Standard',
-                'category_id' => 46,
+                'category_id' => 44,
                 'brand_id' => 55,    // American
                 'stock' => rand(10, 25),
                 'price' => 1400000,  // Estimasi
@@ -6700,7 +6736,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kloset Duduk VOLK 680',
-                'category_id' => 46,
+                'category_id' => 44,
                 'brand_id' => 58,    // VOLK
                 'stock' => rand(10, 25),
                 'price' => 975000,
@@ -6710,7 +6746,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Terpal A12 2X3',
-                'category_id' => 47, // Terpal
+                'category_id' => 45, // Terpal
                 'brand_id' => 60,    // Tidak ada brand spesifik
                 'stock' => rand(25, 50),
                 'price' => 35000,    // Estimasi
@@ -6719,7 +6755,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Terpal A12 3X5',
-                'category_id' => 47,
+                'category_id' => 45,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 75000,    // Estimasi
@@ -6728,7 +6764,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Terpal A12 5X7',
-                'category_id' => 47,
+                'category_id' => 45,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 115000,   // Estimasi
@@ -6737,7 +6773,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Terpal A12 6X8',
-                'category_id' => 47,
+                'category_id' => 45,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 145000,   // Estimasi
@@ -6746,7 +6782,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Terpal A12 6X10',
-                'category_id' => 47,
+                'category_id' => 45,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 175000,   // Estimasi
@@ -6756,7 +6792,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kawat Las RD 2,0',
-                'category_id' => 48, // Kawat Las
+                'category_id' => 46, // Kawat Las
                 'brand_id' => 60,    // Tidak ada brand spesifik
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -6765,7 +6801,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Las RD 2,6',
-                'category_id' => 48,
+                'category_id' => 46,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6774,7 +6810,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Las RB 2,6',
-                'category_id' => 48,
+                'category_id' => 46,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6784,7 +6820,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kunci T TEKIRO UK 8',
-                'category_id' => 49, // Kunci T
+                'category_id' => 47, // Kunci T
                 'brand_id' => 60,    // Tidak ada informasi brand
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6793,7 +6829,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci T TEKIRO UK 10',
-                'category_id' => 49,
+                'category_id' => 47,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6802,7 +6838,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci T TEKIRO UK 12',
-                'category_id' => 49,
+                'category_id' => 47,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6811,7 +6847,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci T TEKIRO UK 14',
-                'category_id' => 49,
+                'category_id' => 47,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -6821,7 +6857,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Skrap plastik 3 inch',
-                'category_id' => 50, // Skrap
+                'category_id' => 48, // Skrap
                 'brand_id' => 60, // Tidak ada informasi brand
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -6830,7 +6866,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Skrap plastik 5 inch',
-                'category_id' => 50,
+                'category_id' => 48,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6839,7 +6875,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Skrap plastik 7 inch',
-                'category_id' => 50,
+                'category_id' => 48,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6848,7 +6884,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Skrap seng',
-                'category_id' => 50,
+                'category_id' => 48,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6857,7 +6893,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kape kayu Wanly 1,5 inch',
-                'category_id' => 50, // Kape
+                'category_id' => 49, // Kape
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -6866,7 +6902,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kape fiber 2 inch Wanly',
-                'category_id' => 50,
+                'category_id' => 49,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -6875,7 +6911,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kape fiber 2/5 inch IGM',
-                'category_id' => 50,
+                'category_id' => 49,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 17500,
@@ -6884,7 +6920,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kape fiber 3 inch CAB',
-                'category_id' => 50,
+                'category_id' => 49,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -6893,7 +6929,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kape fiber 4 inch VPR',
-                'category_id' => 50,
+                'category_id' => 49,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6903,7 +6939,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kawat Putih BWG UK 14',
-                'category_id' => 51, // Kawat Putih BWG
+                'category_id' => 50, // Kawat Putih BWG
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 30000,
@@ -6912,7 +6948,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Putih BWG UK 16',
-                'category_id' => 51,
+                'category_id' => 50,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 30000,
@@ -6921,7 +6957,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Putih BWG UK 18',
-                'category_id' => 51,
+                'category_id' => 50,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6930,7 +6966,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Putih BWG UK 20',
-                'category_id' => 51,
+                'category_id' => 50,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -6940,7 +6976,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Matabor Kayu 3/8 inch',
-                'category_id' => 52, // Matabor Kayu
+                'category_id' => 51, // Matabor Kayu
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 30000,
@@ -6949,7 +6985,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Kayu 1/2 inch',
-                'category_id' => 52,
+                'category_id' => 51,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -6959,7 +6995,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Sikat Kawat Halus',
-                'category_id' => 53, // Sikat Kawat
+                'category_id' => 52, // Sikat Kawat
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -6968,7 +7004,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sikat Kawat Kasar',
-                'category_id' => 53,
+                'category_id' => 52,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -6977,7 +7013,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sikat Kawat Sisir Bison',
-                'category_id' => 53,
+                'category_id' => 52,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -6986,7 +7022,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sikat Kawat Mangkok EF',
-                'category_id' => 53,
+                'category_id' => 52,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -6996,7 +7032,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Gegep/Catut 9 Inch HSJ',
-                'category_id' => 54, // Gegep / Catut
+                'category_id' => 53, // Gegep / Catut
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7005,7 +7041,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gegep/Catut 9 Inch IGM',
-                'category_id' => 54,
+                'category_id' => 53,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7014,7 +7050,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gegep/Catut 9 Inch Fukuda',
-                'category_id' => 54,
+                'category_id' => 53,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 55000,
@@ -7024,7 +7060,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Penggaris Siku MJP',
-                'category_id' => 55, // Penggaris Siku
+                'category_id' => 54, // Penggaris Siku
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -7033,7 +7069,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Penggaris Siku BISON',
-                'category_id' => 55,
+                'category_id' => 54,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7043,7 +7079,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kikir 3,5 Inch Cap Baud',
-                'category_id' => 56, // Kikir
+                'category_id' => 55, // Kikir
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 17500,
@@ -7052,7 +7088,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kikir 4 Inch Cap Baud',
-                'category_id' => 56,
+                'category_id' => 55,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -7061,7 +7097,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kikir 6 Inch Cap Baud',
-                'category_id' => 56,
+                'category_id' => 55,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7070,7 +7106,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kikir 4 Inch Cap Bahco',
-                'category_id' => 56,
+                'category_id' => 55,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7079,7 +7115,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kikir 3/16 Inch Oregon',
-                'category_id' => 56,
+                'category_id' => 55,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7088,7 +7124,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kikir 3/16 Inch Bahco',
-                'category_id' => 56,
+                'category_id' => 55,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7098,7 +7134,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kunci Gembok Kuning 20mm Nishio',
-                'category_id' => 57, // Kunci Gembok Kuning
+                'category_id' => 56, // Kunci Gembok Kuning
                 'brand_id' => 60, // Tidak ada informasi brand
                 'stock' => rand(25, 50),
                 'price' => 7500,
@@ -7107,7 +7143,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Kuning 25mm Nishio',
-                'category_id' => 57,
+                'category_id' => 56,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 8500,
@@ -7116,7 +7152,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Kuning 38mm Nishio',
-                'category_id' => 57,
+                'category_id' => 56,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7125,7 +7161,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Kuning 50mm Gladio',
-                'category_id' => 57,
+                'category_id' => 56,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7134,7 +7170,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Seal Pompa Air GP 125',
-                'category_id' => 58, // Seal Pompa Air
+                'category_id' => 57, // Seal Pompa Air
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7143,7 +7179,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Seal Pompa Air GP 130',
-                'category_id' => 58,
+                'category_id' => 57,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7152,7 +7188,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher 629 2RS',
-                'category_id' => 59, // Laher
+                'category_id' => 58, // Laher
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7161,7 +7197,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher 6200 2RS',
-                'category_id' => 59,
+                'category_id' => 58,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 17500,
@@ -7170,7 +7206,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher 6001 2RS',
-                'category_id' => 59,
+                'category_id' => 58,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7179,7 +7215,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher 607 2RS',
-                'category_id' => 59,
+                'category_id' => 58,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7188,7 +7224,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher 627 2RS',
-                'category_id' => 59,
+                'category_id' => 58,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7197,7 +7233,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher 626 2RS',
-                'category_id' => 59,
+                'category_id' => 58,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7206,7 +7242,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Laher Artco',
-                'category_id' => 59,
+                'category_id' => 58,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 12500,
@@ -7215,7 +7251,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Fox Kaleng 70G',
-                'category_id' => 60, // Lem
+                'category_id' => 59, // Lem
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 12500,
@@ -7224,7 +7260,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Fox Kaleng 185G',
-                'category_id' => 60,
+                'category_id' => 59,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7233,7 +7269,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Fox Kaleng 300G',
-                'category_id' => 60,
+                'category_id' => 59,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7242,7 +7278,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Fox Kaleng 600G',
-                'category_id' => 60,
+                'category_id' => 59,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 55000,
@@ -7251,7 +7287,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Putih PVAc 300G',
-                'category_id' => 60,
+                'category_id' => 59,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -7260,7 +7296,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Putih PVAc 600G',
-                'category_id' => 60,
+                'category_id' => 59,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -7270,7 +7306,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Cable Ties Putih/Hitam 15cm',
-                'category_id' => 61, // Cable Ties
+                'category_id' => 60, // Cable Ties
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 12500,
@@ -7279,7 +7315,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cable Ties Putih 25cm',
-                'category_id' => 61,
+                'category_id' => 60,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -7288,7 +7324,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cable Ties Hitam 25cm',
-                'category_id' => 61,
+                'category_id' => 60,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7297,7 +7333,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cable Ties Putih 30cm',
-                'category_id' => 61,
+                'category_id' => 60,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7306,7 +7342,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cable Ties Hitam 30cm',
-                'category_id' => 61,
+                'category_id' => 60,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 27500,
@@ -7315,7 +7351,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cable Ties Putih/Hitam 40cm',
-                'category_id' => 61,
+                'category_id' => 60,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 60000,
@@ -7324,7 +7360,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tatah Kayu Eagle Eye 5/8',
-                'category_id' => 62, // Tatah Kayu
+                'category_id' => 61, // Tatah Kayu
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7333,7 +7369,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tatah Kayu Eagle Eye 1 Inch',
-                'category_id' => 62,
+                'category_id' => 61,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7342,7 +7378,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tatah Kayu Eagle Eye 5/16',
-                'category_id' => 62,
+                'category_id' => 61,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7351,7 +7387,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tatah Kayu Eagle Eye 3/8',
-                'category_id' => 62,
+                'category_id' => 61,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -7360,7 +7396,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tatah Kayu Eagle Eye 1/4',
-                'category_id' => 62,
+                'category_id' => 61,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -7369,7 +7405,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tatah Kayu Eagle Eye 1/2',
-                'category_id' => 62,
+                'category_id' => 61,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 22500,
@@ -7378,7 +7414,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roda Kursi SKA 50',
-                'category_id' => 63, // Roda Kursi
+                'category_id' => 62, // Roda Kursi
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 55000,
@@ -7387,7 +7423,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roda Kursi Turbo TG 50B',
-                'category_id' => 63,
+                'category_id' => 62,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 70000,
@@ -7396,7 +7432,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roda Kursi Tokio',
-                'category_id' => 63,
+                'category_id' => 62,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 50000,
@@ -7405,7 +7441,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu Classic Kecil',
-                'category_id' => 64, // Slot Pintu
+                'category_id' => 63, // Slot Pintu
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 85000,
@@ -7414,7 +7450,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu SLG Tanggung',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 115000,
@@ -7423,7 +7459,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu Paorisonic Tanggung',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 200000,
@@ -7432,7 +7468,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu Muller Tanggung',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 235000,
@@ -7441,7 +7477,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu IGM Tanggung',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 110000,
@@ -7450,7 +7486,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu Sobar Besar',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 200000,
@@ -7459,7 +7495,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu IGM Besar',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 150000,
@@ -7468,7 +7504,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu Nicole Besar',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 185000,
@@ -7478,7 +7514,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Slot Pintu Muller Besar',
-                'category_id' => 64, // Slot Pintu
+                'category_id' => 63, // Slot Pintu
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 250000,
@@ -7487,7 +7523,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Slot Pintu Sorento Besar',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 275000,
@@ -7496,7 +7532,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Paori',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 300000,
@@ -7505,7 +7541,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Body Pelor Paori',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 125000,
@@ -7514,7 +7550,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Anak Kunci Tanggung Belmondo',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -7523,7 +7559,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Anak Kunci Besar Belmondo',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 50000,
@@ -7532,7 +7568,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Anak Kunci Tanggung Muller',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 75000,
@@ -7541,7 +7577,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Anak Kunci Besar Paori',
-                'category_id' => 64,
+                'category_id' => 63,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 65000,
@@ -7551,7 +7587,7 @@ class GoodsSeeder extends Seeder
             [
                 // TARIKAN PINTU 2
                 'name' => 'Tarikan Pintu Logam Mulia Bulet Dop (Kecil)',
-                'category_id' => 65, // Tarikan Pintu 2
+                'category_id' => 64, // Tarikan Pintu 2
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 65000,
@@ -7560,7 +7596,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Logam Mulia Kotak Tebu (Kecil)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 65000,
@@ -7569,7 +7605,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Logam Mulia Lengkung (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 110000,
@@ -7578,7 +7614,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Logam Mulia Lengkung Jati (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 110000,
@@ -7587,7 +7623,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Arcel (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 275000,
@@ -7596,7 +7632,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Trompet Crum (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 155000,
@@ -7605,7 +7641,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Marbel Dop (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 150000,
@@ -7614,7 +7650,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Logam Mulia Tebu Dop (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 110000,
@@ -7623,7 +7659,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Suling Dop (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 185000,
@@ -7632,7 +7668,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Stelle (Tanggung)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 275000,
@@ -7641,7 +7677,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Kencono (Besar)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 385000,
@@ -7650,7 +7686,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Tebu Jumbo (Besar)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 450000, // Asumsi
@@ -7659,7 +7695,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Kotak Jumbo (Besar)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 475000, // Asumsi
@@ -7668,7 +7704,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Logam Mulia Twin Kotak (Besar)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 500000, // Asumsi
@@ -7677,7 +7713,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Suling Dop 60CM (Besar)',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 550000, // Asumsi
@@ -7686,7 +7722,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Body Pelor ARS',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 100000,
@@ -7695,7 +7731,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Body Pelor Paori',
-                'category_id' => 65,
+                'category_id' => 64,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 120000,
@@ -7705,7 +7741,7 @@ class GoodsSeeder extends Seeder
             [
                 // GRENDEL TANEM
                 'name' => 'Grendel Tanem VPR',
-                'category_id' => 66, // Grendel Tanem
+                'category_id' => 65, // Grendel Tanem
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 45000, // Asumsi
@@ -7714,7 +7750,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Grendel Tanem Cobra Mas',
-                'category_id' => 66,
+                'category_id' => 65,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 50000, // Asumsi
@@ -7723,7 +7759,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Grendel Tanem BLC',
-                'category_id' => 66,
+                'category_id' => 65,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 55000, // Asumsi
@@ -7733,7 +7769,7 @@ class GoodsSeeder extends Seeder
             [
                 // BAUD JP
                 'name' => 'Baud JP 5X2 CM',
-                'category_id' => 67, // Baud JP
+                'category_id' => 66, // Baud JP
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 500,
@@ -7742,7 +7778,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud JP 5X3 CM',
-                'category_id' => 67,
+                'category_id' => 66,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 650,
@@ -7751,7 +7787,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud JP 5X4 CM',
-                'category_id' => 67,
+                'category_id' => 66,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 750,
@@ -7762,7 +7798,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Matabor Besi IGM 2 ML',
-                'category_id' => 69, // Matabor Besi
+                'category_id' => 67, // Matabor Besi
                 'brand_id' => 43,    // IGM
                 'stock' => rand(25, 50),
                 'price' => 3000,
@@ -7771,7 +7807,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 2,5 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 3000,
@@ -7780,7 +7816,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 3 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 4000,
@@ -7789,7 +7825,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 3,5 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 5000,
@@ -7798,7 +7834,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 4 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 6000,
@@ -7807,7 +7843,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 4,5 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 6000,
@@ -7816,7 +7852,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 5 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7825,7 +7861,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 5,5 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7834,7 +7870,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 6 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7843,7 +7879,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 7 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7852,7 +7888,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 8 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -7861,7 +7897,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 10 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7870,7 +7906,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 12 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7879,7 +7915,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Besi IGM 13 ML',
-                'category_id' => 69,
+                'category_id' => 67,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -7888,7 +7924,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 2,5 ML',
-                'category_id' => 69, // Matabor Besi
+                'category_id' => 68, // Matabor Besi
                 'brand_id' => 44,    // Nachi
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -7897,7 +7933,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 3 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 27500,
@@ -7906,7 +7942,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 3,5 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -7915,7 +7951,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 4 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -7924,7 +7960,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 4,5 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -7933,7 +7969,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 5 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -7942,7 +7978,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 5,5 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -7951,7 +7987,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 6 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 50000,
@@ -7960,7 +7996,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 6,5 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 55000,
@@ -7969,7 +8005,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 7 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 70000,
@@ -7978,7 +8014,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 8 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 75000,
@@ -7987,7 +8023,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 9 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 85000,
@@ -7996,7 +8032,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 10 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 110000,
@@ -8005,7 +8041,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Nachi 12 ML',
-                'category_id' => 69,
+                'category_id' => 68,
                 'brand_id' => 44,
                 'stock' => rand(25, 50),
                 'price' => 140000,
@@ -8015,7 +8051,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Matabor Beton Fujiyama 4 ML',
-                'category_id' => 70, // Matabor Beton
+                'category_id' => 69, // Matabor Beton
                 'brand_id' => 45,    // Fujiyama
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -8024,7 +8060,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Fujiyama 5 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 45,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -8033,7 +8069,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Fujiyama 6 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 45,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -8042,7 +8078,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Fujiyama 8 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 45,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -8051,7 +8087,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Fujiyama 10 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 45,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -8060,7 +8096,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Fujiyama 12 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 45,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -8069,7 +8105,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Toho 6 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 46,    // Toho
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -8078,7 +8114,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Toho 8 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 50000,
@@ -8087,7 +8123,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Matabor Beton Toho 10 ML',
-                'category_id' => 70,
+                'category_id' => 69,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 60000,
@@ -8097,7 +8133,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kunci Gembok IGM 30mm Short',
-                'category_id' => 71, // Kunci Gembok
+                'category_id' => 70, // Kunci Gembok
                 'brand_id' => 43,    // IGM
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -8106,7 +8142,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 30mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -8115,7 +8151,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 40mm Short',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 25000,
@@ -8124,7 +8160,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 40mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -8133,7 +8169,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 50mm Short',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 35000,
@@ -8142,7 +8178,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 50mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -8151,7 +8187,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 60mm Short',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 40000,
@@ -8160,7 +8196,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok IGM 60mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 43,
                 'stock' => rand(25, 50),
                 'price' => 45000,
@@ -8169,7 +8205,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Toho 40mm Short',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 46,    // Toho
                 'stock' => rand(25, 50),
                 'price' => 75000,
@@ -8178,7 +8214,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Toho 50mm Short',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 80000,
@@ -8187,7 +8223,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Toho 60mm Short',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 95000,
@@ -8196,7 +8232,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Toho 40mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 80000,
@@ -8205,7 +8241,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Toho 50mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 90000,
@@ -8214,7 +8250,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Gembok Toho 60mm Long',
-                'category_id' => 71,
+                'category_id' => 70,
                 'brand_id' => 46,
                 'stock' => rand(25, 50),
                 'price' => 100000,
@@ -8223,7 +8259,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Selang Flexibel Onda 25 cm',
-                'category_id' => 72, // Selang
+                'category_id' => 71, // Selang
                 'brand_id' => 47,    // Onda
                 'stock' => rand(25, 50),
                 'price' => 50000,
@@ -8232,7 +8268,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Selang Flexibel Onda 30 cm',
-                'category_id' => 72,
+                'category_id' => 71,
                 'brand_id' => 47,
                 'stock' => rand(25, 50),
                 'price' => 55000,
@@ -8241,7 +8277,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Selang Flexibel Onda 40 cm',
-                'category_id' => 72,
+                'category_id' => 71,
                 'brand_id' => 47,
                 'stock' => rand(25, 50),
                 'price' => 60000,
@@ -8250,7 +8286,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Selang Flexibel Onda 50 cm',
-                'category_id' => 72,
+                'category_id' => 71,
                 'brand_id' => 47,
                 'stock' => rand(25, 50),
                 'price' => 65000,
@@ -8259,7 +8295,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Benang Jangkar per Biji',
-                'category_id' => 73, // Benang
+                'category_id' => 72, // Benang
                 'brand_id' => 48,    // Jangkar
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8268,7 +8304,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Benang Jangkar per Pack',
-                'category_id' => 73,
+                'category_id' => 72,
                 'brand_id' => 48,
                 'stock' => rand(10, 25),
                 'price' => 25000,
@@ -8277,7 +8313,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Benang Jagung per Biji',
-                'category_id' => 73,
+                'category_id' => 72,
                 'brand_id' => 49,    // Jagung
                 'stock' => rand(50, 100),
                 'price' => 3000,
@@ -8286,7 +8322,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Benang Jagung per Pack',
-                'category_id' => 73,
+                'category_id' => 72,
                 'brand_id' => 49,
                 'stock' => rand(10, 25),
                 'price' => 25000,
@@ -8295,7 +8331,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Benang Nilon per Biji',
-                'category_id' => 73,
+                'category_id' => 72,
                 'brand_id' => 50,    // Nilon
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -8304,7 +8340,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Benang Nilon per Pack',
-                'category_id' => 73,
+                'category_id' => 72,
                 'brand_id' => 50,
                 'stock' => rand(10, 25),
                 'price' => 50000,
@@ -8313,7 +8349,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ember Hijau Kecil',
-                'category_id' => 74, // Ember
+                'category_id' => 73, // Ember
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 7500,
@@ -8322,7 +8358,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ember Oren Banteng',
-                'category_id' => 74,
+                'category_id' => 73,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -8331,7 +8367,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ember Oren Hoho',
-                'category_id' => 74,
+                'category_id' => 73,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -8340,7 +8376,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ember Hitam Hoho 16',
-                'category_id' => 74,
+                'category_id' => 73,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 15000,
@@ -8349,7 +8385,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ember Hitam Hoho 20',
-                'category_id' => 74,
+                'category_id' => 72,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 20000,
@@ -8358,7 +8394,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ember Hitam Hoho 26',
-                'category_id' => 74,
+                'category_id' => 72,
                 'brand_id' => 60,
                 'stock' => rand(25, 50),
                 'price' => 30000,
@@ -8367,7 +8403,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Angker Mesin Modern Circle M2600',
-                'category_id' => 75, // Angker Mesin
+                'category_id' => 74, // Angker Mesin
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 175000,
@@ -8376,7 +8412,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Angker Mesin Modern Grenda M2350B',
-                'category_id' => 75,
+                'category_id' => 74,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -8385,7 +8421,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Angker Mesin Modern Grenda M2100B',
-                'category_id' => 75,
+                'category_id' => 74,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -8394,7 +8430,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Angker Mesin Modern Profil M2700',
-                'category_id' => 75,
+                'category_id' => 74,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 110000,
@@ -8403,7 +8439,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Angker Mesin Modern Profil M2900',
-                'category_id' => 75,
+                'category_id' => 74,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -8413,7 +8449,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Grenda Modern',
-                'category_id' => 70, // Mesin Pertukangan
+                'category_id' => 75, // Mesin Pertukangan
                 'brand_id' => 48, // Modern
                 'stock' => rand(5, 20),
                 'price' => 300000,
@@ -8422,7 +8458,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Grenda Fujiyama',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(5, 20),
                 'price' => 325000,
@@ -8431,7 +8467,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Grenda Mactec',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 59, // Mactec
                 'stock' => rand(5, 20),
                 'price' => 350000,
@@ -8440,7 +8476,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Grenda Bosch',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 49, // Bosch
                 'stock' => rand(5, 20),
                 'price' => 450000,
@@ -8449,7 +8485,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Serut Modern M2900',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 48, // Modern
                 'stock' => rand(5, 20),
                 'price' => 500000,
@@ -8458,7 +8494,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Serut Fujiyama PL9900',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(5, 20),
                 'price' => 550000,
@@ -8467,7 +8503,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Profil Modern M2700',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 48, // Modern
                 'stock' => rand(5, 20),
                 'price' => 450000,
@@ -8476,7 +8512,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Modern M2500B',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 48, // Modern
                 'stock' => rand(5, 20),
                 'price' => 200000,
@@ -8485,7 +8521,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bor Modern JIZ10B',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 48, // Modern
                 'stock' => rand(5, 20),
                 'price' => 300000,
@@ -8494,7 +8530,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bor Modern M2130B',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 48, // Modern
                 'stock' => rand(5, 20),
                 'price' => 325000,
@@ -8503,7 +8539,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bor Mactec MT60',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 59, // Mactec
                 'stock' => rand(5, 20),
                 'price' => 400000,
@@ -8512,7 +8548,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bor Bosch MT60',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 49, // Bosch
                 'stock' => rand(5, 20),
                 'price' => 450000,
@@ -8521,7 +8557,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bor Bosch GBM 350',
-                'category_id' => 70,
+                'category_id' => 75,
                 'brand_id' => 49, // Bosch
                 'stock' => rand(5, 20),
                 'price' => 475000,
@@ -8530,7 +8566,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 08 X 50',
-                'category_id' => 71, // Baud Dynabolt
+                'category_id' => 76, // Baud Dynabolt
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(50, 100),
                 'price' => 2000,
@@ -8539,7 +8575,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 08 X 65',
-                'category_id' => 71,
+                'category_id' => 76,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8548,7 +8584,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 08 X 85',
-                'category_id' => 71,
+                'category_id' => 76,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3000,
@@ -8557,7 +8593,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 10 X 50',
-                'category_id' => 71,
+                'category_id' => 76,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3000,
@@ -8566,7 +8602,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 10 X 65',
-                'category_id' => 71,
+                'category_id' => 76,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3500,
@@ -8575,7 +8611,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 10 X 77',
-                'category_id' => 71,
+                'category_id' => 76,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 4000,
@@ -8584,7 +8620,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Dynabolt 12 X 99',
-                'category_id' => 71,
+                'category_id' => 76,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -8620,7 +8656,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 10 Kuning 1 1/2 CM',
-                'category_id' => 73, // Baud Kuning
+                'category_id' => 78, // Baud Kuning
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(50, 100),
                 'price' => 1000,
@@ -8629,7 +8665,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 10 Kuning 2 CM',
-                'category_id' => 73,
+                'category_id' => 78,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 1000,
@@ -8638,7 +8674,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 10 Kuning 3 CM',
-                'category_id' => 73,
+                'category_id' => 78,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 1000,
@@ -8647,7 +8683,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 10 Kuning 4 CM',
-                'category_id' => 73,
+                'category_id' => 78,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 1500,
@@ -8656,7 +8692,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 10 Kuning 5 CM',
-                'category_id' => 73,
+                'category_id' => 78,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 1500,
@@ -8665,7 +8701,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 10 Kuning 10 CM',
-                'category_id' => 73,
+                'category_id' => 78,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3000,
@@ -8675,7 +8711,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Baud 12 Kuning 1,5 CM',
-                'category_id' => 74, // Baud Kuning
+                'category_id' => 79, // Baud Kuning
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(50, 100),
                 'price' => 1500,
@@ -8684,7 +8720,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 2 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 1500,
@@ -8693,7 +8729,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 3 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2000,
@@ -8702,7 +8738,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 4 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2000,
@@ -8711,7 +8747,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 5 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8720,7 +8756,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 6 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8729,7 +8765,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 7 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8738,7 +8774,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 8 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3000,
@@ -8747,7 +8783,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 10 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 4000,
@@ -8756,7 +8792,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 12 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 4500,
@@ -8765,7 +8801,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 12 Kuning 13 CM',
-                'category_id' => 74,
+                'category_id' => 79,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 4500,
@@ -8783,7 +8819,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 3 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8792,7 +8828,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 4 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 2500,
@@ -8801,7 +8837,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 5 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3000,
@@ -8810,7 +8846,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 7 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 3500,
@@ -8819,7 +8855,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 10 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -8828,7 +8864,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 12 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6500,
@@ -8837,7 +8873,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 13 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6500,
@@ -8846,7 +8882,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 14 Kuning 15 CM',
-                'category_id' => 74,
+                'category_id' => 80,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 7500,
@@ -8856,7 +8892,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Baud 17 Kuning 4 CM',
-                'category_id' => 74, // Baud Kuning
+                'category_id' => 81, // Baud Kuning
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(50, 100),
                 'price' => 4000,
@@ -8865,7 +8901,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 5 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 4500,
@@ -8874,7 +8910,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 6 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -8883,7 +8919,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 7 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6500,
@@ -8892,7 +8928,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 8 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6500,
@@ -8901,7 +8937,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 10 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6000,
@@ -8910,7 +8946,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 12 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6500,
@@ -8919,7 +8955,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 13 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 7500,
@@ -8928,7 +8964,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 14 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 7500,
@@ -8937,7 +8973,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud 17 Kuning 15 CM',
-                'category_id' => 74,
+                'category_id' => 81,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 8500,
@@ -8946,7 +8982,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ring Baud 10',
-                'category_id' => 75, // Ring Baud
+                'category_id' => 82, // Ring Baud
                 'brand_id' => 60,
                 'stock' => rand(100, 200),
                 'price' => 250,
@@ -8955,7 +8991,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ring Baud 12',
-                'category_id' => 75,
+                'category_id' => 82,
                 'brand_id' => 60,
                 'stock' => rand(100, 200),
                 'price' => 250,
@@ -8964,7 +9000,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ring Baud 14',
-                'category_id' => 75,
+                'category_id' => 82,
                 'brand_id' => 60,
                 'stock' => rand(100, 200),
                 'price' => 500,
@@ -8973,7 +9009,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ring Baud 17',
-                'category_id' => 75,
+                'category_id' => 82,
                 'brand_id' => 60,
                 'stock' => rand(100, 200),
                 'price' => 750,
@@ -8982,7 +9018,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ring Baud 19',
-                'category_id' => 75,
+                'category_id' => 82,
                 'brand_id' => 60,
                 'stock' => rand(100, 200),
                 'price' => 1000,
@@ -8991,7 +9027,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Paralon Isarplast 40 G',
-                'category_id' => 76, // Lem Paralon
+                'category_id' => 83, // Lem Paralon
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -9000,7 +9036,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Paralon Trilyun 100 G',
-                'category_id' => 76,
+                'category_id' => 83,
                 'brand_id' => 40, // Trilyun
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -9009,7 +9045,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Paralon Isarplast 400 G',
-                'category_id' => 76,
+                'category_id' => 83,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -9018,7 +9054,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Seal Tape',
-                'category_id' => 76,
+                'category_id' => 83,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9028,7 +9064,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Begel 8X8',
-                'category_id' => 77, // Begel
+                'category_id' => 84, // Begel
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9037,7 +9073,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Begel 8X10',
-                'category_id' => 77,
+                'category_id' => 84,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 5500,
@@ -9046,7 +9082,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Begel 8X12',
-                'category_id' => 77,
+                'category_id' => 84,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 6000,
@@ -9055,7 +9091,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Begel 8X15',
-                'category_id' => 77,
+                'category_id' => 84,
                 'brand_id' => 60,
                 'stock' => rand(50, 100),
                 'price' => 7500,
@@ -9064,7 +9100,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bendrat 1 KG',
-                'category_id' => 78, // Bendrat
+                'category_id' => 85, // Bendrat
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -9073,7 +9109,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bendrat 5 KG',
-                'category_id' => 78,
+                'category_id' => 85,
                 'brand_id' => 60,
                 'stock' => rand(5, 20),
                 'price' => 75000,
@@ -9082,7 +9118,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bendrat 25 KG',
-                'category_id' => 78,
+                'category_id' => 85,
                 'brand_id' => 60,
                 'stock' => rand(1, 10),
                 'price' => 375000,
@@ -9091,7 +9127,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pembersih Toilet Wipol 450 ML',
-                'category_id' => 79, // Pembersih Toilet
+                'category_id' => 86, // Pembersih Toilet
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -9100,7 +9136,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pembersih Toilet Wipol 750 ML',
-                'category_id' => 79,
+                'category_id' => 86,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -9109,7 +9145,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pembersih Toilet Vixal 750 ML',
-                'category_id' => 79,
+                'category_id' => 86,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9118,7 +9154,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pembersih Toilet Porstex 1000 ML',
-                'category_id' => 79,
+                'category_id' => 86,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -9226,7 +9262,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Profil Sloting Bit 8 MM',
-                'category_id' => 80,
+                'category_id' => 87,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -9236,7 +9272,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Carbon Brush Modern CB 21',
-                'category_id' => 81, // Carbon Brush
+                'category_id' => 88, // Carbon Brush
                 'brand_id' => 48, // Modern
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9245,7 +9281,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Carbon Brush Modern CB 51',
-                'category_id' => 81,
+                'category_id' => 88,
                 'brand_id' => 48, // Modern
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9254,7 +9290,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Carbon Brush Modern CB 64',
-                'category_id' => 81,
+                'category_id' => 88,
                 'brand_id' => 48, // Modern
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9263,7 +9299,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Carbon Brush Modern CB 100',
-                'category_id' => 81,
+                'category_id' => 88,
                 'brand_id' => 48, // Modern
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9272,7 +9308,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Carbon Brush Fujiyama CB 51A',
-                'category_id' => 81,
+                'category_id' => 88,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(20, 50),
                 'price' => 17500,
@@ -9282,7 +9318,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Amplas Sikens P 60 DW',
-                'category_id' => 82, // Amplas
+                'category_id' => 89, // Amplas
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9291,7 +9327,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 80 DW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9300,7 +9336,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 100 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9309,7 +9345,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 120 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9318,7 +9354,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 150 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9327,7 +9363,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 180 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9336,7 +9372,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 240 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9345,7 +9381,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 400 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9354,7 +9390,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 800 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9363,7 +9399,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 1000 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9372,7 +9408,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 1500 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9381,7 +9417,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 2000 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9390,7 +9426,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Sikens P 5000 CW',
-                'category_id' => 82,
+                'category_id' => 89,
                 'brand_id' => 60, // Sikens
                 'stock' => rand(50, 100),
                 'price' => 5000,
@@ -9399,7 +9435,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 60',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9408,7 +9444,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 80',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9417,7 +9453,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 100',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9426,7 +9462,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 120',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9435,7 +9471,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 150',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9444,7 +9480,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 240',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9453,7 +9489,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Gomeo AA 400',
-                'category_id' => 82,
+                'category_id' => 90,
                 'brand_id' => 60, // Gomeo
                 'stock' => rand(20, 50),
                 'price' => 10000,
@@ -9462,7 +9498,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Bulat EF 60',
-                'category_id' => 82,
+                'category_id' => 91,
                 'brand_id' => 60, // Bulat
                 'stock' => rand(50, 100),
                 'price' => 1000,
@@ -9471,7 +9507,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Amplas Bulat SAB 80',
-                'category_id' => 82,
+                'category_id' => 91,
                 'brand_id' => 60, // Bulat
                 'stock' => rand(50, 100),
                 'price' => 1000,
@@ -9480,7 +9516,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish Mollar A 60',
-                'category_id' => 82,
+                'category_id' => 92,
                 'brand_id' => 60, // Mollar
                 'stock' => rand(30, 70),
                 'price' => 10000,
@@ -9489,7 +9525,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish Carnivor A 80',
-                'category_id' => 82,
+                'category_id' => 92,
                 'brand_id' => 60, // Carnivor
                 'stock' => rand(30, 70),
                 'price' => 10000,
@@ -9498,7 +9534,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish EF A 100',
-                'category_id' => 82,
+                'category_id' => 92,
                 'brand_id' => 60, // EF
                 'stock' => rand(30, 70),
                 'price' => 10000,
@@ -9507,7 +9543,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish EF A 120',
-                'category_id' => 82,
+                'category_id' => 92,
                 'brand_id' => 60, // EF
                 'stock' => rand(30, 70),
                 'price' => 10000,
@@ -9516,7 +9552,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish Mollar A 150',
-                'category_id' => 82,
+                'category_id' => 92,
                 'brand_id' => 60, // Mollar
                 'stock' => rand(30, 70),
                 'price' => 10000,
@@ -9525,7 +9561,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish GT 240',
-                'category_id' => 82,
+                'category_id' => 92,
                 'brand_id' => 60, // GT
                 'stock' => rand(30, 70),
                 'price' => 10000,
@@ -9534,7 +9570,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Flapdish GT 400',
-                'category_id' => 74, // Flapdish
+                'category_id' => 92, // Flapdish
                 'brand_id' => 60, // Brand tidak diketahui
                 'stock' => rand(25, 50),
                 'price' => 10000,
@@ -9543,7 +9579,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Spanner M10',
-                'category_id' => 75, // Spanner
+                'category_id' => 93, // Spanner
                 'brand_id' => 60, // Brand tidak diketahui
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -9552,7 +9588,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Spanner M12',
-                'category_id' => 75,
+                'category_id' => 93,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -9561,7 +9597,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Spanner M16',
-                'category_id' => 75,
+                'category_id' => 93,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -9570,7 +9606,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Spanner M20',
-                'category_id' => 75,
+                'category_id' => 93,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -9579,7 +9615,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 2 LB',
-                'category_id' => 76, // Bodem
+                'category_id' => 94, // Bodem
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -9588,7 +9624,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 2 LB IGM',
-                'category_id' => 76, // Bodem
+                'category_id' => 94, // Bodem
                 'brand_id' => 46, // IGM
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -9597,7 +9633,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gagang Bodem 2 LB',
-                'category_id' => 76, // Bodem
+                'category_id' => 94, // Bodem
                 'brand_id' => 60, // Tidak memiliki brand
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -9606,7 +9642,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 2 LB IGM + Gagang',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 46, // IGM
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -9615,7 +9651,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 3 LB',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -9624,7 +9660,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 4 LB',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -9633,7 +9669,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 4 LB Jumbo',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 100000,
@@ -9642,7 +9678,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 6 LB',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 115000,
@@ -9651,7 +9687,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 8 LB',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 175000,
@@ -9660,7 +9696,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 12 LB',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 235000,
@@ -9669,7 +9705,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bodem 20 LB',
-                'category_id' => 76,
+                'category_id' => 94,
                 'brand_id' => 60,
                 'stock' => rand(5, 15),
                 'price' => 300000, // Perkiraan harga
@@ -9678,7 +9714,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Palu Gagang Kayu',
-                'category_id' => 77, // Palu
+                'category_id' => 95, // Palu
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9687,7 +9723,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Palu IGM 8 OZ',
-                'category_id' => 77,
+                'category_id' => 95,
                 'brand_id' => 46, // IGM
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -9696,7 +9732,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Palu IGM 12 OZ',
-                'category_id' => 77,
+                'category_id' => 95,
                 'brand_id' => 46, // IGM
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -9706,7 +9742,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Pahat Besi 8 OZ Ulir Polos',
-                'category_id' => 77, // Pahat Besi
+                'category_id' => 96, // Pahat Besi
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9715,7 +9751,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pahat Besi 3 OZ Topi Karet',
-                'category_id' => 77,
+                'category_id' => 96,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -9724,7 +9760,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pahat Besi 10 OZ Topi Karet',
-                'category_id' => 77,
+                'category_id' => 96,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -9733,7 +9769,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pahat Besi 12 OZ Topi Karet',
-                'category_id' => 77,
+                'category_id' => 96,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -9742,7 +9778,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gorok Besi HIOSHI',
-                'category_id' => 78, // Gorok Besi
+                'category_id' => 97, // Gorok Besi
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -9751,7 +9787,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gorok Besi CAMEL',
-                'category_id' => 78,
+                'category_id' => 97,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -9760,7 +9796,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gorok Besi VPR',
-                'category_id' => 78,
+                'category_id' => 97,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -9769,7 +9805,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Isi Gorok Mactec',
-                'category_id' => 78,
+                'category_id' => 97,
                 'brand_id' => 59, // Mactec
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -9778,7 +9814,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Isi Gorok Sandflex',
-                'category_id' => 78,
+                'category_id' => 97,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9787,7 +9823,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Besi Ulir 6X8',
-                'category_id' => 79, // Kunci Besi
+                'category_id' => 98, // Kunci Besi
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9796,7 +9832,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Besi Ulir 10X12',
-                'category_id' => 79,
+                'category_id' => 98,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9805,7 +9841,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Besi Ulir 8X12',
-                'category_id' => 79,
+                'category_id' => 98,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9814,7 +9850,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Besi Polos 6-12',
-                'category_id' => 79,
+                'category_id' => 98,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -9823,7 +9859,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lem Korea',
-                'category_id' => 80, // Lem
+                'category_id' => 99, // Lem
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -9832,7 +9868,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Dextone Plastic Steel',
-                'category_id' => 80,
+                'category_id' => 99,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9841,7 +9877,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Dextone Silicone Silent 30 gr',
-                'category_id' => 80,
+                'category_id' => 99,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -9850,7 +9886,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Dextone Silicone Silent 70 gr',
-                'category_id' => 80,
+                'category_id' => 99,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9859,7 +9895,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Dextone Auto Sealer 30 gr',
-                'category_id' => 80,
+                'category_id' => 99,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -9868,7 +9904,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Dextone Auto Sealer 70 gr',
-                'category_id' => 80,
+                'category_id' => 99,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9877,7 +9913,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Meteran Air MNB',
-                'category_id' => 81, // Meteran Air
+                'category_id' => 100, // Meteran Air
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 115000,
@@ -9886,7 +9922,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Meteran Air SENSO',
-                'category_id' => 81,
+                'category_id' => 100,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 120000, // Estimasi harga
@@ -9896,7 +9932,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Waterpass NET 18 Inch',
-                'category_id' => 81, // Waterpass
+                'category_id' => 101, // Waterpass
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -9905,7 +9941,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Waterpass NET 24 Inch',
-                'category_id' => 81,
+                'category_id' => 101,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -9914,16 +9950,16 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Waterpass BLITZ 18 Inch',
-                'category_id' => 81,
+                'category_id' => 101,
                 'brand_id' => 55, // Blitz
                 'stock' => rand(10, 30),
-                'price' => 100000,
+                'price' => 101000,
                 'cost' => 70000,
                 'unit' => 'unit',
             ],
             [
                 'name' => 'Waterpass BLITZ 24 Inch',
-                'category_id' => 81,
+                'category_id' => 101,
                 'brand_id' => 55,
                 'stock' => rand(10, 30),
                 'price' => 125000,
@@ -9933,7 +9969,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Baud Amben Bright Iron',
-                'category_id' => 82, // Baud
+                'category_id' => 102, // Baud
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9942,7 +9978,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Amben KZK',
-                'category_id' => 82,
+                'category_id' => 102,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -9952,7 +9988,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Rooster RAM Peti',
-                'category_id' => 83, // Rooster
+                'category_id' => 103, // Rooster
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -9961,7 +9997,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rooster RAM Sedang',
-                'category_id' => 83,
+                'category_id' => 103,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -9970,7 +10006,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rooster RAM Besar',
-                'category_id' => 83,
+                'category_id' => 103,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -9979,7 +10015,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rooster 10x20 Merah',
-                'category_id' => 83,
+                'category_id' => 103,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 4500,
@@ -9988,7 +10024,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rooster 20x20 Merah',
-                'category_id' => 83,
+                'category_id' => 103,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 6500,
@@ -9997,7 +10033,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rooster 20x20 Motif Sedang',
-                'category_id' => 83,
+                'category_id' => 103,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -10006,7 +10042,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rooster 20x20 Motif Besar',
-                'category_id' => 83,
+                'category_id' => 103,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -10015,7 +10051,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Glasbox Diamond',
-                'category_id' => 84, // Glasbox
+                'category_id' => 104, // Glasbox
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 27500,
@@ -10024,7 +10060,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Glasbox Vesta',
-                'category_id' => 84,
+                'category_id' => 104,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 27500,
@@ -10033,7 +10069,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Glasbox Net',
-                'category_id' => 84,
+                'category_id' => 104,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 27500,
@@ -10043,7 +10079,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Kawat Pagar 1 CM Putih',
-                'category_id' => 85, // Kawat Pagar
+                'category_id' => 105, // Kawat Pagar
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -10052,7 +10088,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar 1/2 CM Putih',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -10061,7 +10097,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar 1/2 CM Hijau',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 17500,
@@ -10070,7 +10106,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar 1 CM Hijau',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 17500,
@@ -10079,7 +10115,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Harmonika',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10088,7 +10124,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Wermesh',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -10097,7 +10133,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Ram Nyamuk',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -10106,7 +10142,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Jaring Hitam',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 4500,
@@ -10115,7 +10151,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Fiber Hijau',
-                'category_id' => 85, // Kawat Pagar
+                'category_id' => 105, // Kawat Pagar
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -10124,7 +10160,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Fiber Putih',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -10133,7 +10169,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Fiber Biru',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -10142,7 +10178,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kawat Pagar Fiber Hitam',
-                'category_id' => 85,
+                'category_id' => 105,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -10151,7 +10187,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 10 CM',
-                'category_id' => 86, // Baud Kongsol
+                'category_id' => 106, // Baud Kongsol
                 'brand_id' => 60, // Tidak ada brand
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10160,7 +10196,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 13 CM',
-                'category_id' => 86,
+                'category_id' => 106,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10169,7 +10205,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 15 CM',
-                'category_id' => 86,
+                'category_id' => 106,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10178,7 +10214,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 20 CM',
-                'category_id' => 86,
+                'category_id' => 106,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10187,7 +10223,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 23 CM',
-                'category_id' => 86,
+                'category_id' => 106,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10196,7 +10232,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 25 CM',
-                'category_id' => 86,
+                'category_id' => 106,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10205,7 +10241,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Baud Kongsol 30 CM',
-                'category_id' => 86,
+                'category_id' => 106,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10215,7 +10251,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Sambungan Pipa Besi L 1/2',
-                'category_id' => 87, // Sambungan Pipa Besi
+                'category_id' => 107, // Sambungan Pipa Besi
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -10224,7 +10260,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi SOK 1/2',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10233,7 +10269,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi L 3/4',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -10242,16 +10278,16 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi SOK 3/4',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 12500,
-                'cost' => 8750,
+                'cost' => 10750,
                 'unit' => 'unit',
             ],
             [
                 'name' => 'Sambungan Pipa Besi T 1/2',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 17500,
@@ -10260,7 +10296,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi SOK 1',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -10269,7 +10305,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi L 1',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -10278,7 +10314,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi SOK 11/4',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 22500,
@@ -10287,7 +10323,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi L 11/4',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10296,7 +10332,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi SOK 11/2',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -10305,7 +10341,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi L 11/2',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -10314,7 +10350,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi SOK 2',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -10323,17 +10359,17 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sambungan Pipa Besi L 2',
-                'category_id' => 87,
+                'category_id' => 107,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 55000,
-                'cost' => 38500,
+                'cost' => 310500,
                 'unit' => 'unit',
             ],
 
             [
                 'name' => 'Cangkul Cap Elang',
-                'category_id' => 88, // Cangkul
+                'category_id' => 108, // Cangkul
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -10342,7 +10378,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cangkul Cap Buaya',
-                'category_id' => 88,
+                'category_id' => 108,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -10351,7 +10387,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cangkul Cap Hen',
-                'category_id' => 88,
+                'category_id' => 108,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -10360,7 +10396,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cangkul Cap Mata',
-                'category_id' => 88,
+                'category_id' => 108,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 100000,
@@ -10370,7 +10406,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'SOK 1/2 Grest',
-                'category_id' => 89, // Sambungan Paralon
+                'category_id' => 109, // Sambungan Paralon
                 'brand_id' => 52, // Grest
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -10379,7 +10415,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 1/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -10388,7 +10424,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 3000,
@@ -10397,7 +10433,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -10408,7 +10444,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'T 1/2 Grest',
-                'category_id' => 89, // Sambungan Paralon
+                'category_id' => 109, // Sambungan Paralon
                 'brand_id' => 52, // Grest
                 'stock' => rand(10, 30),
                 'price' => 4000,
@@ -10417,7 +10453,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 4000,
@@ -10426,7 +10462,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'PERLOKSOK 1/2 X 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 4000,
@@ -10435,7 +10471,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'PERLOKSOK 11/4 X 1 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10444,7 +10480,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'PERLOKSOK 11/4 X 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -10453,7 +10489,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'PERLOKSOK 11/4 X 1/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10462,7 +10498,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'PERLOKSOK 2 X 11/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10471,7 +10507,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 1 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 4000,
@@ -10480,7 +10516,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 1 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 4000,
@@ -10489,7 +10525,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 1 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10498,7 +10534,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 11/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10507,7 +10543,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 11/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -10516,7 +10552,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 11/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -10525,7 +10561,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 11/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10534,7 +10570,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 11/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -10543,7 +10579,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 11/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 8500,
@@ -10554,7 +10590,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'SOK 2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -10563,7 +10599,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 8500,
@@ -10572,7 +10608,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10581,7 +10617,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 21/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 6500,
@@ -10590,7 +10626,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 21/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10599,7 +10635,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 21/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -10608,7 +10644,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 3 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -10617,7 +10653,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 3 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -10626,7 +10662,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 3 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -10635,7 +10671,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -10644,7 +10680,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -10653,7 +10689,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -10662,7 +10698,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'PERLOKSOK 2X3 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -10671,7 +10707,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP DRAT DALAM 1/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -10680,7 +10716,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP DRAT DALAM 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 3000,
@@ -10689,7 +10725,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP DRAT LUAR 1/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -10698,7 +10734,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP DRAT LUAR 3/4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 3000,
@@ -10707,7 +10743,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10716,7 +10752,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 21/2 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 6500,
@@ -10725,7 +10761,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 3 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -10734,7 +10770,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 4 Grest',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 52,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10744,7 +10780,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'SOK 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54, // Rucika
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -10753,7 +10789,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -10762,7 +10798,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10771,7 +10807,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 4000,
@@ -10780,7 +10816,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 4500,
@@ -10789,7 +10825,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -10798,7 +10834,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SOK 1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -10807,7 +10843,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6500,
@@ -10816,7 +10852,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'T 1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 8500,
@@ -10825,7 +10861,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10834,7 +10870,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 21/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -10843,7 +10879,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 3 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -10852,7 +10888,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L 4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -10861,7 +10897,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'L DRAT KUNINGAN 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -10870,7 +10906,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 1/2 KUNINGAN Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -10879,7 +10915,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 3/4 KUNINGAN Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -10888,7 +10924,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10897,7 +10933,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10906,7 +10942,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -10915,7 +10951,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10924,7 +10960,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7000,
@@ -10933,7 +10969,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 11/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -10942,7 +10978,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 11/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10951,7 +10987,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -10960,7 +10996,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOUBLE NIPPLE 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 3000,
@@ -10969,7 +11005,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10978,7 +11014,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10987,7 +11023,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 2X1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -10996,7 +11032,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 1X1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11005,7 +11041,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 1X3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11014,7 +11050,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 2.5 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11023,7 +11059,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 3X2.5 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -11032,7 +11068,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 1 X 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11041,7 +11077,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 1X3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11050,7 +11086,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 1X1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -11059,7 +11095,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 11/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11068,7 +11104,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 11/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11077,7 +11113,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 11/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11086,7 +11122,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 11/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11095,7 +11131,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDL 2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11105,7 +11141,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Perloksok 11/4 X 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -11114,7 +11150,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 11/4 X 1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11123,7 +11159,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 11/4 X 1/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11132,7 +11168,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 11/2 X3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11141,7 +11177,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 11/2 X 1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11150,7 +11186,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 11/2 X 3/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11159,7 +11195,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 3X21/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -11168,7 +11204,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 21/2X2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11177,7 +11213,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 2X11/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 8500,
@@ -11186,7 +11222,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'SDD 2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -11195,7 +11231,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 11/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -11204,7 +11240,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 11/2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11213,7 +11249,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 2 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11222,7 +11258,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 3 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11231,7 +11267,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'DOP 4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11240,7 +11276,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 2X1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -11249,7 +11285,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 11/4X1 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11258,7 +11294,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Perloksok 2X11/4 Rucika',
-                'category_id' => 89,
+                'category_id' => 109,
                 'brand_id' => 54,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11268,7 +11304,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Watermur 1/2',
-                'category_id' => 101, // Watermur
+                'category_id' => 110, // Watermur
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11277,7 +11313,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Watermur 3/4',
-                'category_id' => 101, // Watermur
+                'category_id' => 110, // Watermur
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11286,7 +11322,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Watermur 1',
-                'category_id' => 101, // Watermur
+                'category_id' => 110, // Watermur
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -11295,7 +11331,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Watershock 1/2',
-                'category_id' => 102, // Watershock
+                'category_id' => 111, // Watershock
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11304,7 +11340,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Watershock 3/4',
-                'category_id' => 102, // Watershock
+                'category_id' => 111, // Watershock
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -11313,7 +11349,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Drat Torn 1/2',
-                'category_id' => 103, // Drat Torn
+                'category_id' => 112, // Drat Torn
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11322,7 +11358,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Drat Torn 3/4',
-                'category_id' => 103, // Drat Torn
+                'category_id' => 112, // Drat Torn
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -11331,7 +11367,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Drat Torn 1',
-                'category_id' => 103, // Drat Torn
+                'category_id' => 112, // Drat Torn
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11340,7 +11376,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pelampung Torn Radar JP',
-                'category_id' => 104, // Pelampung Torn
+                'category_id' => 113, // Pelampung Torn
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -11349,7 +11385,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pelampung Torn Penguin',
-                'category_id' => 104, // Pelampung Torn
+                'category_id' => 113, // Pelampung Torn
                 'brand_id' => 30, // Penguin
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -11358,7 +11394,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pelampung Torn Amico',
-                'category_id' => 104, // Pelampung Torn
+                'category_id' => 113, // Pelampung Torn
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -11367,7 +11403,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pelampung Torn Camel',
-                'category_id' => 104, // Pelampung Torn
+                'category_id' => 113, // Pelampung Torn
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -11376,7 +11412,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Sadel 11/4',
-                'category_id' => 105, // Klem Sadel
+                'category_id' => 114, // Klem Sadel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -11385,7 +11421,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Sadel 11/2',
-                'category_id' => 105, // Klem Sadel
+                'category_id' => 114, // Klem Sadel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -11394,7 +11430,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Sadel 2',
-                'category_id' => 105, // Klem Sadel
+                'category_id' => 114, // Klem Sadel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -11403,7 +11439,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tali Rafia Non Full',
-                'category_id' => 106, // Tali Rafia
+                'category_id' => 115, // Tali Rafia
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11412,7 +11448,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tali Rafia Full',
-                'category_id' => 106, // Tali Rafia
+                'category_id' => 115, // Tali Rafia
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -11421,7 +11457,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Kabel YAN\'S 4',
-                'category_id' => 107, // Klem Kabel
+                'category_id' => 116, // Klem Kabel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11430,7 +11466,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Kabel YAN\'S 8',
-                'category_id' => 107, // Klem Kabel
+                'category_id' => 116, // Klem Kabel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 6500,
@@ -11439,7 +11475,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Kabel YAN\'S 9',
-                'category_id' => 107, // Klem Kabel
+                'category_id' => 116, // Klem Kabel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11448,7 +11484,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Kabel YANS 10',
-                'category_id' => 107, // Klem Kabel
+                'category_id' => 116, // Klem Kabel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11457,7 +11493,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Kabel YANS 12',
-                'category_id' => 107, // Klem Kabel
+                'category_id' => 116, // Klem Kabel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11466,7 +11502,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Kabel YANS 17',
-                'category_id' => 107, // Klem Kabel
+                'category_id' => 116, // Klem Kabel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -11477,7 +11513,7 @@ class GoodsSeeder extends Seeder
             // Klem Selang
             [
                 'name' => 'Klem Selang 1/2',
-                'category_id' => 108, // Klem Selang
+                'category_id' => 117, // Klem Selang
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -11486,7 +11522,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 5/8',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -11495,7 +11531,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 3/4',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -11504,7 +11540,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 1',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11513,7 +11549,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 11/4',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11522,7 +11558,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 11/2',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11531,7 +11567,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 2',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11540,7 +11576,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 21/2',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11549,7 +11585,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Selang 3',
-                'category_id' => 108,
+                'category_id' => 117,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11560,7 +11596,7 @@ class GoodsSeeder extends Seeder
             // Klem Paralon (Plastik)
             [
                 'name' => 'Klem Paralon 1/2 Plastik',
-                'category_id' => 109, // Klem Paralon (Plastik)
+                'category_id' => 118, // Klem Paralon (Plastik)
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 1000,
@@ -11569,7 +11605,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 3/4 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 1500,
@@ -11578,7 +11614,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 1 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 2000,
@@ -11587,7 +11623,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 11/4 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -11596,7 +11632,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 11/2 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 3500,
@@ -11605,7 +11641,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 2 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11614,7 +11650,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 21/2 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11623,7 +11659,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 3 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11632,7 +11668,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Paralon 4 Plastik',
-                'category_id' => 109,
+                'category_id' => 118,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 7500,
@@ -11643,7 +11679,7 @@ class GoodsSeeder extends Seeder
             // Obeng
             [
                 'name' => 'Obeng Blitz Kecil Panjang (+/-)',
-                'category_id' => 110, // Obeng
+                'category_id' => 119, // Obeng
                 'brand_id' => 53, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11652,7 +11688,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Rocia',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11661,7 +11697,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Toho',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 46, // Toho
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -11670,7 +11706,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Paorisonic 4 Inch',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -11679,7 +11715,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Paorisonic 6 Inch',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -11688,7 +11724,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Leon',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11697,7 +11733,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Anata',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11706,7 +11742,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Insulated',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11715,7 +11751,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Testpen Tofuda',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -11724,7 +11760,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Testpen Meiko',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11733,7 +11769,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obeng Bison 12 Inch',
-                'category_id' => 110,
+                'category_id' => 119,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -11744,7 +11780,7 @@ class GoodsSeeder extends Seeder
             // Tang Blitz
             [
                 'name' => 'Tang Blitz 6 Inch',
-                'category_id' => 111, // Tang Blitz
+                'category_id' => 120, // Tang Blitz
                 'brand_id' => 53, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -11753,7 +11789,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tang Blitz 7 Inch',
-                'category_id' => 111,
+                'category_id' => 120,
                 'brand_id' => 53, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 55000,
@@ -11762,7 +11798,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tang Blitz 8 Inch',
-                'category_id' => 111,
+                'category_id' => 120,
                 'brand_id' => 53, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -11771,7 +11807,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tang Blitz Lancip 6 Inch',
-                'category_id' => 111,
+                'category_id' => 120,
                 'brand_id' => 53, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -11780,7 +11816,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tang Blitz Potong 6 Inch',
-                'category_id' => 111,
+                'category_id' => 120,
                 'brand_id' => 53, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -11792,7 +11828,7 @@ class GoodsSeeder extends Seeder
             // Kunci Inggris
             [
                 'name' => 'Kunci Inggris 6 Inch',
-                'category_id' => 112, // Kunci Inggris
+                'category_id' => 121, // Kunci Inggris
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -11801,7 +11837,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Inggris 8 Inch',
-                'category_id' => 112,
+                'category_id' => 121,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -11810,7 +11846,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Inggris 10 Inch',
-                'category_id' => 112,
+                'category_id' => 121,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -11819,7 +11855,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Inggris 12 Inch',
-                'category_id' => 112,
+                'category_id' => 121,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -11828,7 +11864,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Inggris 15 Inch',
-                'category_id' => 112,
+                'category_id' => 121,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 135000,
@@ -11837,7 +11873,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Inggris 18 Inch',
-                'category_id' => 112,
+                'category_id' => 121,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 175000,
@@ -11848,7 +11884,7 @@ class GoodsSeeder extends Seeder
             // Kunci Ring Pas
             [
                 'name' => 'Kunci Ring Pas 8',
-                'category_id' => 113, // Kunci Ring Pas
+                'category_id' => 122, // Kunci Ring Pas
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11857,7 +11893,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 10',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 17500,
@@ -11866,7 +11902,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 11',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11875,7 +11911,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 12',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -11884,7 +11920,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 14',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -11893,7 +11929,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 15',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11902,7 +11938,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 16',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -11911,7 +11947,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring Pas 17',
-                'category_id' => 113,
+                'category_id' => 122,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -11922,7 +11958,7 @@ class GoodsSeeder extends Seeder
             // Kunci Ring
             [
                 'name' => 'Kunci Ring 10X11',
-                'category_id' => 114, // Kunci Ring
+                'category_id' => 123, // Kunci Ring
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -11931,7 +11967,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring 12X13',
-                'category_id' => 114,
+                'category_id' => 123,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -11940,7 +11976,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring 14X15',
-                'category_id' => 114,
+                'category_id' => 123,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -11949,7 +11985,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring 16X17',
-                'category_id' => 114,
+                'category_id' => 123,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -11958,7 +11994,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci Ring 18X19',
-                'category_id' => 114,
+                'category_id' => 123,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -11969,7 +12005,7 @@ class GoodsSeeder extends Seeder
             // Lakban
             [
                 'name' => 'Lakban Bening/Coklat',
-                'category_id' => 115, // Lakban
+                'category_id' => 124, // Lakban
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -11978,7 +12014,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban Hitam',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -11987,7 +12023,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban Kertas Kecil',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -11996,7 +12032,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban Kertas NACHI 2cm',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 45, // Nachi
                 'stock' => rand(10, 30),
                 'price' => 8500,
@@ -12005,7 +12041,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban Kertas NACHI 5cm',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 45,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12014,7 +12050,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Double Tape Homecare',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12023,7 +12059,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Double Tape NACHI',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 45,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12032,7 +12068,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban Seng No Drop',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12041,7 +12077,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban GRC Tanpa Lem',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -12050,7 +12086,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lakban GRC Rofix',
-                'category_id' => 115,
+                'category_id' => 124,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 12500,
@@ -12061,7 +12097,7 @@ class GoodsSeeder extends Seeder
             // Sekop
             [
                 'name' => 'Sekop CRD Gagang Kayu',
-                'category_id' => 116, // Sekop
+                'category_id' => 125, // Sekop
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12070,7 +12106,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sekop Semar',
-                'category_id' => 116,
+                'category_id' => 125,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12079,7 +12115,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sekop Mata',
-                'category_id' => 116,
+                'category_id' => 125,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 115000,
@@ -12089,7 +12125,7 @@ class GoodsSeeder extends Seeder
             // Kayu
             [
                 'name' => 'Usuk 5x5 2m',
-                'category_id' => 117, // Kayu
+                'category_id' => 126, // Kayu
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 115000,
@@ -12098,7 +12134,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Usuk 5x5 3m',
-                'category_id' => 117,
+                'category_id' => 126,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 120000,
@@ -12107,7 +12143,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Reng Kayu 2m',
-                'category_id' => 117,
+                'category_id' => 126,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 1500000,
@@ -12116,7 +12152,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Reng Kayu 3m',
-                'category_id' => 117,
+                'category_id' => 126,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 165000,
@@ -12127,7 +12163,7 @@ class GoodsSeeder extends Seeder
             // Lis Kayu
             [
                 'name' => 'Lis Kayu 4 CM X 3M',
-                'category_id' => 118, // Lis Kayu
+                'category_id' => 127, // Lis Kayu
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12136,7 +12172,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Kayu 4 CM X 4M',
-                'category_id' => 118,
+                'category_id' => 127,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 17500,
@@ -12145,7 +12181,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Kayu 6 CM X 4M',
-                'category_id' => 118,
+                'category_id' => 127,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12154,7 +12190,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Kayu 8 CM X 3M',
-                'category_id' => 118,
+                'category_id' => 127,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12163,7 +12199,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lis Kayu 8 CM X 4M',
-                'category_id' => 118,
+                'category_id' => 127,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12174,7 +12210,7 @@ class GoodsSeeder extends Seeder
             // Gendeng
             [
                 'name' => 'Gendeng Gepak',
-                'category_id' => 119, // Gendeng
+                'category_id' => 128, // Gendeng
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(5000, 15000),
@@ -12183,7 +12219,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gendeng Bulet',
-                'category_id' => 119,
+                'category_id' => 128,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(5000, 15000),
@@ -12192,7 +12228,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gendeng Kerpus Lancip',
-                'category_id' => 119,
+                'category_id' => 128,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(10000, 20000),
@@ -12201,7 +12237,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gendeng Kerpus Bulet',
-                'category_id' => 119,
+                'category_id' => 128,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(10000, 20000),
@@ -12212,7 +12248,7 @@ class GoodsSeeder extends Seeder
             // Plastik Cor
             [
                 'name' => 'Plastik Cor Bunglon',
-                'category_id' => 120, // Plastik Cor
+                'category_id' => 129, // Plastik Cor
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -12221,7 +12257,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Plastik Cor Tebal',
-                'category_id' => 120,
+                'category_id' => 129,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 125000,
@@ -12232,7 +12268,7 @@ class GoodsSeeder extends Seeder
             // Klep Kuningan Onda
             [
                 'name' => 'Klep Kuningan 1/2 Onda',
-                'category_id' => 121, // Klep Kuningan
+                'category_id' => 130, // Klep Kuningan
                 'brand_id' => 50, // Onda
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12241,7 +12277,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klep Kuningan 3/4 Onda',
-                'category_id' => 121,
+                'category_id' => 130,
                 'brand_id' => 50,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -12250,7 +12286,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klep Kuningan 1 Onda',
-                'category_id' => 121,
+                'category_id' => 130,
                 'brand_id' => 50,
                 'stock' => rand(10, 30),
                 'price' => 100000,
@@ -12261,7 +12297,7 @@ class GoodsSeeder extends Seeder
             // Stopkran Kuningan Onda
             [
                 'name' => 'Stopkran Kuningan 1/2 Onda',
-                'category_id' => 122, // Stopkran
+                'category_id' => 131, // Stopkran
                 'brand_id' => 50, // Onda
                 'stock' => rand(10, 30),
                 'price' => 110000,
@@ -12270,7 +12306,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Stopkran Kuningan 3/4 Onda',
-                'category_id' => 122,
+                'category_id' => 131,
                 'brand_id' => 50,
                 'stock' => rand(10, 30),
                 'price' => 125000,
@@ -12279,7 +12315,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Stopkran Kuningan 1 Onda',
-                'category_id' => 122,
+                'category_id' => 131,
                 'brand_id' => 50,
                 'stock' => rand(10, 30),
                 'price' => 175000,
@@ -12290,7 +12326,7 @@ class GoodsSeeder extends Seeder
             // Hak Buka
             [
                 'name' => 'Hak Buka No 8',
-                'category_id' => 123, // Hak Buka
+                'category_id' => 132, // Hak Buka
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 2000,
@@ -12299,7 +12335,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Hak Buka No 10',
-                'category_id' => 123,
+                'category_id' => 132,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 1500,
@@ -12308,7 +12344,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Hak Buka No 14',
-                'category_id' => 123,
+                'category_id' => 132,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -12319,7 +12355,7 @@ class GoodsSeeder extends Seeder
                         // Korden
                         [
                             'name' => 'Tiang Korden',
-                            'category_id' => 124, // Korden
+                            'category_id' => 133, // Korden
                             'brand_id' => 60,
                             'stock' => rand(10, 30),
                             'price' => rand(25000, 50000),
@@ -12328,7 +12364,7 @@ class GoodsSeeder extends Seeder
                         ],
                         [
                             'name' => 'Gantungan Korden',
-                            'category_id' => 124,
+                            'category_id' => 133,
                             'brand_id' => 60,
                             'stock' => rand(10, 30),
                             'price' => rand(10000, 25000),
@@ -12337,7 +12373,7 @@ class GoodsSeeder extends Seeder
                         ],
                         [
                             'name' => 'Tutup Korden',
-                            'category_id' => 124,
+                            'category_id' => 133,
                             'brand_id' => 60,
                             'stock' => rand(10, 30),
                             'price' => rand(15000, 30000),
@@ -12348,7 +12384,7 @@ class GoodsSeeder extends Seeder
             // Kuas Lukis Eterna
             [
                 'name' => 'Kuas Lukis Eterna Kecil',
-                'category_id' => 125, // Kuas Lukis
+                'category_id' => 134, // Kuas Lukis
                 'brand_id' => 53, // Eterna
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -12357,7 +12393,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kuas Lukis Eterna No 6',
-                'category_id' => 125,
+                'category_id' => 134,
                 'brand_id' => 53,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -12366,7 +12402,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kuas Lukis Eterna No 7',
-                'category_id' => 125,
+                'category_id' => 134,
                 'brand_id' => 53,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -12375,7 +12411,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kuas Lukis Eterna No 8',
-                'category_id' => 125,
+                'category_id' => 134,
                 'brand_id' => 53,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -12384,7 +12420,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kuas Lukis Eterna No 9',
-                'category_id' => 125,
+                'category_id' => 134,
                 'brand_id' => 53,
                 'stock' => rand(10, 30),
                 'price' => 7000,
@@ -12393,7 +12429,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kuas Lukis Eterna No 11',
-                'category_id' => 125,
+                'category_id' => 134,
                 'brand_id' => 53,
                 'stock' => rand(10, 30),
                 'price' => 8000,
@@ -12402,7 +12438,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kuas Lukis Eterna No 12',
-                'category_id' => 125,
+                'category_id' => 134,
                 'brand_id' => 53,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -12413,7 +12449,7 @@ class GoodsSeeder extends Seeder
             // Cat Batu Alam
             [
                 'name' => 'Cat Batu Alam Decofresh Super Black 1 Lt',
-                'category_id' => 126, // Cat Batu Alam
+                'category_id' => 135, // Cat Batu Alam
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12422,7 +12458,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cat Batu Alam Decofresh Clear Gloss',
-                'category_id' => 126,
+                'category_id' => 135,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -12433,7 +12469,7 @@ class GoodsSeeder extends Seeder
             // Kapasitor Kotak JP
             [
                 'name' => 'Kapasitor Kotak JP UF 6',
-                'category_id' => 127, // Kapasitor Kotak JP
+                'category_id' => 136, // Kapasitor Kotak JP
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12442,7 +12478,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kapasitor Kotak JP UF 4',
-                'category_id' => 127,
+                'category_id' => 136,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12451,7 +12487,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kapasitor Kotak JP UF 8',
-                'category_id' => 127,
+                'category_id' => 136,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -12460,7 +12496,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kapasitor Kotak JP UF 10',
-                'category_id' => 127,
+                'category_id' => 136,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -12469,7 +12505,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kapasitor Kotak JP UF 12',
-                'category_id' => 127,
+                'category_id' => 136,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -12480,7 +12516,7 @@ class GoodsSeeder extends Seeder
             // Saringan Bak Cuci Piring
             [
                 'name' => 'Saringan Bak Cuci Piring Putih',
-                'category_id' => 128, // Saringan Bak Cuci Piring
+                'category_id' => 137, // Saringan Bak Cuci Piring
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12489,7 +12525,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Saringan Bak Cuci Piring DO8110',
-                'category_id' => 128,
+                'category_id' => 137,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(20000, 40000),
@@ -12498,7 +12534,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Saringan Bak Cuci Piring Selang Oracle',
-                'category_id' => 128,
+                'category_id' => 137,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -12509,7 +12545,7 @@ class GoodsSeeder extends Seeder
             // Handle Jenset
             [
                 'name' => 'Handle Jenset 15 A',
-                'category_id' => 129, // Handle Jenset
+                'category_id' => 138, // Handle Jenset
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 55000,
@@ -12518,7 +12554,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Handle Jenset 30 A',
-                'category_id' => 129,
+                'category_id' => 138,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -12529,7 +12565,7 @@ class GoodsSeeder extends Seeder
             // Pisau Keramik
             [
                 'name' => 'Pisau Keramik Gomeo',
-                'category_id' => 130, // Pisau Keramik
+                'category_id' => 139, // Pisau Keramik
                 'brand_id' => 42, // Gomeo
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -12538,7 +12574,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Keramik Fujiyama',
-                'category_id' => 130,
+                'category_id' => 139,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12547,7 +12583,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Keramik Makita',
-                'category_id' => 130,
+                'category_id' => 139,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -12556,7 +12592,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Keramik Bosch',
-                'category_id' => 130,
+                'category_id' => 139,
                 'brand_id' => 49, // Bosch
                 'stock' => rand(10, 30),
                 'price' => 135000,
@@ -12565,7 +12601,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Keramik Toho',
-                'category_id' => 130,
+                'category_id' => 139,
                 'brand_id' => 46, // Toho
                 'stock' => rand(10, 30),
                 'price' => 165000,
@@ -12574,7 +12610,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Keramik Manual',
-                'category_id' => 130,
+                'category_id' => 139,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 55000,
@@ -12585,7 +12621,7 @@ class GoodsSeeder extends Seeder
             // Pisau Sirkel
             [
                 'name' => 'Pisau Sirkel Coyote',
-                'category_id' => 131, // Pisau Sirkel
+                'category_id' => 140, // Pisau Sirkel
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -12594,7 +12630,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Sirkel Modern',
-                'category_id' => 131,
+                'category_id' => 140,
                 'brand_id' => 48, // Modern
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -12603,7 +12639,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Sirkel Fujiyama',
-                'category_id' => 131,
+                'category_id' => 140,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(10, 30),
                 'price' => 55000,
@@ -12612,7 +12648,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Sirkel Toho',
-                'category_id' => 131,
+                'category_id' => 140,
                 'brand_id' => 46, // Toho
                 'stock' => rand(10, 30),
                 'price' => 70000,
@@ -12623,7 +12659,7 @@ class GoodsSeeder extends Seeder
             // Pisau Mesin Pasah
             [
                 'name' => 'Pisau Mesin Pasah Modern',
-                'category_id' => 132, // Pisau Mesin Pasah
+                'category_id' => 141, // Pisau Mesin Pasah
                 'brand_id' => 48, // Modern
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12632,7 +12668,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Mesin Pasah Fujiyama',
-                'category_id' => 132,
+                'category_id' => 141,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -12643,7 +12679,7 @@ class GoodsSeeder extends Seeder
             // Saklar Mesin
             [
                 'name' => 'Saklar Mesin Serut Modern',
-                'category_id' => 133, // Saklar Mesin
+                'category_id' => 142, // Saklar Mesin
                 'brand_id' => 48, // Modern
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -12652,7 +12688,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Saklar Mesin Grenda Modern',
-                'category_id' => 133,
+                'category_id' => 142,
                 'brand_id' => 48,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12661,7 +12697,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Saklar Mesin Circle Modern',
-                'category_id' => 133,
+                'category_id' => 142,
                 'brand_id' => 48,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12670,7 +12706,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Saklar Mesin Profil Modern',
-                'category_id' => 133,
+                'category_id' => 142,
                 'brand_id' => 48,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -12681,7 +12717,7 @@ class GoodsSeeder extends Seeder
             // Wastafel Cuci Tangan
             [
                 'name' => 'Wastafel Cuci Tangan Duty Kecil',
-                'category_id' => 134, // Wastafel Cuci Tangan
+                'category_id' => 143, // Wastafel Cuci Tangan
                 'brand_id' => 56, // Duty
                 'stock' => rand(10, 30),
                 'price' => 235000,
@@ -12690,7 +12726,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Wastafel Cuci Tangan Duty Besar Putih',
-                'category_id' => 134,
+                'category_id' => 143,
                 'brand_id' => 56,
                 'stock' => rand(10, 30),
                 'price' => 300000,
@@ -12699,7 +12735,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Wastafel Cuci Tangan Duty Besar Maroon',
-                'category_id' => 134,
+                'category_id' => 143,
                 'brand_id' => 56,
                 'stock' => rand(10, 30),
                 'price' => 325000,
@@ -12708,7 +12744,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Wastafel Cuci Tangan American Standard Putih',
-                'category_id' => 134,
+                'category_id' => 143,
                 'brand_id' => 57, // American
                 'stock' => rand(10, 30),
                 'price' => 550000,
@@ -12718,7 +12754,7 @@ class GoodsSeeder extends Seeder
             // Asahan Grenda
             [
                 'name' => 'Asahan Grenda Schlieper 6 Inch',
-                'category_id' => 104, // Asahan Grenda
+                'category_id' => 144, // Asahan Grenda
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12727,7 +12763,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Asahan Grenda Schlieper 8 Inch',
-                'category_id' => 104,
+                'category_id' => 144,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12736,7 +12772,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Asahan Grenda Inax 6 Inch',
-                'category_id' => 104,
+                'category_id' => 144,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(10000, 20000),
@@ -12745,7 +12781,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Asahan Grenda Inax 8 Inch',
-                'category_id' => 104,
+                'category_id' => 144,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => rand(15000, 30000),
@@ -12756,7 +12792,7 @@ class GoodsSeeder extends Seeder
             // Timbangan
             [
                 'name' => 'Timbangan Gantung Lobster 25 kg',
-                'category_id' => 105, // Timbangan
+                'category_id' => 145, // Timbangan
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -12765,7 +12801,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Timbangan Gantung Lobster 50 kg',
-                'category_id' => 105,
+                'category_id' => 145,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -12774,7 +12810,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Timbangan Dacin 50 kg',
-                'category_id' => 105,
+                'category_id' => 145,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 315000,
@@ -12783,7 +12819,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Timbangan Dacin 100 kg',
-                'category_id' => 105,
+                'category_id' => 145,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 415000,
@@ -12792,7 +12828,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Timbangan Bebek',
-                'category_id' => 105,
+                'category_id' => 145,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 365000,
@@ -12803,7 +12839,7 @@ class GoodsSeeder extends Seeder
             // Pemotong Kaca
             [
                 'name' => 'Pemotong Kaca Chrome',
-                'category_id' => 106, // Pemotong Kaca
+                'category_id' => 146, // Pemotong Kaca
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -12812,7 +12848,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pemotong Kaca Owl',
-                'category_id' => 106,
+                'category_id' => 146,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -12821,7 +12857,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pemotong Kaca Toyo',
-                'category_id' => 106,
+                'category_id' => 146,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 285000,
@@ -12832,7 +12868,7 @@ class GoodsSeeder extends Seeder
             // Papan Gypsum
             [
                 'name' => 'Papan Gypsum A Plus',
-                'category_id' => 107, // Papan Gypsum
+                'category_id' => 147, // Papan Gypsum
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 50000,
@@ -12841,7 +12877,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Papan Gypsum Jaya Board',
-                'category_id' => 107,
+                'category_id' => 147,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 70000,
@@ -12852,7 +12888,7 @@ class GoodsSeeder extends Seeder
             // Paving Blok
             [
                 'name' => 'Paving Blok Segi 4',
-                'category_id' => 108, // Paving Blok
+                'category_id' => 148, // Paving Blok
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -12861,7 +12897,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Paving Blok Segi 6',
-                'category_id' => 108,
+                'category_id' => 148,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -12872,7 +12908,7 @@ class GoodsSeeder extends Seeder
             // Klem Pipa Besi
             [
                 'name' => 'Klem Pipa Besi 11/4',
-                'category_id' => 109, // Klem Pipa Besi
+                'category_id' => 149, // Klem Pipa Besi
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12881,7 +12917,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Pipa Besi 11/2',
-                'category_id' => 109,
+                'category_id' => 149,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -12890,7 +12926,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Klem Pipa Besi 2',
-                'category_id' => 109,
+                'category_id' => 149,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12901,7 +12937,7 @@ class GoodsSeeder extends Seeder
             // Siku Rak
             [
                 'name' => 'Siku Rak 6x8',
-                'category_id' => 110, // Siku Rak
+                'category_id' => 150, // Siku Rak
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -12910,7 +12946,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Siku Rak 8x10',
-                'category_id' => 110,
+                'category_id' => 150,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12919,7 +12955,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Siku Rak 10x12',
-                'category_id' => 110,
+                'category_id' => 150,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12928,7 +12964,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Siku Rak 12x14',
-                'category_id' => 110,
+                'category_id' => 150,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 27500,
@@ -12937,7 +12973,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Siku Rak 10x12 Putih IGM',
-                'category_id' => 110,
+                'category_id' => 150,
                 'brand_id' => 46, // IGM
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12947,7 +12983,7 @@ class GoodsSeeder extends Seeder
             // Perlengkapan Tukang
             [
                 'name' => 'Kunci L 1 Set Chrome',
-                'category_id' => 135, // Perlengkapan Tukang
+                'category_id' => 151, // Perlengkapan Tukang
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12956,7 +12992,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kunci L 1 Set Vaniro',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -12965,7 +13001,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kabel Setrika Shinyoku',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -12974,7 +13010,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Solder New Pallas',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -12983,7 +13019,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Solder Sheng Wei',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -12992,7 +13028,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tinol',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13001,7 +13037,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gunting Buah Imperial',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -13010,7 +13046,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tang Diamond',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 50, // Diamond
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13019,7 +13055,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gunting New Daeland',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -13028,7 +13064,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Karet Ban',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 3000,
@@ -13037,7 +13073,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Karet Ban Besar',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -13046,7 +13082,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Karet Asbes',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 3000,
@@ -13055,7 +13091,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Senter Aoki',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13064,7 +13100,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semprotan Popeye',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13073,7 +13109,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gorok Triplek Koala',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -13082,7 +13118,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lot Tukang Crissbow',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13091,7 +13127,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Lot Tukang Holy',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13100,7 +13136,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Isi Pisau Cutter Kecil Kenko',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 8500,
@@ -13109,7 +13145,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Isi Pisau Cutter Besar Kenko',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -13118,7 +13154,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Geser',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13127,7 +13163,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Jarum Karung',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -13136,7 +13172,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Gergaji Triplek',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13145,7 +13181,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pensil Tukang Makita',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 2500,
@@ -13154,7 +13190,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pisau Asahan Kayu Manual',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 30000,
@@ -13163,7 +13199,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rantai',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -13172,7 +13208,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Dudukan Kompor',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13182,7 +13218,7 @@ class GoodsSeeder extends Seeder
 
             [
                 'name' => 'Regulator Winn Gas',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 100000,
@@ -13191,7 +13227,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Regulator Quantum Tanpa Amper',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 70000,
@@ -13200,7 +13236,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Regulator Quantum Dengan Amper',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -13209,7 +13245,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Regulator MPU',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13218,7 +13254,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Selang Regulator',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -13227,7 +13263,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Selang + Regulator Quantum',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 125000,
@@ -13236,7 +13272,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Regulator + Pengunci Winn Gas',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 125000,
@@ -13245,7 +13281,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gelas Trimmer Modern',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 48, // Modern
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -13254,7 +13290,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tang Ripet Bison',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -13263,7 +13299,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Penutup Pintu',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13272,7 +13308,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tembakan Lem Kaca',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13281,7 +13317,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Saklar On/Off',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -13290,7 +13326,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Fanbelt Fujiyama',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 45, // Fujiyama
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13299,7 +13335,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tarikan Pintu Bulat',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -13308,7 +13344,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kran Waterpass Hato',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13317,7 +13353,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kran Waterpass Onda',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 46, // Onda
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13326,7 +13362,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Filter Aquarium Aquila',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 85000,
@@ -13335,7 +13371,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kanebo Mugen',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13344,7 +13380,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sarung Tangan',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 6000,
@@ -13353,7 +13389,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sarung Tangan Karet',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13362,7 +13398,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Rompi Proyek',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13371,7 +13407,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Helm Proyek',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13380,7 +13416,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sepatu Boot (40, 41, 42)',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 125000,
@@ -13389,7 +13425,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Engsel Plastik Pintu Kamar Mandi',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -13398,7 +13434,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Karbit Buah',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -13407,7 +13443,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Karbit MDQ',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13416,7 +13452,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Tambang',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -13425,7 +13461,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gantungan Kamar Mandi',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13434,7 +13470,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kerekan Timba Kecil',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13443,7 +13479,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kerekan Timba Laher',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -13452,7 +13488,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Palu Karet 8 OZ',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13461,7 +13497,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Palu Karet 12 OZ',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13470,7 +13506,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ungkil',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13479,7 +13515,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kampak',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13488,7 +13524,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Batu Asahan',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13497,7 +13533,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gunting Taman Honxi',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13506,7 +13542,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Garpu Kebun',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -13515,7 +13551,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cetok Kecil',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13524,7 +13560,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Cetok Besar',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13533,7 +13569,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Blencong',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 95000,
@@ -13542,7 +13578,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pengki Hoho',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13551,7 +13587,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Pengki Kudamas',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13560,7 +13596,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Bokor Hoho',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13569,7 +13605,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roskam Putih',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 15000,
@@ -13578,7 +13614,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roskam Hitam',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13587,7 +13623,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roskam Besi',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13596,7 +13632,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Batu Kaca Fukuda',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 45, // Fukuda
                 'stock' => rand(10, 30),
                 'price' => 20000,
@@ -13605,7 +13641,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Garuk Sampah',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 22500,
@@ -13614,7 +13650,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Artco Sorong',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 685000,
@@ -13623,7 +13659,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ban Luar Artco',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -13632,7 +13668,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ban Dalam Artco',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 40000,
@@ -13641,7 +13677,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Ban Artco 1 Set',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 195000,
@@ -13650,7 +13686,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obat Cor Bestmittel',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13659,7 +13695,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obat Cor Damdex',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 75000,
@@ -13668,7 +13704,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obat Rayap Artona',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13677,7 +13713,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Obat Rayap Cislin',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -13686,7 +13722,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'WD 40',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 65000,
@@ -13695,7 +13731,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Brasso',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 45000,
@@ -13704,7 +13740,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'VIP Remover 250 Gr',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 35000,
@@ -13713,7 +13749,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'VIP Remover 1 Kg',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 80000,
@@ -13722,7 +13758,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Roofing',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 25000,
@@ -13731,7 +13767,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gunting Bison 24 Inch',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 45, // Bison
                 'stock' => rand(10, 30),
                 'price' => 285000,
@@ -13740,7 +13776,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gunting Hollo Bison 8 Inch',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 45, // Bison
                 'stock' => rand(10, 30),
                 'price' => 55000,
@@ -13749,7 +13785,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Gunting Baja Blitz',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 47, // Blitz
                 'stock' => rand(10, 30),
                 'price' => 100000,
@@ -13758,7 +13794,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sikatop 107 Plus 5 Kg',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 150000,
@@ -13767,7 +13803,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Sika Top 25 Kg',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 415000,
@@ -13776,7 +13812,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kompon A Plus / Elephant',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 5000,
@@ -13785,7 +13821,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Kompon A Plus / Elephant (Sak)',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 60000,
@@ -13794,7 +13830,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen Putih (2 Kg)',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 10000,
@@ -13803,7 +13839,7 @@ class GoodsSeeder extends Seeder
             ],
             [
                 'name' => 'Semen Putih (Sak)',
-                'category_id' => 135,
+                'category_id' => 151,
                 'brand_id' => 60,
                 'stock' => rand(10, 30),
                 'price' => 110000,
@@ -13835,7 +13871,6 @@ class GoodsSeeder extends Seeder
             DB::table('goods')->insert([
                 'category_id' => $good['category_id'],
                 'brand_id' => $good['brand_id'],
-                'good_code' => substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 16),
                 'name' => $good['name'],
                 'stock' => $good['stock'],
                 'unit' => $good['unit'],
