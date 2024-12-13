@@ -62,6 +62,25 @@
                         @enderror
                     </div>
                 </div>
+                <div class="col-span-3">
+                    <label for="good.brand_id" class="block text-sm font-medium leading-6 text-gray-900">
+                        Brand <span class="text-xs text-red-500">*</span>
+                    </label>
+                    <div class="mt-2">
+                        <select wire:model="good.brand_id" id="good.brand_id"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6">
+                            <option value="" @if (old('good.brand_id', $good->brand_id ?? null) == '') selected @endif>Pilih Brand
+                            </option>
+                            @foreach ($brands->sortByDesc(fn($brand) => $brand->id == 60) as $brand)
+                                <option value="{{ $brand->id }}" @if ($brand->id == old('good.brand_id', $good->brand_id ?? null)) selected @endif>
+                                    {{ $brand->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('good.brand_id')
+                            <span class="text-xs text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
 
                 <div class="col-span-2">
                     <label for="good.unit" class="block text-sm font-medium leading-6 text-gray-900">Satuan

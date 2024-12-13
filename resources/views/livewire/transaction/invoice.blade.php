@@ -2,7 +2,7 @@
     <div class="w-screen bg-gray-100">
         <div class="flex justify-center bg-gray-100 w-screen">
             <div class="bg-white px-12 py-4">
-                <span class="text-2xl">INVOICE</span>
+                <span class="text-2xl">RECIPE</span>
             </div>
         </div>
         <div class="flex justify-between items-center px-8 py-6">

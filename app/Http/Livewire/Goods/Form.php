@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Goods;
-
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Goods;
 use Livewire\Component;
@@ -20,6 +20,8 @@ class Form extends Component
     protected $rules = [
         'good.name' => 'required|min:3',
         'good.category_id' => 'required',
+        'good.brand_id' => 'required',
+
         'good.unit' => 'required',
         'good.cost' => 'required',
         'good.price' => 'required',
@@ -31,6 +33,8 @@ class Form extends Component
             'good.name.required' => 'Nama barang harus diisi.',
             'good.name.min' => 'Panjang nama barang minimal adalah :min karakter.',
             'good.category_id.required' => 'Kategori harus diisi.',
+            'good.brand_id.required' => 'Kategori harus diisi.',
+
             'good.unit.required' => 'Satuan harus diisi.',
             'good.cost.required' => 'Harga beli harus diisi.',
             'good.price.required' => 'Harga jual harus diisi.',
@@ -67,6 +71,8 @@ class Form extends Component
         $this->good = [
             'name' => $data->name,
             'category_id' => $data->category_id,
+            'brand_id' => $data->category_id,
+
             'unit' => $data->unit,
             'cost' => $data->cost,
             'price' => $data->price,
@@ -85,9 +91,13 @@ class Form extends Component
     public function render()
     {
         $categories = Category::all();
+        $brands = Brand::all();
+
 
         return view('livewire.goods.form', [
             'categories' => $categories,
+            'brands' => $brands,
+
         ]);
     }
 }

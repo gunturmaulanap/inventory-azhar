@@ -11,7 +11,7 @@
                     </option>
                 @endforeach
             </select>
-        
+
             <!-- Dropdown Pekan -->
             <select wire:model.lazy="selectedWeek"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-40 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
@@ -24,15 +24,32 @@
 
     </div>
 
-
-    <div class="grid grid-cols-4 gap-4 mt-8 sm:grid-cols-2">
-        <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow pr-2 row-span-2">
+    <div class="grid grid-cols-4 gap-4 mt-8 sm:grid-cols-1">
+        <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow row-span-2">
             <div class="p-4 bg-green-400 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-12">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v7.5m2.25-6.466a9.016 9.016 0 0 0-3.461-.203c-.536.072-.974.478-1.021 1.017a4.559 4.559 0 0 0-.018.402c0 .464.336.844.775.994l2.95 1.012c.44.15.775.53.775.994 0 .136-.006.27-.018.402-.047.539-.485.945-1.021 1.017a9.077 9.077 0 0 1-3.461-.203M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
                 </svg>
+
+
+            </div>
+            <div class="px-4 text-gray-700">
+                <h3 class="text-sm tracking-wider">Total Pemasukan</h3>
+                <p class="text-xl">@currency($pemasukan)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4 mt-8 sm:grid-cols-2">
+        <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow pr-2 row-span-2">
+            <div class="p-4 bg-yellow-300 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-12">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                </svg>
+
 
             </div>
             <div class="px-4 py-2 text-gray-700">
@@ -55,29 +72,15 @@
             </div>
         </div>
     </div>
-    <canvas id="first-chart" class="w-full h-[250px] overflow-auto shadow p-4 rounded-md mt-4"></canvas>
-    {{-- <div id="sec-chart" class="w-full h-[250px] overflow-auto bg-gray-100 rounded-md mt-4"></div> --}}
-
-    <div class="grid grid-cols-4 gap-4 px-4 mt-8 sm:grid-cols-2 sm:px-8">
+    <div class="grid grid-cols-4 gap-4 mt-8 sm:grid-cols-1">
         <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow row-span-2">
-            <div class="p-4 bg-green-400 text-white">
+            <div class="p-4 bg-red-400 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-12">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
                 </svg>
-            </div>
-            <div class="px-4 text-gray-700">
-                <h3 class="text-sm tracking-wider">Total Pemasukan</h3>
-                <p class="text-xl">@currency($pemasukan)</p>
-            </div>
-        </div>
-        <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow row-span-2">
-            <div class="p-4 bg-blue-400 text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                </svg>
+
+
             </div>
             <div class="px-4 text-gray-700">
                 <h3 class="text-sm tracking-wider">Total Pengeluaran</h3>
@@ -85,6 +88,10 @@
             </div>
         </div>
     </div>
+    <canvas id="first-chart" class="w-full h-[250px] overflow-auto shadow p-4 rounded-md mt-4"></canvas>
+    {{-- <div id="sec-chart" class="w-full h-[250px] overflow-auto bg-gray-100 rounded-md mt-4"></div> --}}
+
+
 
     <div class="grid grid-cols-3 gap-4 px-4 mt-8 sm:grid-cols-3 sm:px-8">
         <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">

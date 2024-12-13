@@ -33,8 +33,8 @@ return new class extends Migration
         // Foreign key untuk category_id
         $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         
-        // Foreign key untuk brand_id yang nullable
-        $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('cascade');
+        // Foreign key untuk brand_id 
+        $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
         
         // Kolom lainnya
         $table->string('good_code')->nullable();
