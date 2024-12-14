@@ -68,8 +68,8 @@ class Dashboard extends Component
         }
 
 
-        $incomes = Transaction::where('status', '!=', 'hutang')
-            ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
+        $incomes = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])
+                    ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
             ->groupBy(DB::raw('DATE(created_at)'))
             ->selectRaw('DATE(created_at) as date, SUM(grand_total) as total')
             ->pluck('total', 'date');
@@ -92,7 +92,7 @@ class Dashboard extends Component
             }
         }
 
-        $this->incomes = Transaction::where('status', '!=', 'hutang')
+        $this->$incomes = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])
             ->whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
         $this->pemasukan = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
         $this->debt = Transaction::where('status', 'hutang')->whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
