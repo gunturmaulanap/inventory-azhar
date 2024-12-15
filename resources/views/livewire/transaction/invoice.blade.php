@@ -1,8 +1,14 @@
 <div>
     <div class="w-screen bg-gray-100">
+        <div class="absolute top-20 -right-20 flex items-center text-center justify-center">
+            <div
+                class="bg-red-300 text-white text-2xl font-bold py-2 w-[400px] rotate-45 border border-red-400 opacity-75">
+                Hutang
+            </div>
+        </div>
         <div class="flex justify-center bg-gray-100 w-screen">
             <div class="bg-white px-12 py-4">
-                <span class="text-2xl">INVOICE</span>
+                <span class="text-2xl">RECIPE</span>
             </div>
         </div>
         <div class="flex justify-between items-center px-8 py-6">
@@ -150,3 +156,4 @@
             </div>
         </div>
     </div>
+</div>

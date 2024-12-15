@@ -18,37 +18,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 
-    <style>
-        @media print {
-            /* Hide URL and other unnecessary parts in the header/footer */
-
-
-            .printable-content {
-                visibility: visible;
-            }
-
-            header,
-            footer {
-                display: none;
-                /* Hide header and footer during print */
-            }
-
-            /* You can also hide page numbers and URL from the browser print settings */
-            @page {
-                margin: 0;
-            }
-
-            /* If the URL is appearing on the print layout, you can hide it like this */
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
+    
 
 
 </head>
 
-<body class="font-sans antialiased bg-gray-50 flex items-center justify-center">
+<body class="font-sans antialiased bg-gray-50 flex items-center justify-center overflow-hidden">
     {{ $slot }}
     @livewireScripts
 </body>
