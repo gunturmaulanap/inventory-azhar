@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="font-sans antialiased bg-gray-50 flex items-center justify-center">
+<body class="font-sans antialiased bg-gray-50 flex items-center justify-center overflow-hidden">
     {{ $slot }}
     @livewireScripts
 </body>
