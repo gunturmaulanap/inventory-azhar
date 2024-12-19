@@ -24,7 +24,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('employee_id')->constrained()->onDelete('cascade');
             $table->date('date');
-            $table->string('status')->default('Alpha'); //Hadir, Izin, Alpha
+            $table->string('status')->default('Alpha'); //Halfday, Fullday, Alpha
             $table->timestamps();
         });
     }

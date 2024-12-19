@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->integer('balance')->default(0);
             $table->integer('debt')->default(0);
+            $table->string('username')->nullable()->unique(); // Username harus unik
+            $table->string('password')->nullable(); // Password bersifat opsional
             $table->timestamps();
         });
 

@@ -97,7 +97,7 @@
                                 {{ $item->address }}
                             </td>
                             <td class="p-2">
-                                {{ $item->keterangan }}
+                                {{ $item->description }}
                             </td>
                             <td class="py-2">
                                 <div class="flex items-center gap-x-4 justify-center">

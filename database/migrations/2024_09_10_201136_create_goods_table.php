@@ -37,7 +37,6 @@ return new class extends Migration
         $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
         
         // Kolom lainnya
-        $table->string('good_code')->nullable();
         $table->string('name');
         $table->integer('stock')->default(0);
         $table->string('unit');

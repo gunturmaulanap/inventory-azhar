@@ -203,35 +203,31 @@
                     <div>
                         @foreach ($groupedHistory as $dateTime => $items)
                             @php
-                                // Filter item unik berdasarkan ID barang atau atribut lain yang unik
-                                $filteredItems = collect($items)->unique(function ($item) {
-                                    return $item->id; // Gunakan ID atau atribut unik lainnya
+                                // Filter item unik hanya untuk grup saat ini
+                                $filteredItems = collect($items)->unique('id');
+                    
+                                // Format waktu untuk memastikan konsistensi
+                                $dateTimeFormatted = \Carbon\Carbon::parse($dateTime)->format('Y-m-d H:i');
+                    
+                                // Cari detail terkait berdasarkan waktu
+                                $relatedDetail = $details->first(function ($detail) use ($dateTimeFormatted) {
+                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i') === $dateTimeFormatted;
                                 });
                             @endphp
-
+                    
                             <div class="flex items-start gap-4 py-2">
                                 <!-- Elemen Tanggal -->
                                 <div class="flex items-center gap-2">
                                     <li class="font-bold">
                                         {{ \Carbon\Carbon::parse($dateTime)->translatedFormat('l, d F Y H:i') }}
                                     </li>
-
+                    
                                     <!-- Tombol Detail untuk Gambar -->
                                     <div x-data="{ openDetail: null }">
-                                        @php
-                                            // Ambil hanya satu detail yang cocok dengan waktu
-                                            $relatedDetail = $details->first(function ($detail) use ($dateTime) {
-                                                return \Carbon\Carbon::parse($detail->created_at)->format(
-                                                    'Y-m-d H:i',
-                                                ) === $dateTime;
-                                            });
-                                        @endphp
-
                                         @if ($relatedDetail && $relatedDetail->image)
                                             <button type="button" @click="openDetail = true"
                                                 class="px-2 py-1 flex items-center gap-x-2 rounded-md bg-sky-500 text-white text-xs">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                    fill="currentColor" class="size-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3">
                                                     <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                                                     <path fill-rule="evenodd"
                                                         d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
@@ -239,23 +235,20 @@
                                                 </svg>
                                                 Detail
                                             </button>
-
+                    
                                             <!-- Modal -->
-                                            <div x-show="openDetail"
-                                                class="fixed inset-0 flex items-center justify-center z-50"
+                                            <div x-show="openDetail" class="fixed inset-0 flex items-center justify-center z-50"
                                                 x-transition:enter="transition-opacity duration-300"
                                                 x-transition:enter-start="opacity-0"
                                                 x-transition:enter-end="opacity-100"
                                                 x-transition:leave="transition-opacity duration-300"
                                                 x-transition:leave-start="opacity-100"
                                                 x-transition:leave-end="opacity-0" style="display: none;">
-                                                <div class="fixed inset-0 bg-gray-500 opacity-75"
-                                                    @click="openDetail = null"></div>
+                                                <div class="fixed inset-0 bg-gray-500 opacity-75" @click="openDetail = null"></div>
                                                 <button class="absolute inset-x right-64 top-32 rounded-full bg-white"
                                                     type="button" @click="openDetail = null">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="size-10 text-red-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                        stroke-width="1.5" stroke="currentColor" class="size-10 text-red-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                                     </svg>
@@ -265,8 +258,7 @@
                                                     <div class="p-6 grid grid-cols-1 gap-4">
                                                         @foreach ($relatedDetail->image as $image)
                                                             <div class="flex items-center justify-center">
-                                                                <img src="{{ asset('storage/' . $image) }}"
-                                                                    alt="Image Preview"
+                                                                <img src="{{ asset('storage/' . $image) }}" alt="Image Preview"
                                                                     class="mt-2 max-w-full max-h-[70vh] object-contain object-center">
                                                             </div>
                                                         @endforeach
@@ -277,17 +269,15 @@
                                     </div>
                                 </div>
                             </div>
-
+                    
                             <!-- List Item History -->
                             <div class="pl-6">
                                 @foreach ($filteredItems as $item)
                                     <li class="flex items-center justify-start gap-2">
-                                        <span
-                                            class="px-2 py-0.5 rounded bg-gray-50 text-center text-sm font-bold text-gray-600">
+                                        <span class="px-2 py-0.5 rounded bg-gray-50 text-center text-sm font-bold text-gray-600">
                                             {{ $item->qty }} {{ $item->goods->unit }}
                                         </span>
-                                        <span>{{ $item->goods->name }} proses pengiriman dibuat oleh
-                                            {{ $item->user->name }}</span>
+                                        <span>{{ $item->goods->name }} proses pengiriman dibuat oleh {{ $item->user->name }}</span>
                                     </li>
                                 @endforeach
                             </div>

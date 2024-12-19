@@ -14,7 +14,7 @@ class Supplier extends Model
         'name',
         'phone',
         'address',
-        'keterangan',
+        'description',
     ];
 
     public function scopeSearch($query, $term)

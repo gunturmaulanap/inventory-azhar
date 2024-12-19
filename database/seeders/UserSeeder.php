@@ -22,73 +22,61 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Azhar Material',
                 'username' => 'superadmin',
-                'email' => 'super@azhar.com',
-                'role' => 'super_admin',
+                 'role' => 'super_admin',
             ],
             [
                 'name' => 'Rina Andriani',
                 'username' => 'admin_gudang',
-                'email' => 'gudang@azhar.com',
                 'role' => 'admin',
             ],
             [
                 'name' => 'Budi Santoso',
                 'username' => 'admin_penjualan',
-                'email' => 'penjualan@azhar.com',
                 'role' => 'admin',
             ],
             [
                 'name' => 'Siti Nurhaliza',
                 'username' => 'customer_sumatra',
-                'email' => 'sumatra_customer@azhar.com',
                 'role' => 'customer',
             ],
             [
                 'name' => 'Eka Prasetyo',
                 'username' => 'admin_keuangan',
-                'email' => 'keuangan@azhar.com',
                 'role' => 'admin',
             ],
             [
                 'name' => 'Andi Wijaya',
                 'username' => 'customer_kalimantan',
-                'email' => 'kalimantan_customer@azhar.com',
                 'role' => 'customer',
             ],
             [
                 'name' => 'Maya Rahmawati',
                 'username' => 'admin_it',
-                'email' => 'it@azhar.com',
                 'role' => 'admin',
             ],
             [
                 'name' => 'Nurul Aini',
                 'username' => 'customer_sulawesi',
-                'email' => 'sulawesi_customer@azhar.com',
                 'role' => 'customer',
             ],
             [
                 'name' => 'Doni Setiawan',
                 'username' => 'admin_operasional',
-                'email' => 'operasional@azhar.com',
                 'role' => 'admin',
             ],
             [
                 'name' => 'Fitri Amalia',
                 'username' => 'customer_papua',
-                'email' => 'papua_customer@azhar.com',
                 'role' => 'customer',
             ],
             [
                 'name' => 'Joko Prabowo',
                 'username' => 'admin_hrd',
-                'email' => 'hrd@azhar.com',
                 'role' => 'admin',
             ],
             [
                 'name' => 'Dewi Sartika',
                 'username' => 'customer_bali',
-                'email' => 'bali_customer@azhar.com',
                 'role' => 'customer',
             ],
         ];
@@ -104,7 +92,7 @@ class UserSeeder extends Seeder
                 'name' => $user['name'],
                 'username' => $user['username'],
                 'address' => $address,
-                'email' => $user['email'],
+                
                 'role' => $user['role'],
                 'phone' => $this->generateRandomPhoneNumber(),
                 'password' => Hash::make('password'),

@@ -32,10 +32,17 @@ return new class extends Migration
             $table->foreignId('delivery_id')->constrained()->onDelete('cascade');
             $table->foreignId('goods_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('image')->nullable();
-
             $table->integer('qty');
             $table->timestamps();
+        });
+
+        Schema::create('act_delivery_details', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('delivery_id')->constrained()->onDelete('cascade');
+            $table->json('image')->nullable(); 
+            $table->timestamps();
+    
+            
         });
     }
 
@@ -47,5 +54,7 @@ return new class extends Migration
         Schema::dropIfExists('act_deliveries');
         Schema::dropIfExists('delivery_goods');
         Schema::dropIfExists('deliveries');
+        Schema::dropIfExists('act_delivery_details');
+
     }
 };
