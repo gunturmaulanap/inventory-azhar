@@ -27,11 +27,11 @@
     <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-x-4">
             <input wire:model="search"
-                class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
+                class="flex rounded-md bg-white border-gray-300 px-3 py-1 sm:w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
                 placeholder="Cari admin...">
             <select wire:model="perPage"
-                class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-20 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-                <option value="10">10</option>
+                class="flex rounded-md bg-white border-gray-300 px-3 py-1 sm:w-20 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
+                <option value="5">5</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
                 <option value="250">250</option>
@@ -44,18 +44,20 @@
                     d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
                     clip-rule="evenodd" />
             </svg>
-            Tambah Data
+            <span class="hidden sm:block">Tambah data</span>
+            <span class="sm:hidden">Tambah</span>
         </a>
     </div>
 
     {{-- Main Table --}}
-    <div class="rounded-md border bg-white">
+    <div class="rounded-md border bg-white hidden sm:block">
         <div class="relative w-full overflow-auto">
             <table class="w-full text-sm">
                 <thead>
                     <tr class="border-b">
                         <th class="h-10 px-4 text-left">
-                            <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                            <span
+                                class="inline-flex whitespace-nowrap font-medium items-center justify-center px-3 text-sm -ml-3">
                                 Nama Pegawai
                             </span>
                         </th>
@@ -89,7 +91,7 @@
                             <td class="p-2">
                                 {{ $item->position }}
                             </td>
-                            <td class="p-2 text-center">
+                            <td class="p-2 text-center whitespace-nowrap">
                                 {{ $item->active ? 'Aktif' : 'Tidak Aktif' }}
                             </td>
                             <td class="py-2">
@@ -121,7 +123,64 @@
             </table>
         </div>
     </div>
+
+    {{-- Responsive Table --}}
+    <div class="space-y-3 sm:hidden">
+        @foreach ($data as $item)
+            <button class="flex flex-col items-start gap-2 rounded-lg border p-3 text-left text-sm w-full">
+                <div class="flex w-full flex-col gap-1">
+                    <div class="flex items-center">
+                        <div class="flex items-center gap-2">
+                            <div class="font-semibold">{{ $item->name }}</div>
+                        </div>
+                        <div class="ml-auto text-xs text-foreground">{{ $item->phone }}</div>
+                    </div>
+                    <div class="text-xs font-medium">{{ $item->position }} @if (!$item->active)
+                            <span class="text-red-600">Tidak Aktif</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 w-full justify-end">
+                    <a href="{{ route('master.update-employee', ['id' => $item->id]) }}"
+                        class="px-2 py-1 flex items-center gap-x-2 rounded-md bg-gray-100 text-xs">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-3">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
+                        Ubah
+                    </a>
+                    <a wire:click="validationDelete({{ $item->id }})"
+                        class="px-2 py-1 flex items-center gap-x-2 rounded-md bg-red-500 text-xs text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                            <path fill-rule="evenodd"
+                                d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Hapus
+                    </a>
+                </div>
+            </button>
+        @endforeach
+    </div>
     <div class="pt-4">
         {{ $data->links() }}
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fungsi untuk mendeteksi ukuran layar
+        function isMobile() {
+            return window.innerWidth <= 768; // Misalkan 768px adalah batas untuk mobile
+        }
+
+        // Jika layar dalam mode mobile
+        if (isMobile()) {
+            // Mengirim nilai ke Livewire
+            Livewire.emit('perpage', 5); // Atur perPage menjadi 5 untuk mobile
+        } else {
+            Livewire.emit('perpage', 10); // Atur perPage menjadi 10 untuk desktop
+        }
+    });
+</script>

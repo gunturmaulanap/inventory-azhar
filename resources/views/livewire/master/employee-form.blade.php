@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-3">
+                <div class="col-span-5 sm:col-span-3">
                     <label for="employee.phone" class="block text-sm font-medium leading-6 text-gray-900">Nomor telp
                         <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
@@ -57,7 +57,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-span-3">
+                <div class="col-span-5 col-span-3">
                     <label for="employee.position" class="block text-sm font-medium leading-6 text-gray-900">Jabatan
                         <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">

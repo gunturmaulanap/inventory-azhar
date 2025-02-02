@@ -17,8 +17,14 @@ class Data extends Component
 
     public $perPage = 10;
 
+    public function setPerPage($value)
+    {
+        $this->perPage = $value;
+    }
+
     protected $listeners = [ // listeners handler untuk menjalankan delete setelah confirm
         'confirm' => 'delete',
+        'perpage' => 'setPerPage',
     ];
 
     public function validationDelete($id) // function menjalankan confirm delete
@@ -38,35 +44,34 @@ class Data extends Component
     }
 
     public function render()
-{
-    // Mendapatkan daftar semua kategori
-    $categories = Category::all();
+    {
+        // Mendapatkan daftar semua kategori
+        $categories = Category::all();
 
-    // Mendapatkan daftar semua Brand
-    $brands = Brand::all();
+        // Mendapatkan daftar semua Brand
+        $brands = Brand::all();
 
-    // Query data berdasarkan pencarian dan filter
-    $data = Goods::when($this->search, function ($query) {
+        // Query data berdasarkan pencarian dan filter
+        $data = Goods::when($this->search, function ($query) {
             $query->search($this->search); // Menjalankan query pencarian
         })
-        ->when($this->byCategory, function ($query) {
-            $query->where('category_id', $this->byCategory); // Menjalankan query filter berdasarkan kategori
-        })
+            ->when($this->byCategory, function ($query) {
+                $query->where('category_id', $this->byCategory); // Menjalankan query filter berdasarkan kategori
+            })
 
-        ->when($this->byBrand, function ($query) {
-            $query->where('brand_id', $this->byBrand); // Menjalankan query filter berdasarkan kategori
-        })
-        
-        
-        ->orderBy('created_at', 'desc')
-        ->paginate($this->perPage);
+            ->when($this->byBrand, function ($query) {
+                $query->where('brand_id', $this->byBrand); // Menjalankan query filter berdasarkan kategori
+            })
 
-    // Mengembalikan data ke view
-    return view('livewire.goods.data', [
-        'categories' => $categories,
-        'brands' => $brands,
-        'data' => $data,
-    ]);
-}
 
+            ->orderBy('created_at', 'desc')
+            ->paginate($this->perPage);
+
+        // Mengembalikan data ke view
+        return view('livewire.goods.data', [
+            'categories' => $categories,
+            'brands' => $brands,
+            'data' => $data,
+        ]);
+    }
 }

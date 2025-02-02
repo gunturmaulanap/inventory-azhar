@@ -24,33 +24,29 @@
     </x-slot>
 
     {{-- Header Table (Filter Search, Per Page, Create Button) --}}
-    <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center gap-x-4">
+    <div class="flex items-center sm:justify-between mb-4 w-full">
+        <div class="hidden sm:flex items-center gap-x-4">
             {{-- <input wire:model="search"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
                 placeholder="Cari admin..."> --}}
         </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-            <div class="flex flex-col">
-                <select id="monthSelect" wire:model="selectedMonth"
-                    class="block w-full pl-3 pr-10 py-1.5 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    @foreach ($months as $month)
-                        <option value="{{ $month }}">{{ \Carbon\Carbon::parse($month . '-01')->format('F Y') }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
+        <div class="flex gap-4 w-full sm:w-fit">
+            <select id="monthSelect" wire:model="selectedMonth"
+                class="block w-full sm:w-44 py-1.5 text-xs sm:text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                @foreach ($months as $month)
+                    <option value="{{ $month }}">{{ \Carbon\Carbon::parse($month . '-01')->format('F Y') }}
+                    </option>
+                @endforeach
+            </select>
 
-            <div class="flex flex-col">
-                <select id="weekSelect" wire:model="selectedWeek"
-                    class="block w-full pl-3 pr-10 py-1.5 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="1">Minggu 1</option>
-                    <option value="2">Minggu 2</option>
-                    <option value="3">Minggu 3</option>
-                    <option value="4">Minggu 4</option>
-                    <option value="5">Minggu 5</option>
-                </select>
-            </div>
+            <select id="weekSelect" wire:model="selectedWeek"
+                class="block w-full py-1.5 text-xs sm:text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <option value="1">Minggu 1</option>
+                <option value="2">Minggu 2</option>
+                <option value="3">Minggu 3</option>
+                <option value="4">Minggu 4</option>
+                <option value="5">Minggu 5</option>
+            </select>
         </div>
     </div>
 
@@ -59,7 +55,7 @@
             <table class="w-full text-sm">
                 <thead>
                     <tr class="border-b">
-                        <th class="h-10 px-4 text-left">Nama Pegawai</th>
+                        <th class="h-10 px-4 text-left whitespace-nowrap">Nama Pegawai</th>
                         @foreach ($weekDates as $date)
                             <th class="h-10 px-4 text-center pt-2">
                                 <div class="flex flex-col space-y-0">
@@ -75,16 +71,17 @@
                 <tbody>
                     @foreach ($weeklyAttendance as $attendance)
                         <tr class="border-b transition-colors hover:bg-gray-50">
-                            <td class="px-4 py-2">{{ $attendance['employee'] }}</td>
+                            <td class="px-4 py-2 whitespace-nowrap">{{ $attendance['employee'] }}</td>
                             @foreach ($attendance['attendance'] as $date => $status)
                                 <td class="px-4 py-2 text-center">
                                     <select
                                         wire:change="updateAttendance({{ $attendance['employee_id'] }}, '{{ $date }}', $event.target.value)"
-                                        class="mt-1 block w-full pl-3 pr-10 py-1 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                        class="mt-1 block xl:w-full pl-3 pr-10 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                                         <option value=""></option>
-                                        <option value="Full Day" {{ $status === 'Hadir' ? 'selected' : '' }}>Full Day
+                                        <option value="Full Day" {{ $status === 'Full Day' ? 'selected' : '' }}>Full Day
                                         </option>
-                                        <option value="Half Day" {{ $status === 'Izin' ? 'selected' : '' }}>Half Day
+                                        <option value="Half Day" {{ $status === 'Half Day' ? 'selected' : '' }}>Half
+                                            Day
                                         </option>
                                         <option value="Alpha" {{ $status === 'Alpha' ? 'selected' : '' }}>Alpha
                                         </option>

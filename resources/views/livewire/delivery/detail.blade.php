@@ -23,9 +23,9 @@
         @endforeach
     </x-slot>
 
-    <div class="flex items-start justify-between">
+    <div class="flex flex-col sm:flex-row items-start sm:justify-between">
         <h2 class="text-2xl font-semibold tracking-tight">{{ $delivery->transaction->name }}</h2>
-        <div class="max-w-xs text-right">
+        <div class="sm:max-w-xs sm:text-right mt-3 sm:mt-0">
             <span class="text-md">{{ $delivery->transaction->phone }}</span><br>
             <span class="text-sm text-gray-500">{{ $delivery->transaction->address }}</span>
         </div>
@@ -42,7 +42,7 @@
 
     <div x-data="{ open: false }" x-init="open = false" class="rounded-md bg-white mt-0 border-b pb-4">
         <div class="relative w-full overflow-auto">
-            <table class="w-full text-sm">
+            <table class="w-full text-sm whitespace-nowrap">
                 <thead>
                     <tr class="border-b">
                         <th class="h-10 text-left">
@@ -120,24 +120,24 @@
                         <dl class="-my-3 divide-y divide-gray-100 text-sm">
                             <div class="grid p-3 grid-cols-3 gap-4">
                                 <dt class="font-medium text-gray-900">Nama Barang</dt>
-                                <dd class="text-gray-700 sm:col-span-2">{{ $detail['name'] ?? '' }}</dd>
+                                <dd class="text-gray-700 col-span-2">{{ $detail['name'] ?? '' }}</dd>
                             </div>
 
                             <div class="grid p-3 grid-cols-3 gap-4">
                                 <dt class="font-medium text-gray-900">Qty</dt>
-                                <dd class="text-gray-700 sm:col-span-2">{{ $detail['qty'] ?? '' }}
+                                <dd class="text-gray-700 col-span-2">{{ $detail['qty'] ?? '' }}
                                     {{ $detail['unit'] ?? '' }}</dd>
                             </div>
 
                             <div class="grid p-3 grid-cols-3 gap-4">
                                 <dt class="font-medium text-gray-900">Terikirim</dt>
-                                <dd class="text-gray-700 sm:col-span-2">{{ $detail['delivered'] ?? '' }}
+                                <dd class="text-gray-700 col-span-2">{{ $detail['delivered'] ?? '' }}
                                     {{ $detail['unit'] ?? '' }}</dd>
                             </div>
 
-                            <div class="grid p-3 grid-cols-3 gap-4">
+                            <div class="grid p-3 grid-cols-3 gap-4 items-center">
                                 <dt class="font-medium text-gray-900">Baru terkirim</dt>
-                                <dd class="text-gray-700 col-span-1">
+                                <dd class="text-gray-700 col-span-2">
                                     <div class="flex items-center gap-x-2">
                                         <input type="number" value="0" wire:model="detail.input"
                                             class="block w-20 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -189,10 +189,11 @@
                         @foreach ($activities as $activity)
                             <li class="flex items-center justify-center gap-2">
                                 <span
-                                    class="px-2 py-0.5 rounded bg-blue-50 text-center text-sm font-bold text-blue-600">
+                                    class="px-2 py-0.5 rounded bg-blue-50 text-center text-sm font-bold text-blue-600 w-1/3 sm:w-fit whitespace-nowrap">
                                     {{ $activity['qty'] }} {{ $activity['unit'] }}
                                 </span>
-                                <span>{{ $activity['name'] }} proses pengiriman dibuat oleh {{ Auth::user()->name }}
+                                <span><span class="font-extrabold">{{ $activity['name'] }}</span> proses pengiriman
+                                    dibuat oleh {{ Auth::user()->name }}
                                     pada tanggal
                                     {{ \Carbon\Carbon::parse($activity['created_at'])->translatedFormat('d F Y') }}</span>
 
@@ -205,29 +206,31 @@
                             @php
                                 // Filter item unik hanya untuk grup saat ini
                                 $filteredItems = collect($items)->unique('id');
-                    
+
                                 // Format waktu untuk memastikan konsistensi
                                 $dateTimeFormatted = \Carbon\Carbon::parse($dateTime)->format('Y-m-d H:i');
-                    
+
                                 // Cari detail terkait berdasarkan waktu
                                 $relatedDetail = $details->first(function ($detail) use ($dateTimeFormatted) {
-                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i') === $dateTimeFormatted;
+                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i') ===
+                                        $dateTimeFormatted;
                                 });
                             @endphp
-                    
+
                             <div class="flex items-start gap-4 py-2">
                                 <!-- Elemen Tanggal -->
                                 <div class="flex items-center gap-2">
                                     <li class="font-bold">
                                         {{ \Carbon\Carbon::parse($dateTime)->translatedFormat('l, d F Y H:i') }}
                                     </li>
-                    
+
                                     <!-- Tombol Detail untuk Gambar -->
                                     <div x-data="{ openDetail: null }">
                                         @if ($relatedDetail && $relatedDetail->image)
                                             <button type="button" @click="openDetail = true"
                                                 class="px-2 py-1 flex items-center gap-x-2 rounded-md bg-sky-500 text-white text-xs">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="size-3">
                                                     <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                                                     <path fill-rule="evenodd"
                                                         d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
@@ -235,20 +238,23 @@
                                                 </svg>
                                                 Detail
                                             </button>
-                    
+
                                             <!-- Modal -->
-                                            <div x-show="openDetail" class="fixed inset-0 flex items-center justify-center z-50"
+                                            <div x-show="openDetail"
+                                                class="fixed inset-0 flex items-center justify-center z-50"
                                                 x-transition:enter="transition-opacity duration-300"
                                                 x-transition:enter-start="opacity-0"
                                                 x-transition:enter-end="opacity-100"
                                                 x-transition:leave="transition-opacity duration-300"
                                                 x-transition:leave-start="opacity-100"
                                                 x-transition:leave-end="opacity-0" style="display: none;">
-                                                <div class="fixed inset-0 bg-gray-500 opacity-75" @click="openDetail = null"></div>
+                                                <div class="fixed inset-0 bg-gray-500 opacity-75"
+                                                    @click="openDetail = null"></div>
                                                 <button class="absolute inset-x right-64 top-32 rounded-full bg-white"
                                                     type="button" @click="openDetail = null">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                        stroke-width="1.5" stroke="currentColor" class="size-10 text-red-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-10 text-red-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                                     </svg>
@@ -258,7 +264,8 @@
                                                     <div class="p-6 grid grid-cols-1 gap-4">
                                                         @foreach ($relatedDetail->image as $image)
                                                             <div class="flex items-center justify-center">
-                                                                <img src="{{ asset('storage/' . $image) }}" alt="Image Preview"
+                                                                <img src="{{ asset('storage/' . $image) }}"
+                                                                    alt="Image Preview"
                                                                     class="mt-2 max-w-full max-h-[70vh] object-contain object-center">
                                                             </div>
                                                         @endforeach
@@ -269,15 +276,19 @@
                                     </div>
                                 </div>
                             </div>
-                    
+
                             <!-- List Item History -->
                             <div class="pl-6">
                                 @foreach ($filteredItems as $item)
                                     <li class="flex items-center justify-start gap-2">
-                                        <span class="px-2 py-0.5 rounded bg-gray-50 text-center text-sm font-bold text-gray-600">
+                                        <span
+                                            class="px-2 py-0.5 rounded bg-gray-50 text-center text-sm font-bold text-gray-600">
                                             {{ $item->qty }} {{ $item->goods->unit }}
                                         </span>
-                                        <span>{{ $item->goods->name }} proses pengiriman dibuat oleh {{ $item->user->name }}</span>
+                                        <span><span class="font-extrabold">{{ $item->goods->name }}</span> proses
+                                            pengiriman
+                                            dibuat oleh
+                                            {{ $item->user->name }}</span>
                                     </li>
                                 @endforeach
                             </div>
@@ -290,12 +301,13 @@
 
     </div>
 
-    <div class="mt-6 flex items-center justify-between">
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-end sm:justify-between w-full">
         <!-- Bagian Upload Image di Rata Kiri -->
-        <div>
+        <div class="w-full sm:w-3/4 mb-4 sm:mb-0 justify-center">
             @if ($isUploading)
                 @if (empty($detail['images']))
-                    <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-4 py-2">
+                    <div
+                        class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-4 py-2 w-full sm:w-3/4">
                         <div class="text-center">
                             <svg class="mx-auto h-6 w-6 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
                                 aria-hidden="true" data-slot="icon">
@@ -314,9 +326,9 @@
                         </div>
                     </div>
                 @else
-                    <div class="mt-2 grid grid-cols-3 gap-4">
+                    <div class="mt-2 mb-3 sm:mb-0 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
                         @foreach ($detail['images'] as $index => $image)
-                            <div class="relative h-52 w-60">
+                            <div class="col-span-1 relative h-52 w-full sm:w-60">
                                 <button class="absolute inset-x -right-2 -top-2 rounded-full bg-white" type="button"
                                     wire:click="deleteImage({{ $index }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -341,7 +353,7 @@
         <!-- Bagian Reset, Lihat Transaksi, dan Save di Rata Kanan -->
         @if (in_array(auth()->user()->role, ['super_admin', 'admin']))
 
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center gap-x-6 w-full sm:w-fit justify-end">
                 <a href="{{ route('transaction.detail', ['id' => $delivery->transaction_id]) }}"
                     class="text-sm font-semibold leading-6 text-yellow-500">Lihat Transaksi</a>
                 @if ($delivery->status !== 'selesai')
@@ -352,7 +364,7 @@
                 @endif
             </div>
         @else
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center gap-x-6 w-full sm:w-fit justify-end">
                 <a href="{{ route('customer.transaction.detail', ['id' => $delivery->transaction_id]) }}"
                     class="text-sm font-semibold leading-6 text-yellow-500">Lihat Transaksi</a>
 

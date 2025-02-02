@@ -33,7 +33,7 @@
             </p>
 
             <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-                <div class="col-span-5">
+                <div class="col-span-6 sm:col-span-5">
                     <label for="customer.name" class="block text-sm font-medium leading-6 text-gray-900">Nama
                         lengkap <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-3">
+                <div class="col-span-6 sm:col-span-3">
                     <label for="customer.phone" class="block text-sm font-medium leading-6 text-gray-900">Nomor telp
                         <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-4">
+                <div class="col-span-6 sm:col-span-4">
                     <label for="customer.address"
                         class="block text-sm font-medium leading-6 text-gray-900">Alamat</label>
                     <div class="mt-2">
@@ -69,7 +69,7 @@
                     </p>
                 </div>
                 <!-- Input Username -->
-                <div class="sm:col-span-3">
+                <div class="col-span-6 sm:col-span-3">
                     <label for="customer.username" class="block text-sm font-medium leading-6 text-gray-900">
                         Username <span class="text-xs text-red-500">*</span>
                     </label>
@@ -83,7 +83,7 @@
                 </div>
 
                 <!-- Input Password -->
-                <div class="sm:col-span-3">
+                <div class="col-span-6 sm:col-span-3">
                     <label for="customer.password" class="block text-sm font-medium leading-6 text-gray-900">
                         Password
                         {{ $form === 'update' ? 'baru ' : '' }}

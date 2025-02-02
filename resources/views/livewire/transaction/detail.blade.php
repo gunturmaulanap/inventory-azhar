@@ -23,22 +23,22 @@
         @endforeach
     </x-slot>
 
-    <div class="flex items-start justify-between">
+    <div class="flex flex-col sm:flex-row items-start sm:justify-between">
         <h2 class="text-2xl font-semibold tracking-tight">{{ $transaction->name }}</h2>
-        <div class="max-w-xs text-right">
+        <div class="sm:max-w-xs sm:text-right mt-3 sm:mt-0">
             <span class="text-md">{{ $transaction->phone }}</span><br>
             <span class="text-sm text-gray-500">{{ $transaction->address }}</span>
         </div>
     </div>
 
-    <div class="flex items-end justify-between mt-6">
-        <div>
+    <div class="flex flex-col sm:flex-row items-end sm:justify-between mt-6">
+        <div class="w-full sm:w-fit">
             <h2 class="text-base font-semibold leading-7 text-gray-900">Detail Transaksi</h2>
             <p class="mt-1 mb-6 text-sm leading-6 text-gray-600">
                 Informasi detail mengenai barang.
             </p>
         </div>
-        <div class="flex gap-4">
+        <div class="flex gap-4 w-full sm:w-fit">
             @if (in_array(auth()->user()->role, ['super_admin', 'admin']))
                 @if (isset($transaction->delivery->id))
                     <a href="{{ route('delivery.detail', ['id' => $transaction->delivery->id]) }}"
@@ -95,7 +95,7 @@
 
                                 <div class="rounded-md border bg-white mt-4 max-h-96 overflow-auto">
                                     <div class="relative w-full overflow-auto">
-                                        <table class="w-full text-sm">
+                                        <table class="w-full text-sm whitespace-nowrap">
 
                                             <thead>
                                                 <tr class="border-b">
@@ -154,7 +154,7 @@
 
     <div x-data="{ open: false }" x-init="open = false" class="mt-0 border-b pb-4">
         <div class="relative w-full overflow-auto">
-            <table class="w-full text-sm">
+            <table class="w-full text-sm whitespace-nowrap">
                 <thead>
                     <tr class="border-b">
                         <th class="h-10 text-left">
@@ -250,16 +250,17 @@
             </table>
         </div>
 
-        <div x-data="{ open: false }" class="grid grid-cols-7 mt-4">
-            <div class="col-span-4">
-                <div class="grid py-3 grid-cols-3">
+        <div x-data="{ open: false }" class="grid grid-cols-1 sm:grid-cols-7 mt-4">
+            <div class="sm:col-span-4">
+
+                <div class="grid py-3 grid-cols-2 sm:grid-cols-3 text-end sm:text-start">
                     <dt class="font-medium text-gray-900">Status</dt>
                     <dd
-                        class="@if ($transaction->status !== 'selesai') text-yellow-600 @else text-green-600 @endif mr-4 capitalize">
+                        class="@if ($transaction->status !== 'selesai') text-yellow-600 @else text-green-600 @endif capitalize">
                         {{ $transaction->status }}</dd>
                 </div>
                 @if ($transaction->image)
-                    <div class="grid py-3 grid-cols-3">
+                    <div class="grid py-3 grid-cols-2 sm:grid-cols-3">
                         <dt class="font-medium text-gray-900">Foto transaksi</dt>
                         <dd>
                             <button type="button" @click="open = true"
@@ -307,39 +308,39 @@
                     </ol>
                 @endif
             </div>
-            <div class="col-start-6 col-span-2">
+            <div class="sm:col-start-6 sm:col-span-2">
                 <div class="grid py-3 grid-cols-2 gap-4 text-end">
                     <dt class="font-extrabold text-gray-950">Total</dt>
-                    <dd class="font-extrabold text-gray-900 mr-4">@currency($transaction['total'])</dd>
+                    <dd class="font-extrabold text-gray-900">@currency($transaction['total'])</dd>
                 </div>
                 @if ($transaction['discount'] > 0)
                     <div class="grid py-3 grid-cols-2 gap-4 text-end">
                         <dt class="font-light text-gray-900">Potongan</dt>
-                        <dd class="text-gray-700 mr-4">@currency($transaction['discount'])</dd>
+                        <dd class="text-gray-700">@currency($transaction['discount'])</dd>
                     </div>
                 @endif
                 @if ($transaction['balance'] > 0)
                     <div class="grid py-3 grid-cols-2 gap-4 text-end">
                         <dt class="font-light text-gray-900">Saldo</dt>
-                        <dd class="text-gray-700 mr-4">@currency($transaction['balance'])</dd>
+                        <dd class="text-gray-700">@currency($transaction['balance'])</dd>
                     </div>
                 @endif
                 @if ($transaction['grand_total'] > 0 && $transaction['grand_total'] !== $transaction['total'])
                     <div class="grid py-3 grid-cols-2 gap-4 text-end">
                         <dt class="font-extrabold text-gray-950">Grand total</dt>
-                        <dd class="font-extrabold text-gray-900 mr-4">@currency($transaction['grand_total'])</dd>
+                        <dd class="font-extrabold text-gray-900">@currency($transaction['grand_total'])</dd>
                     </div>
                 @endif
                 @if ($transaction['balance'] - ($transaction['total'] - $transaction['discount']) > 0)
                     <div class="grid py-3 grid-cols-2 gap-4 text-end">
                         <dt class="font-light text-gray-900">Sisa saldo</dt>
-                        <dd class="text-gray-700 mr-4">@currency($transaction['balance'] - ($transaction['total'] - $transaction['discount']))</dd>
+                        <dd class="text-gray-700">@currency($transaction['balance'] - ($transaction['total'] - $transaction['discount']))</dd>
                     </div>
                 @endif
                 @if ($transaction['bill'] > 0)
                     <div class="grid py-3 grid-cols-2 gap-4 text-end">
                         <dt class="font-light text-gray-900">Bayar</dt>
-                        <dd class="text-gray-700 mr-4">@currency($transaction['bill'])</dd>
+                        <dd class="text-gray-700">@currency($transaction['bill'])</dd>
                     </div>
                 @endif
                 @if ($transaction['return'] !== 0)
@@ -347,14 +348,14 @@
                         <dt class="font-light {{ $transaction['return'] > 0 ? 'text-gray-900' : 'text-red-700' }}">
                             {{ $transaction['return'] > 0 ? 'Kembalian' : 'Kurang' }}
                         </dt>
-                        <dd class="{{ $transaction['return'] > 0 ? 'text-gray-700' : 'text-red-600' }} mr-4">
+                        <dd class="{{ $transaction['return'] > 0 ? 'text-gray-700' : 'text-red-600' }}">
                             @currency(abs($transaction['return']))
                         </dd>
                     </div>
                 @endif
                 @if (auth()->user()->role === 'super_admin')
                     @if ($transaction['status'] == 'hutang' && $transaction['total'] > 0 && $transaction['return'] < 0)
-                        <div x-data="{ open: false }" class="flex justify-end mr-4 mt-2">
+                        <div x-data="{ open: false }" class="flex justify-end mt-2">
                             <button type="button" @click="open = true"
                                 class="flex items-center gap-x-2 rounded-md bg-green-500 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-green-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -381,14 +382,14 @@
                                             <dl class="-my-3 divide-y divide-gray-100 text-sm">
                                                 <div class="grid p-3 grid-cols-3 gap-4">
                                                     <dt class="font-medium text-gray-900">Tagihan</dt>
-                                                    <dd class="text-gray-700 sm:col-span-2">
+                                                    <dd class="text-gray-700 col-span-2">
                                                         @currency(abs($transaction->return))
                                                     </dd>
                                                 </div>
 
                                                 <div class="grid p-3 grid-cols-3 gap-4">
                                                     <dt class="font-medium text-gray-900">Bayar</dt>
-                                                    <dd class="text-gray-700 sm:col-span-2">
+                                                    <dd class="text-gray-700 col-span-2">
                                                         <input wire:model="input.bill" type="number" id="bill"
                                                             class="block w-full rounded-md border-0 ms-1 py-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
                                                             min="0"
@@ -418,6 +419,8 @@
         <div x-data="{ modal: false }" class="mt-6 flex items-center justify-end gap-x-6">
             <button @click="modal = true" type="button" wire:click="setReturData"
                 class="text-sm font-semibold leading-6 text-red-600">Retur</button>
+            <a href="{{ route('transaction.mini-invoice', ['id' => $transaction->id]) }}" target="_blank"
+                class="text-sm font-semibold">Nota kecil</a>
             <a href="{{ route('transaction.invoice', ['id' => $transaction->id]) }}" target="_blank"
                 class="rounded-md bg-sky-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-400">Cetak</a>
 
@@ -434,7 +437,7 @@
 
                         <div class="rounded-md border bg-white mt-4 max-h-96 overflow-auto">
                             <div class="relative w-full overflow-auto">
-                                <table class="w-full text-sm">
+                                <table class="w-full text-sm whitespace-nowrap">
                                     <thead>
                                         <thead>
                                             <tr class="border-b">
@@ -531,10 +534,10 @@
                             </div>
 
                             <div class="grid grid-cols-7 mt-2">
-                                <div class="col-start-6 col-span-2">
-                                    <div class="grid py-3 grid-cols-2 gap-4 text-end">
+                                <div class="col-span-7 sm:col-start-6 sm:col-span-2">
+                                    <div class="grid py-3 grid-cols-2 gap-4 text-end sm:mr-4">
                                         <dt class="font-medium text-gray-900">Total</dt>
-                                        <dd class="text-gray-700 mr-4">@currency($total)</dd>
+                                        <dd class="text-gray-700">@currency($total)</dd>
                                     </div>
                                 </div>
                             </div>

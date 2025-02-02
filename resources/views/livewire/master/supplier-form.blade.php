@@ -33,7 +33,7 @@
             </p>
 
             <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-                <div class="col-span-3">
+                <div class="col-span-6 sm:col-span-3">
                     <label for="supplier.company" class="block text-sm font-medium leading-6 text-gray-900">Nama
                         perusahaan <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
@@ -44,7 +44,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-span-3">
+                <div class="col-span-6 sm:col-span-3">
                     <label for="supplier.name" class="block text-sm font-medium leading-6 text-gray-900">Nama
                         supplier <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-3">
+                <div class="col-span-6 sm:col-span-3">
                     <label for="supplier.phone" class="block text-sm font-medium leading-6 text-gray-900">Nomor telp
                         <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
@@ -68,8 +68,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-span-3">
-                    <label for="supplier.phone" class="block text-sm font-medium leading-6 text-gray-900">Keterangan    
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="supplier.phone" class="block text-sm font-medium leading-6 text-gray-900">Keterangan
                         <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
                         <input wire:model="supplier.keterangan" id="supplier.keterangan" type="text"
@@ -80,7 +80,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-4">
+                <div class="col-span-6 xl:col-span-4">
                     <label for="supplier.address"
                         class="block text-sm font-medium leading-6 text-gray-900">Alamat</label>
                     <div class="mt-2">
