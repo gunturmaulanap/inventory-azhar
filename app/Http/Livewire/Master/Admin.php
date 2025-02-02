@@ -13,8 +13,14 @@ class Admin extends Component
     public $search;
     public $perPage = 10;
 
+    public function setPerPage($value)
+    {
+        $this->perPage = $value;
+    }
+
     protected $listeners = [ // listeners handler untuk menjalankan delete setelah confirm
         'confirm' => 'delete',
+        'perpage' => 'setPerPage',
     ];
 
     public function validationDelete($id) // function menjalankan confirm delete

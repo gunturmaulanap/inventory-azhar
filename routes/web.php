@@ -79,6 +79,7 @@ Route::middleware('auth')->group(function () {
         Route::get('pengiriman-barang', App\Http\Livewire\Delivery\Index::class)->name('delivery.index');
         Route::get('pengiriman-barang/{id}', App\Http\Livewire\Delivery\Detail::class)->name('delivery.detail');
         Route::get('invoice/{id}', App\Http\Livewire\Transaction\Invoice::class)->name('transaction.invoice');
+        Route::get('mini-invoice/{id}', App\Http\Livewire\Transaction\MiniInvoice::class)->name('transaction.mini-invoice');
 
         // Barang
         Route::get('brand-baru', App\Http\Livewire\Brand\Form::class)->name('goods.brand-create');

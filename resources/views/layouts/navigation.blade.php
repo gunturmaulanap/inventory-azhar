@@ -11,7 +11,7 @@
                             {{ __('inventory') }}
                         </a>
                     @else
-                        <a href="{{ route('customer.detail', ['id' =>  Auth::guard('customer')->user()->id]) }}"
+                        <a href="{{ route('customer.detail', ['id' => Auth::guard('customer')->user()->id]) }}"
                             class="text-2xl uppercase tracking-widest font-[1000] subpixel-antialiased">
                             {{ __('inventory') }}
                         </a>

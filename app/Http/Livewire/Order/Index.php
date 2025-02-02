@@ -17,8 +17,14 @@ class Index extends Component
     public $search, $startDate, $endDate;
     public $perPage = 10;
 
+    public function setPerPage($value)
+    {
+        $this->perPage = $value;
+    }
+
     protected $listeners = [ // listeners handler untuk menjalankan delete setelah confirm
         'confirm' => 'delete',
+        'perpage' => 'setPerPage',
     ];
 
     public function validationDelete($id) // function menjalankan confirm delete

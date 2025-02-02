@@ -18,12 +18,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 
-    
+
 
 
 </head>
 
-<body class="font-sans antialiased bg-gray-50 flex items-center justify-center overflow-hidden">
+<body class="font-sans antialiased bg-gray-50 flex items-center justify-start overflow-hidden">
     {{ $slot }}
     @livewireScripts
 </body>

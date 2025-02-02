@@ -23,9 +23,9 @@
         @endforeach
     </x-slot>
 
-    <div class="flex items-start justify-between">
+    <div class="flex flex-col sm:flex-row items-start sm:justify-between">
         <h2 class="text-2xl font-semibold tracking-tight">{{ $order->name }}</h2>
-        <div class="max-w-xs text-right">
+        <div class="sm:max-w-xs sm:text-right mt-3 sm:mt-0">
             <span class="text-md">{{ $order->phone }}</span><br>
             <span class="text-sm text-gray-500">{{ $order->address }}</span>
         </div>
@@ -44,8 +44,7 @@
             <button type="button"
                 class="flex items-center gap-x-4 bg-blue-500 rounded-md px-3 py-2 text-white hover:bg-blue-700"
                 @click="open = true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="size-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
                     <path fill-rule="evenodd"
                         d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
                         clip-rule="evenodd" />
@@ -54,12 +53,11 @@
             </button>
 
             {{-- MODAL INFORMASI RETUR --}}
-            
+
             <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50"
                 x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity duration-300"
-                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                style="display: none;">
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
                 <div class="fixed inset-0 bg-gray-500 opacity-75" @click="open = false"></div>
                 <div
                     class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-4xl">
@@ -69,8 +67,8 @@
 
                         <div class="rounded-md border bg-white mt-4 max-h-96 overflow-auto">
                             <div class="relative w-full overflow-auto">
-                                <table class="w-full text-sm">
-                                    
+                                <table class="w-full text-sm whitespace-nowrap">
+
                                     <thead>
                                         <tr class="border-b">
                                             <th class="h-10 px-4 text-left">
@@ -100,18 +98,19 @@
                                         </tr>
                                     </thead>
                                     @if (count($returOrder) > 0)
-                                    <tbody>
-                                        @foreach ($returOrder as $retur)
-                                        <tr class="border-b transition-colors hover:bg-gray-50">
-                                            <td class="p-2 px-4 w-[20%]">{{ $retur->goods->name }}
+                                        <tbody>
+                                            @foreach ($returOrder as $retur)
+                                                <tr class="border-b transition-colors hover:bg-gray-50">
+                                                    <td class="p-2 px-4 w-[20%]">{{ $retur->goods->name }}
 
-                                            </td>
-                                            <td class="p-2 text-center">@currency($retur->cost)</td>
-                                            <td class="p-2 text-center">{{ $retur->retur_qty }} {{ $retur->goods->unit }}</td>
-                                            <td class="p-2 text-center">@currency($retur->subcashback)</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
+                                                    </td>
+                                                    <td class="p-2 text-center">@currency($retur->cost)</td>
+                                                    <td class="p-2 text-center">{{ $retur->retur_qty }}
+                                                        {{ $retur->goods->unit }}</td>
+                                                    <td class="p-2 text-center">@currency($retur->subcashback)</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
                                     @endif
                                 </table>
                             </div>
@@ -126,7 +125,7 @@
 
     <div x-data="{ open: false }" x-init="open = false" class="rounded-md bg-white mt-0 border-b pb-4">
         <div class="relative w-full overflow-auto">
-            <table class="w-full text-sm">
+            <table class="w-full text-sm whitespace-nowrap">
                 <thead>
                     <tr class="border-b">
                         <th class="h-10 text-left">
@@ -169,12 +168,12 @@
                         </tr>
                     @endforeach
                 </tbody>
-                
+
             </table>
         </div>
 
-        <div class="grid grid-cols-7 mt-4">
-            <div class="col-span-2">
+        <div class="grid grid-cols-1 sm:grid-cols-7 mt-4">
+            <div class="sm:col-span-4">
                 <div class="grid py-3 grid-cols-2">
                     <dt class="font-medium text-gray-900">Status</dt>
                     <dd class="@if ($order->status !== 'selesai') text-red-500 @else text-green-600 @endif mr-4">
@@ -206,10 +205,10 @@
                         <div class="fixed inset-0 bg-gray-500 opacity-75" @click="open = false"></div>
                         <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all w-auto">
                             <div class="flex items-center justify-center p-6">
-                                
+
 
                                 <img src="{{ asset('images/products/' . $order->image) }}" alt="Image Preview"
-                                class="mt-2 w-80 object-contain object-center">
+                                    class="mt-2 w-80 object-contain object-center">
                             </div>
                         </div>
                     </div>
@@ -218,7 +217,7 @@
             <div class="col-start-6 col-span-2">
                 <div class="grid py-3 grid-cols-2 gap-4 text-end">
                     <dt class="font-medium text-gray-900">Total</dt>
-                    <dd class="text-gray-700 mr-4">@currency($order['total'])</dd>
+                    <dd class="text-gray-700 sm:mr-4">@currency($order['total'])</dd>
                 </div>
             </div>
         </div>
@@ -243,7 +242,7 @@
 
                     <div class="rounded-md border bg-white mt-4 max-h-96 overflow-auto">
                         <div class="relative w-full overflow-auto">
-                            <table class="w-full text-sm">
+                            <table class="w-full text-sm whitespace-nowrap">
                                 <thead>
                                     <thead>
                                         <tr class="border-b">
@@ -313,7 +312,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="px-4 text-center">
+                                                <td class="px-4 text-end">
                                                     @currency($good->pivot->cost * ($returGoods[$index]['retur_qty'] ?? 0))
                                                 </td>
                                             </tr>
@@ -324,9 +323,9 @@
                         </div>
 
                         <div class="grid grid-cols-7 mt-2">
-                            <div class="col-start-6 col-span-2">
+                            <div class="col-span-7 sm:col-start-6 sm:col-span-2">
                                 <div class="grid py-3 grid-cols-2 gap-4 text-end">
-                                    <dt class="font-medium text-gray-900">Total</dt>
+                                    <dt class="font-medium text-gray-900 text-end">Total</dt>
                                     <dd class="text-gray-700 mr-4">@currency($cashback)</dd>
                                 </div>
                             </div>

@@ -23,9 +23,9 @@
         @endforeach
     </x-slot>
 
-    <div class="flex items-start justify-between">
+    <div class="flex flex-col sm:flex-row items-start sm:justify-between">
         <h2 class="text-2xl font-semibold tracking-tight">{{ $delivery->transaction->name }}</h2>
-        <div class="max-w-xs text-right">
+        <div class="sm:max-w-xs sm:text-right mt-3 sm:mt-0">
             <span class="text-md">{{ $delivery->transaction->phone }}</span><br>
             <span class="text-sm text-gray-500">{{ $delivery->transaction->address }}</span>
         </div>
@@ -42,7 +42,7 @@
 
     <div x-data="{ open: false }" x-init="open = false" class="rounded-md bg-white mt-0 border-b pb-4">
         <div class="relative w-full overflow-auto">
-            <table class="w-full text-sm">
+            <table class="w-full text-sm whitespace-nowrap">
                 <thead>
                     <tr class="border-b">
                         <th class="h-10 text-left">
@@ -120,24 +120,24 @@
                         <dl class="-my-3 divide-y divide-gray-100 text-sm">
                             <div class="grid p-3 grid-cols-3 gap-4">
                                 <dt class="font-medium text-gray-900">Nama Barang</dt>
-                                <dd class="text-gray-700 sm:col-span-2">{{ $detail['name'] ?? '' }}</dd>
+                                <dd class="text-gray-700 col-span-2">{{ $detail['name'] ?? '' }}</dd>
                             </div>
 
                             <div class="grid p-3 grid-cols-3 gap-4">
                                 <dt class="font-medium text-gray-900">Qty</dt>
-                                <dd class="text-gray-700 sm:col-span-2">{{ $detail['qty'] ?? '' }}
+                                <dd class="text-gray-700 col-span-2">{{ $detail['qty'] ?? '' }}
                                     {{ $detail['unit'] ?? '' }}</dd>
                             </div>
 
                             <div class="grid p-3 grid-cols-3 gap-4">
                                 <dt class="font-medium text-gray-900">Terikirim</dt>
-                                <dd class="text-gray-700 sm:col-span-2">{{ $detail['delivered'] ?? '' }}
+                                <dd class="text-gray-700 col-span-2">{{ $detail['delivered'] ?? '' }}
                                     {{ $detail['unit'] ?? '' }}</dd>
                             </div>
 
-                            <div class="grid p-3 grid-cols-3 gap-4">
+                            <div class="grid p-3 grid-cols-3 gap-4 items-center">
                                 <dt class="font-medium text-gray-900">Baru terkirim</dt>
-                                <dd class="text-gray-700 col-span-1">
+                                <dd class="text-gray-700 col-span-2">
                                     <div class="flex items-center gap-x-2">
                                         <input type="number" value="0" wire:model="detail.input"
                                             class="block w-20 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -189,10 +189,11 @@
                         @foreach ($activities as $activity)
                             <li class="flex items-center justify-center gap-2">
                                 <span
-                                    class="px-2 py-0.5 rounded bg-blue-50 text-center text-sm font-bold text-blue-600">
+                                    class="px-2 py-0.5 rounded bg-blue-50 text-center text-sm font-bold text-blue-600 w-1/3 sm:w-fit whitespace-nowrap">
                                     {{ $activity['qty'] }} {{ $activity['unit'] }}
                                 </span>
-                                <span>{{ $activity['name'] }} proses pengiriman dibuat oleh {{ Auth::user()->name }}
+                                <span><span class="font-extrabold">{{ $activity['name'] }}</span> proses pengiriman
+                                    dibuat oleh {{ Auth::user()->name }}
                                     pada tanggal
                                     {{ \Carbon\Carbon::parse($activity['created_at'])->translatedFormat('d F Y') }}</span>
 
@@ -286,7 +287,9 @@
                                             class="px-2 py-0.5 rounded bg-gray-50 text-center text-sm font-bold text-gray-600">
                                             {{ $item->qty }} {{ $item->goods->unit }}
                                         </span>
-                                        <span>{{ $item->goods->name }} proses pengiriman dibuat oleh
+                                        <span><span class="font-extrabold">{{ $item->goods->name }}</span> proses
+                                            pengiriman
+                                            dibuat oleh
                                             {{ $item->user->name }}</span>
                                     </li>
                                 @endforeach
@@ -300,12 +303,13 @@
 
     </div>
 
-    <div class="mt-6 flex items-center justify-between">
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-end sm:justify-between w-full">
         <!-- Bagian Upload Image di Rata Kiri -->
-        <div>
+        <div class="w-full sm:w-3/4 mb-4 sm:mb-0 justify-center">
             @if ($isUploading)
                 @if (empty($detail['images']))
-                    <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-4 py-2">
+                    <div
+                        class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-4 py-2 w-full sm:w-3/4">
                         <div class="text-center">
                             <svg class="mx-auto h-6 w-6 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
                                 aria-hidden="true" data-slot="icon">
@@ -324,9 +328,9 @@
                         </div>
                     </div>
                 @else
-                    <div class="mt-2 grid grid-cols-3 gap-4">
+                    <div class="mt-2 mb-3 sm:mb-0 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
                         @foreach ($detail['images'] as $index => $image)
-                            <div class="relative h-52 w-60">
+                            <div class="col-span-1 relative h-52 w-full sm:w-60">
                                 <button class="absolute inset-x -right-2 -top-2 rounded-full bg-white" type="button"
                                     wire:click="deleteImage({{ $index }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -351,7 +355,7 @@
         <!-- Bagian Reset, Lihat Transaksi, dan Save di Rata Kanan -->
         @if (in_array(auth()->user()->role, ['super_admin', 'admin']))
 
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center gap-x-6 w-full sm:w-fit justify-end">
                 <a href="{{ route('transaction.detail', ['id' => $delivery->transaction_id]) }}"
                     class="text-sm font-semibold leading-6 text-yellow-500">Lihat Transaksi</a>
                 @if ($delivery->status !== 'selesai')
@@ -362,7 +366,7 @@
                 @endif
             </div>
         @else
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center gap-x-6 w-full sm:w-fit justify-end">
                 <a href="{{ route('customer.transaction.detail', ['id' => $delivery->transaction_id]) }}"
                     class="text-sm font-semibold leading-6 text-yellow-500">Lihat Transaksi</a>
 

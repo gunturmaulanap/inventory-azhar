@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class Dashboard extends Component
 {
-    public $incomes, $pemasukan, $debt, $expense, $customers, $suppliers, $employees, $goods;
+    public $penjualan, $pemasukan, $debt, $expense, $customers, $suppliers, $employees, $goods;
 
     public $selectedWeek, $selectedMonth, $startDate, $endDate;
 
@@ -69,9 +69,9 @@ class Dashboard extends Component
 
 
         $incomes = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])
-                    ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
+            ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
             ->groupBy(DB::raw('DATE(created_at)'))
-            ->selectRaw('DATE(created_at) as date, SUM(grand_total) as total')
+            ->selectRaw('DATE(created_at) as date, SUM(total) as total')
             ->pluck('total', 'date');
 
         $expenses = Order::whereBetween('created_at', [$startOfWeek, $endOfWeek])
@@ -92,12 +92,10 @@ class Dashboard extends Component
             }
         }
 
-        $this->$incomes = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])
-            ->whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
+        $this->penjualan = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('total');
         $this->pemasukan = Transaction::whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
         $this->debt = Transaction::where('status', 'hutang')->whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('grand_total');
         $this->expense = Order::whereBetween('created_at', [$startOfWeek, $endOfWeek])->sum('total');
-
         return [
             'labels' => $labels,
             'incomeData' => $incomeData,
