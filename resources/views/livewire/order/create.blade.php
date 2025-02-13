@@ -471,8 +471,8 @@
                                 </div>
                             </div>
 
-                            <div class="rounded-md border-0 sm:border bg-white mt-4 max-h-96 overflow-auto">
-                                <div class="relative w-full overflow-auto hidden sm:block">
+                            <div class="rounded-md border-0 sm:border bg-white mt-4 max-h-96 ">
+                                <div class="relative w-full  hidden sm:block">
                                     <table class="w-full text-sm">
                                         <thead>
                                             <tr class="border-b">
