@@ -113,6 +113,14 @@
             x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
             <div class="fixed inset-0 bg-gray-500 opacity-75" @click="open = false"></div>
             <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl">
+                <button class="absolute inset-x right-0 top-0 rounded-full bg-white" type="button"
+                    @click="open = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-8 text-red-500">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </button>
                 <div class="p-6">
                     <h2 class="text-lg font-semibold">Detail Barang</h2>
                     <p class="">Input jumlah barang yang baru terkirim.</p>
