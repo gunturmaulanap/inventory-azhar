@@ -1,13 +1,5 @@
-<div>
-    <div class="w-screen bg-gray-100">
-        @if ($transaction->status == 'hutang')
-            <div class="absolute top-20 -right-20 flex items-center text-center justify-center">
-                <div
-                    class="bg-red-300 text-white text-2xl font-bold py-2 w-[400px] rotate-45 border border-red-400 opacity-75">
-                    Hutang
-                </div>
-            </div>
-        @endif
+<div class="h-screen w-screen overflow-auto">
+    <div class="w-screen bg-gray-100 min-h-screen overflow-auto">
         <div class="flex justify-center bg-gray-100 w-screen">
             <div class="bg-white px-12 py-4">
                 <span class="text-2xl">RECIPE</span>
@@ -42,37 +34,33 @@
             </div>
 
             <div class="mt-0 border-b pb-4">
-                <div class="relative w-full overflow-auto">
-                    <table class="w-full text-sm">
+                <!-- Tambahkan overflow-auto di wrapper tabel -->
+                <div class="relative w-full max-w-full overflow-auto">
+                    <table class="w-full text-sm max-h-[500px] overflow-auto">
                         <thead>
                             <tr class="border-b">
                                 <th class="h-10 text-left">
-                                    <span
-                                        class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                                    <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
                                         Nama Barang
                                     </span>
                                 </th>
                                 <th class="h-10 px-2 text-center">
-                                    <span
-                                        class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                                    <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
                                         Harga
                                     </span>
                                 </th>
                                 <th class="h-10 px-2 text-center">
-                                    <span
-                                        class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                                    <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
                                         Qty
                                     </span>
                                 </th>
                                 <th class="h-10 px-2 text-center">
-                                    <span
-                                        class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                                    <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
                                         Status
                                     </span>
                                 </th>
                                 <th class="h-10 px-2 text-right">
-                                    <span
-                                        class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
+                                    <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
                                         Subtotal
                                     </span>
                                 </th>
@@ -144,8 +132,7 @@
                         @endif
                         @if ($transaction['return'] !== 0)
                             <div class="grid py-3 grid-cols-2 gap-4 text-end">
-                                <dt
-                                    class="font-light {{ $transaction['return'] > 0 ? 'text-gray-900' : 'text-red-700' }}">
+                                <dt class="font-light {{ $transaction['return'] > 0 ? 'text-gray-900' : 'text-red-700' }}">
                                     {{ $transaction['return'] > 0 ? 'Kembalian' : 'Kurang' }}
                                 </dt>
                                 <dd class="{{ $transaction['return'] > 0 ? 'text-gray-700' : 'text-red-600' }} mr-4">
