@@ -31,7 +31,7 @@
                 placeholder="Cari admin...">
             <select wire:model="perPage"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 sm:w-20 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-                <option value="5">5</option>
+                <option value="10">10</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
                 <option value="250">250</option>

@@ -37,8 +37,8 @@
                     <label for="customer.name" class="block text-sm font-medium leading-6 text-gray-900">Nama
                         lengkap <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
-                        <input wire:model="customer.name" type="text" id="customer.name" autocomplete="given-name"
-                            autofocus
+                        <input wire:model="customer.name" type="text" id="customer.name" autocomplete="off"
+                            placeholder="Masukkan nama lengkap customer" autofocus
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6">
                         @error('customer.name')
                             <span class="text-xs text-red-500">{{ $message }}</span>
@@ -74,7 +74,8 @@
                         Username <span class="text-xs text-red-500">*</span>
                     </label>
                     <div class="mt-2">
-                        <input wire:model="customer.username" type="text" id="customer.username" autocomplete="off"
+                        <input wire:model="customer.username" type="text" id="customer.username"
+                            autocomplete="given-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6">
                         @error('customer.username')
                             <span class="text-xs text-red-500">{{ $message }}</span>

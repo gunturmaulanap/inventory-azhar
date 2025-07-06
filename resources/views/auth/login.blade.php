@@ -38,7 +38,7 @@
         </div>
 
         <!-- Login Button -->
-        <x-primary-button class="w-full mt-6 bg-blue-300 justify-center">
+        <x-primary-button class="w-full mt-6 bg-sky-500 hover:bg-sky-700 justify-center">
             <span class="tracking-normal normal-case">Login now</span>
         </x-primary-button>
     </form>

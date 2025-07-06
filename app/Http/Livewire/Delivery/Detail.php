@@ -39,10 +39,10 @@ class Detail extends Component
 
 
     public function deleteImage($index)
-{
-    unset($this->detail['images'][$index]);
-    $this->detail['images'] = array_values($this->detail['images']); // Reset array index
-}
+    {
+        unset($this->detail['images'][$index]);
+        $this->detail['images'] = array_values($this->detail['images']); // Reset array index
+    }
 
     public function setImage()
     {
@@ -98,15 +98,15 @@ class Detail extends Component
     }
 
     public function resetInput()
-{
-    $this->actDeliveries = [];
-    $this->detail['images'] = []; // Reset images menjadi array kosong
-}
+    {
+        $this->actDeliveries = [];
+        $this->detail['images'] = []; // Reset images menjadi array kosong
+    }
 
 
     public function submit()
     {
-        
+
 
         $this->actDeliveries[$this->detail['index']] = $this->actDeliveries[$this->detail['index']] ?? [
             'user_id' => Auth::user()->id,
@@ -204,17 +204,16 @@ class Detail extends Component
             ->orderBy('created_at', 'desc')
             ->get();
         $details = ActDeliveryDetails::where('delivery_id', $this->deliveryId)->get();
-    
-        // Mengelompokkan berdasarkan created_at
+
+        // Perbaiki: Group by detik, bukan menit
         $groupedHistory = $history->groupBy(function ($item) {
-            return \Carbon\Carbon::parse($item->created_at)->format('Y-m-d H:i'); // Format sesuai kebutuhan
+            return \Carbon\Carbon::parse($item->created_at)->format('Y-m-d H:i:s'); // Format hingga detik
         });
-    
+
         return view('livewire.delivery.detail', [
             'history' => $history,
             'groupedHistory' => $groupedHistory,
-            'details' => $details, // Oper `details` ke view
+            'details' => $details,
         ]);
     }
-    
 }

@@ -184,9 +184,9 @@
                     </li>
                 @else
                     @php
-                        // Mengelompokkan aktivitas berdasarkan created_at
+                        // Mengelompokkan aktivitas berdasarkan created_at hingga detik
                         $groupedActivities = collect($actDeliveries)->groupBy(function ($activity) {
-                            return \Carbon\Carbon::parse($activity['created_at'])->format('Y-m-d'); // Format untuk pengelompokan
+                            return \Carbon\Carbon::parse($activity['created_at'])->format('Y-m-d H:i:s'); // Format hingga detik
                         });
                     @endphp
                     @if ($details->isNotEmpty())
@@ -215,13 +215,12 @@
                                 // Filter item unik hanya untuk grup saat ini
                                 $filteredItems = collect($items)->unique('id');
 
-                                // Format waktu untuk memastikan konsistensi
-                                $dateTimeFormatted = \Carbon\Carbon::parse($dateTime)->format('Y-m-d H:i');
+                                // Format waktu untuk memastikan konsistensi (sampai detik)
+                                $dateTimeFormatted = \Carbon\Carbon::parse($dateTime)->format('Y-m-d H:i:s');
 
-                                // Cari detail terkait berdasarkan waktu
+                                // Cari detail terkait berdasarkan waktu (sampai detik)
                                 $relatedDetail = $details->first(function ($detail) use ($dateTimeFormatted) {
-                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i') ===
-                                        $dateTimeFormatted;
+                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i:s') === $dateTimeFormatted;
                                 });
                             @endphp
 
@@ -229,7 +228,7 @@
                                 <!-- Elemen Tanggal -->
                                 <div class="flex items-center gap-2">
                                     <li class="font-bold">
-                                        {{ \Carbon\Carbon::parse($dateTime)->translatedFormat('l, d F Y H:i') }}
+                                        {{ \Carbon\Carbon::parse($dateTime)->translatedFormat('l, d F Y H:i:s') }}
                                     </li>
 
                                     <!-- Tombol Detail untuk Gambar -->
@@ -260,9 +259,7 @@
                                                     @click="openDetail = null"></div>
                                                 <button class="absolute inset-x right-64 top-32 rounded-full bg-white"
                                                     type="button" @click="openDetail = null">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="size-10 text-red-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-red-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                                     </svg>
