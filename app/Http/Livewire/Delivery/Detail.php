@@ -8,7 +8,7 @@ use Livewire\Component;
 use App\Models\Delivery;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\deliveryGoods;
+use App\Models\DeliveryGoods;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Livewire\WithFileUploads;
