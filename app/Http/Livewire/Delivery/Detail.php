@@ -158,7 +158,7 @@ class Detail extends Component
                 });
 
                 // Update delivered qty for deliveryGoods
-                $deliveryGood = deliveryGoods::where('delivery_id', $this->deliveryId)
+                $deliveryGood = DeliveryGoods::where('delivery_id', $this->deliveryId)
                     ->where('goods_id', $activity['goods_id'])
                     ->first();
 
