@@ -246,7 +246,12 @@ class Create extends Component
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
             // Upload gambar dan simpan path ke dalam database
-            $imagePath = $this->transaction['image']->storeAs('images/products', $uniqueFileName, 'public');
+            $image = $this->transaction['image'];
+            $path = $image->storeAs('images/products', $uniqueFileName, 'public');
+
+            // Salin ke public_html/storage secara manual
+            copy(storage_path("app/public/images/products/{$uniqueFileName}"), base_path("public_html/storage/images/products/{$uniqueFileName}"));
+
             $this->transaction['image'] = $uniqueFileName;
         }
 

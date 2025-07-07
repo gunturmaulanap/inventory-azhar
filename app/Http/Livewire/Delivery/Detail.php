@@ -53,8 +53,15 @@ class Detail extends Component
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
             // Upload gambar dan simpan path ke dalam database
-            $imagePath = $this->detail['image']->storeAs('images/products', $uniqueFileName, 'public');
-            $this->detail['image'] = $imagePath;
+            $image = $this->detail['image'];
+            $path = $image->storeAs('images/products', $uniqueFileName, 'public');
+
+            // Salin ke public_html/storage
+            copy(storage_path("app/public/images/products/{$uniqueFileName}"), base_path("public_html/storage/images/products/{$uniqueFileName}"));
+
+            $stored = $image->store('images', 'public');
+            copy(storage_path("app/public/{$stored}"), base_path("public_html/storage/{$stored}"));
+            $images[] = $stored;
         }
     }
 
