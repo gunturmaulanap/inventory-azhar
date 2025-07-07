@@ -52,19 +52,24 @@ class Detail extends Component
             // Membuat nama file yang unik
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
-            // Upload gambar dan simpan path ke dalam database
-            $image = $this->detail['image'];
-            $path = $image->storeAs('images/products', $uniqueFileName, 'public');
+            // Tujuan langsung ke public_html/storage/images/products
+            $destinationPath = base_path('public_html/storage/images/products');
 
-            // Salin ke public_html/storage
-            copy(storage_path("app/public/images/products/{$uniqueFileName}"), base_path("public_html/storage/images/products/{$uniqueFileName}"));
+            // Buat folder jika belum ada
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
 
-            $stored = $image->store('images', 'public');
-            copy(storage_path("app/public/{$stored}"), base_path("public_html/storage/{$stored}"));
-            $images[] = $stored;
+            // Pindahkan file
+            $this->detail['image']->storeAs('temp', $uniqueFileName); // Upload ke tempat sementara
+            rename(
+                storage_path("app/temp/{$uniqueFileName}"),
+                $destinationPath . '/' . $uniqueFileName
+            );
+
+            $this->detail['image'] = "images/products/{$uniqueFileName}";
         }
     }
-
 
 
     public function setDetail($index)

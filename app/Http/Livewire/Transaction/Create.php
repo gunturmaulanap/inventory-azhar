@@ -242,19 +242,27 @@ class Create extends Component
         if (!empty($this->transaction['image'])) {
             $extension = $this->transaction['image']->getClientOriginalExtension();
 
-            // Membuat nama file yang unik
+            // Nama file unik
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
-            // Upload gambar dan simpan path ke dalam database
-            $image = $this->transaction['image'];
-            $path = $image->storeAs('images/products', $uniqueFileName, 'public');
+            // Path tujuan langsung ke public_html
+            $destinationPath = base_path('public_html/storage/images/products');
 
-            // Salin ke public_html/storage secara manual
-            copy(storage_path("app/public/images/products/{$uniqueFileName}"), base_path("public_html/storage/images/products/{$uniqueFileName}"));
+            // Buat folder jika belum ada
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
 
-            $this->transaction['image'] = $uniqueFileName;
+            // Simpan sementara lalu pindah ke public_html
+            $this->transaction['image']->storeAs('temp', $uniqueFileName);
+            rename(
+                storage_path("app/temp/{$uniqueFileName}"),
+                $destinationPath . '/' . $uniqueFileName
+            );
+
+            // Simpan nama file di database
+            $this->transaction['image'] = "images/products/{$uniqueFileName}";
         }
-
         return true; // Kembali true jika semua validasi lolos
     }
 
