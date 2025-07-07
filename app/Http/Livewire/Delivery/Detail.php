@@ -48,26 +48,27 @@ class Detail extends Component
     {
         if (!empty($this->detail['image'])) {
             $extension = $this->detail['image']->getClientOriginalExtension();
-            $uniqueFileName = uniqid() . '.' . $extension;
+            $uniqueFileName = date('dmyHis') . '.' . $extension;
 
-            // Path tujuan langsung ke public_html
-            $destinationPath = base_path('../public_html/storage/images/products');
+            // Tujuan upload: ke folder luar repositories
+            $destinationPath = '/home/azha3438/public_html/storage/images/products';
 
-            // Pastikan folder tujuan ada
+            // Buat folder jika belum ada
             if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
 
-            // Simpan file langsung ke public_html
-            $this->detail['image']->storeAs('tmp', $uniqueFileName); // Sementara di storage/app/tmp
-            $tempPath = storage_path("app/tmp/{$uniqueFileName}");
+            // Upload sementara dulu
+            $this->detail['image']->storeAs('temp', $uniqueFileName);
 
-            if (file_exists($tempPath)) {
-                rename($tempPath, $destinationPath . '/' . $uniqueFileName);
-                $this->detail['image'] = "images/products/{$uniqueFileName}";
-            } else {
-                $this->dispatchBrowserEvent('error', ['message' => 'Gagal menyimpan gambar.']);
-            }
+            // Pindahkan dari temp ke public_html/storage/images/products
+            rename(
+                storage_path("app/temp/{$uniqueFileName}"),
+                $destinationPath . '/' . $uniqueFileName
+            );
+
+            // Simpan path yang akan diakses dari browser
+            $this->detail['image'] = "images/products/{$uniqueFileName}";
         }
     }
 

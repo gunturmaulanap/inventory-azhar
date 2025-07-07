@@ -220,8 +220,7 @@
 
                                 // Cari detail terkait berdasarkan waktu (sampai detik)
                                 $relatedDetail = $details->first(function ($detail) use ($dateTimeFormatted) {
-                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i:s') ===
-                                        $dateTimeFormatted;
+                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i:s') === $dateTimeFormatted;
                                 });
                             @endphp
 
@@ -260,9 +259,7 @@
                                                     @click="openDetail = null"></div>
                                                 <button class="absolute inset-x right-64 top-32 rounded-full bg-white"
                                                     type="button" @click="openDetail = null">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="size-10 text-red-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-red-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                                     </svg>
@@ -347,9 +344,6 @@
                                 </button>
                                 @if ($image instanceof \Livewire\TemporaryUploadedFile)
                                     <img src="{{ $image->temporaryUrl() }}" alt="Image Preview"
-                                        class="mt-2 w-full h-full object-contain object-center">
-                                @else
-                                    <img src="{{ asset('storage/' . $image) }}" alt="Image Preview"
                                         class="mt-2 w-full h-full object-contain object-center">
                                 @endif
                             </div>
