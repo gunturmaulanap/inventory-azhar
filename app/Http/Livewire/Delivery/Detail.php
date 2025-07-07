@@ -48,26 +48,26 @@ class Detail extends Component
     {
         if (!empty($this->detail['image'])) {
             $extension = $this->detail['image']->getClientOriginalExtension();
+            $uniqueFileName = uniqid() . '.' . $extension;
 
-            // Membuat nama file yang unik
-            $uniqueFileName = date('dmyHis') . '.' . $extension;
+            // Path tujuan langsung ke public_html
+            $destinationPath = base_path('../public_html/storage/images/products');
 
-            // Tujuan langsung ke public_html/storage/images/products
-            $destinationPath = base_path('public_html/storage/images/products');
-
-            // Buat folder jika belum ada
+            // Pastikan folder tujuan ada
             if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
 
-            // Pindahkan file
-            $this->detail['image']->storeAs('temp', $uniqueFileName); // Upload ke tempat sementara
-            rename(
-                storage_path("app/temp/{$uniqueFileName}"),
-                $destinationPath . '/' . $uniqueFileName
-            );
+            // Simpan file langsung ke public_html
+            $this->detail['image']->storeAs('tmp', $uniqueFileName); // Sementara di storage/app/tmp
+            $tempPath = storage_path("app/tmp/{$uniqueFileName}");
 
-            $this->detail['image'] = "images/products/{$uniqueFileName}";
+            if (file_exists($tempPath)) {
+                rename($tempPath, $destinationPath . '/' . $uniqueFileName);
+                $this->detail['image'] = "images/products/{$uniqueFileName}";
+            } else {
+                $this->dispatchBrowserEvent('error', ['message' => 'Gagal menyimpan gambar.']);
+            }
         }
     }
 
@@ -171,7 +171,20 @@ class Detail extends Component
             $images = [];
             if (isset($this->detail['images']) && is_array($this->detail['images'])) {
                 foreach ($this->detail['images'] as $image) {
-                    $images[] = $image->store('images', 'public'); // Simpan file dan dapatkan path
+                    $extension = $image->getClientOriginalExtension();
+                    $uniqueFileName = uniqid() . '.' . $extension;
+
+                    $destinationPath = base_path('../public_html/storage/images/products');
+                    if (!file_exists($destinationPath)) {
+                        mkdir($destinationPath, 0755, true);
+                    }
+
+                    $image->storeAs('tmp', $uniqueFileName); // Sementara
+                    $tempPath = storage_path("app/tmp/{$uniqueFileName}");
+                    if (file_exists($tempPath)) {
+                        rename($tempPath, $destinationPath . '/' . $uniqueFileName);
+                        $images[] = "images/products/{$uniqueFileName}";
+                    }
                 }
             }
 
