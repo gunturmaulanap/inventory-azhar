@@ -274,32 +274,31 @@ class Create extends Component
     public function render()
     {
         $suppliers = Supplier::when($this->searchSupplier, function ($query) {
-            $query->search($this->searchSupplier); // menjalankan query search
+            $query->search($this->searchSupplier);
         })
             ->orderBy('created_at', 'desc')
             ->get();
 
         $goods = Goods::when($this->search, function ($query) {
-            $query->search($this->search); // menjalankan query search
-        })->when($this->byCategory, function ($query) {
-            $query->where('category_id', $this->byCategory); // menjalankan query by Category
+            $query->search($this->search);
         })
-        ->when($this->byBrand, function ($query) {
-            $query->where('brand_id', $this->byBrand); // menjalankan query by Category
-        })
-            ->orderBy('created_at', 'desc')
+            ->when($this->byCategory, function ($query) {
+                $query->where('category_id', $this->byCategory);
+            })
+            ->when($this->byBrand, function ($query) {
+                $query->where('brand_id', $this->byBrand);
+            })
+            ->orderByRaw("CAST(name AS UNSIGNED), name ASC") // ⬅️ urut angka lalu huruf
             ->get();
 
-        $categories = Category::all();
-        $brands = Brand::all();
-
+        $categories = Category::orderBy('name', 'asc')->get();
+        $brands = Brand::orderBy('name', 'asc')->get();
 
         return view('livewire.order.create', [
             'suppliers' => $suppliers,
             'goods' => $goods,
-            'categories' => $categories,
-            'brands' => $brands,
-
+            'brands' => Brand::orderBy('name', 'asc')->get(),
+            'categories' => Category::orderBy('name', 'asc')->get(),
         ]);
     }
 }

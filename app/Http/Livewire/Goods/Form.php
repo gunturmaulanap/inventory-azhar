@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Goods;
+
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Goods;
@@ -95,8 +96,8 @@ class Form extends Component
 
 
         return view('livewire.goods.form', [
-            'categories' => $categories,
-            'brands' => $brands,
+            'brands' => Brand::orderBy('name', 'asc')->get(),
+            'categories' => Category::orderBy('name', 'asc')->get(),
 
         ]);
     }

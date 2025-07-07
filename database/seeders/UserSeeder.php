@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Azhar Material',
                 'username' => 'superadmin',
-                 'role' => 'super_admin',
+                'role' => 'super_admin',
             ],
             [
                 'name' => 'Rina Andriani',
@@ -92,7 +92,7 @@ class UserSeeder extends Seeder
                 'name' => $user['name'],
                 'username' => $user['username'],
                 'address' => $address,
-                
+
                 'role' => $user['role'],
                 'phone' => $this->generateRandomPhoneNumber(),
                 'password' => Hash::make('password'),

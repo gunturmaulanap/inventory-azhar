@@ -410,7 +410,7 @@ class Create extends Component
                 $query->where('brand_id', $this->byBrand); // menjalankan query by Category
             })
 
-            ->orderBy('created_at', 'desc')
+            ->orderByRaw("CAST(name AS UNSIGNED), name ASC") // ⬅️ urut angka lalu huruf
             ->get();
 
         $categories = Category::all();
@@ -420,8 +420,8 @@ class Create extends Component
         return view('livewire.transaction.create', [
             'customers' => $customers,
             'goods' => $goods,
-            'categories' => $categories,
-            'brands' => $brands,
+            'brands' => Brand::orderBy('name', 'asc')->get(),
+            'categories' => Category::orderBy('name', 'asc')->get(),
 
         ]);
     }

@@ -17,10 +17,15 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-    <div id="page"
-        class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-[url('../img/logo-azhar.png')] bg-center bg-contain">
-        <h2 class="text-xl z-10">Masuk Akun</h2>
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 overflow-hidden sm:rounded-lg z-10">
+    <div id="page" class="min-h-screen flex items-center justify-center bg-cover bg-no-repeat bg-center relative"
+        style="background-image: url('/img/logo-azhar.png')">
+
+        <!-- Overlay Putih Transparan (optional) -->
+        <div class="absolute inset-0 bg-white opacity-70"></div>
+
+        <!-- Kontainer Login -->
+        <div class="relative w-full max-w-md px-6 py-8 bg-white bg-opacity-90 rounded-lg z-10 shadow-xl">
+            <h2 class="text-xl font-semibold text-center mb-6">Masuk Akun</h2>
             {{ $slot }}
         </div>
     </div>
