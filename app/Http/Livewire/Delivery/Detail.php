@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Delivery;
 
-use App\Models\actDeliveryDetails;
-use App\Models\actDelivery;
+use App\Models\ActDeliveryDetails;
+use App\Models\ActDelivery;
 use Livewire\Component;
 use App\Models\Delivery;
 use Illuminate\Support\Facades\DB;
