@@ -50,7 +50,7 @@ class Admin extends Component
             ->paginate($this->perPage);
 
         return view('livewire.master.admin', [
-            'data' => $data,
+            'data' => User::orderBy('name', 'asc')->get(),
         ]);
     }
 }

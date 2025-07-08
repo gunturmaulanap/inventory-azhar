@@ -48,7 +48,7 @@ class Customer extends Component
             ->paginate($this->perPage);
 
         return view('livewire.master.customer', [
-            'data' => $data,
+            'data' => ModelsCustomer::orderBy('name', 'asc')->get(),
         ]);
     }
 }

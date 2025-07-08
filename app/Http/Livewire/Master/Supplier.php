@@ -48,7 +48,7 @@ class Supplier extends Component
             ->paginate($this->perPage);
 
         return view('livewire.master.supplier', [
-            'data' => $data,
+            'data' => ModelsSupplier::orderBy('name', 'asc')->get(),
         ]);
     }
 }

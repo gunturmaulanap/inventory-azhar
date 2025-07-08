@@ -1,4 +1,6 @@
 <x-guest-layout>
+    <x-slot name="title">{{ __('Login') }}</x-slot>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -10,15 +12,15 @@
             <x-input-label for="username" :value="__('Username')" />
             <input
                 class="block mt-1 w-full border-sky-300 focus:border-sky-300 focus:ring-sky-500 rounded-md bg-transparent"
-                type="text" name="username" id="username" :value="old('username')" required autofocus autocomplete="username">
+                type="text" name="username" id="username" :value="old('username')" required autofocus
+                autocomplete="username">
             <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-            <input
-                type="password"
+            <input type="password"
                 class="block mt-1 w-full border-sky-300 focus:border-sky-300 focus:ring-sky-500 rounded-md bg-transparent"
                 id="password" name="password" required autocomplete="current-password">
             <x-input-error :messages="$errors->get('password')" class="mt-1" />
@@ -27,9 +29,7 @@
         <!-- Login Type Selector -->
         <div class="mt-4">
             <x-input-label for="login_type" :value="__('Login As')" />
-            <select 
-                id="login_type"
-                name="login_type"
+            <select id="login_type" name="login_type"
                 class="block mt-1 w-full border-sky-300 focus:border-sky-300 focus:ring-sky-500 rounded-md bg-transparent">
                 <option value="user" {{ old('login_type') === 'user' ? 'selected' : '' }}>User</option>
                 <option value="customer" {{ old('login_type') === 'customer' ? 'selected' : '' }}>Customer</option>

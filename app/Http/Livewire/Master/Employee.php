@@ -48,7 +48,7 @@ class Employee extends Component
             ->paginate($this->perPage);
 
         return view('livewire.master.employee', [
-            'data' => $data,
+            'data' => ModelsEmployee::orderBy('name', 'asc')->get(),
         ]);
     }
 }
