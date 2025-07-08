@@ -44,11 +44,11 @@ class Employee extends Component
         $data = ModelsEmployee::when($this->search, function ($query) {
             $query->search($this->search);
         })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('name', 'asc') // ⬅️ Urutkan berdasarkan nama A-Z
             ->paginate($this->perPage);
 
         return view('livewire.master.employee', [
-            'data' => ModelsEmployee::orderBy('name', 'asc')->get(),
+            'data' => $data,
         ]);
     }
 }

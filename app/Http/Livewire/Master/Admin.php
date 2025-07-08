@@ -42,15 +42,14 @@ class Admin extends Component
     public function render()
     {
         $data = User::whereIn('role', ['admin', 'super_admin'])
-            // ketika input search terisi
             ->when($this->search, function ($query) {
-                $query->search($this->search); // menjalankan query search
+                $query->search($this->search);
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('name', 'asc') // ⬅️ Urutkan berdasarkan nama A-Z
             ->paginate($this->perPage);
 
         return view('livewire.master.admin', [
-            'data' => User::orderBy('name', 'asc')->get(),
+            'data' => $data,
         ]);
     }
 }

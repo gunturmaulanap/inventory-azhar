@@ -44,11 +44,11 @@ class Supplier extends Component
         $data = ModelsSupplier::when($this->search, function ($query) {
             $query->search($this->search); // menjalankan query search
         })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('name', 'asc') // ⬅️ Urutkan berdasarkan nama A-Z
             ->paginate($this->perPage);
 
         return view('livewire.master.supplier', [
-            'data' => ModelsSupplier::orderBy('name', 'asc')->get(),
+            'data' => $data,
         ]);
     }
 }

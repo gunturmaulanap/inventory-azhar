@@ -44,11 +44,11 @@ class Customer extends Component
         $data = ModelsCustomer::when($this->search, function ($query) {
             $query->search($this->search); // menjalankan query search
         })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('name', 'asc') // ⬅️ Urutkan berdasarkan nama A-Z
             ->paginate($this->perPage);
 
         return view('livewire.master.customer', [
-            'data' => ModelsCustomer::orderBy('name', 'asc')->get(),
+            'data' => $data,
         ]);
     }
 }
