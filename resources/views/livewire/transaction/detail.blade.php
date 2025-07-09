@@ -294,7 +294,7 @@
                         <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all w-auto">
                             <div class="flex items-center justify-center p-6">
                                 <img src="{{ asset('storage/' . $transaction->image) }}" alt="Image Preview"
-                                    class="mt-2 w-full max-w-2xl object-contain object-center">
+                                    class="mt-2 w-full max-w-screen-lg object-contain object-center">
                             </div>
                         </div>
                     </div>
