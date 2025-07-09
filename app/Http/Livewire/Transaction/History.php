@@ -64,7 +64,7 @@ class History extends Component
                 return $query->whereBetween('created_at', [$this->startDate, $this->endDate]);
             })
             ->orderBy('created_at', 'desc')
-            ->paginate($this->perPage);
+            ->paginate($this->perPage);  // Ensure you're using paginate here, not get()
 
         return view('livewire.transaction.history', [
             'data' => $data

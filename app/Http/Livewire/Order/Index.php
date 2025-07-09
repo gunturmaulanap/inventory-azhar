@@ -7,6 +7,8 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Goods;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;  // <-- Add this line to import Carbon
+
 
 
 
@@ -50,14 +52,20 @@ class Index extends Component
 
     public function render()
     {
+        // Pastikan $startDate dan $endDate terisi dengan format yang benar
         $orders = Order::when($this->search, function ($query) {
             return $query->whereHas('supplier', function ($subquery) {
                 $subquery->where('name', 'like', '%' . $this->search . '%')
                     ->orWhere('company', 'like', '%' . $this->search . '%');
             });
         })
+            // Menambahkan pengecekan format tanggal, jika ada filter tanggal yang diinput
             ->when($this->startDate && $this->endDate, function ($query) {
-                return $query->whereBetween('created_at', [$this->startDate, $this->endDate]);
+                // Pastikan tanggal yang diberikan sudah dalam format yang benar
+                return $query->whereBetween('created_at', [
+                    Carbon::parse($this->startDate)->startOfDay(),
+                    Carbon::parse($this->endDate)->endOfDay()
+                ]);
             })
             ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);

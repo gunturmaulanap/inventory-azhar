@@ -198,79 +198,79 @@ class Detail extends Component
     }
 
     public function pay()
-{
-    if (!empty($this->input['bill'])) {
-        $transaction = Transaction::findOrFail($this->transactionId);
+    {
+        if (!empty($this->input['bill'])) {
+            $transaction = Transaction::findOrFail($this->transactionId);
 
-        // Increment pembayaran dan update return
-        $transaction->increment('bill', $this->input['bill']);
-        $transaction->increment('return', $this->input['bill']);
-        Customer::findOrFail($transaction->customer_id)->decrement('debt', $this->input['bill']);
+            // Increment pembayaran dan update return
+            $transaction->increment('bill', $this->input['bill']);
+            $transaction->increment('return', $this->input['bill']);
+            Customer::findOrFail($transaction->customer_id)->decrement('debt', $this->input['bill']);
 
-        // Cek apakah pembayaran cukup untuk melunasi transaksi
-        if ($transaction->bill < $transaction->grand_total) {
-            // Jika pembayaran belum mencukupi Grand Total, tetap status hutang
-            $transaction->update(['status' => 'hutang']);
-        } else {
-            // Pembayaran cukup untuk melunasi transaksi
-            $delivery = Delivery::where('transaction_id', $transaction->id)->first();
+            // Cek apakah pembayaran cukup untuk melunasi transaksi
+            if ($transaction->bill < $transaction->grand_total) {
+                // Jika pembayaran belum mencukupi Grand Total, tetap status hutang
+                $transaction->update(['status' => 'hutang']);
+            } else {
+                // Pembayaran cukup untuk melunasi transaksi
+                $delivery = Delivery::where('transaction_id', $transaction->id)->first();
 
-            if ($transaction->return <= 0) {
-                // Jika hutang lunas, cek status pengiriman
-                if ($delivery) {
-                    $allDelivered = DeliveryGoods::where('delivery_id', $delivery->id)
-                        ->get()
-                        ->every(fn($deliveryGood) => $deliveryGood->delivered >= $deliveryGood->qty);
+                if ($transaction->return <= 0) {
+                    // Jika hutang lunas, cek status pengiriman
+                    if ($delivery) {
+                        $allDelivered = DeliveryGoods::where('delivery_id', $delivery->id)
+                            ->get()
+                            ->every(fn($deliveryGood) => $deliveryGood->delivered >= $deliveryGood->qty);
 
-                    if ($allDelivered) {
-                        // Semua barang sudah terkirim
-                        $delivery->update(['status' => 'selesai']);
-                        $transaction->update(['status' => 'selesai']);
+                        if ($allDelivered) {
+                            // Semua barang sudah terkirim
+                            $delivery->update(['status' => 'selesai']);
+                            $transaction->update(['status' => 'selesai']);
+                        } else {
+                            // Masih ada barang yang belum terkirim
+                            $delivery->update(['status' => 'pengiriman']);
+                            $transaction->update(['status' => 'pengiriman']);
+                        }
                     } else {
-                        // Masih ada barang yang belum terkirim
-                        $delivery->update(['status' => 'pengiriman']);
+                        // Tidak ada data pengiriman, set status selesai jika hutang lunas
+                        $transaction->update(['status' => 'selesai']);
+                    }
+                } else if ($transaction->return > 0) {
+                    // Jika ada kelebihan pembayaran, cek pengiriman
+                    if ($delivery) {
+                        $allDelivered = DeliveryGoods::where('delivery_id', $delivery->id)
+                            ->get()
+                            ->every(fn($deliveryGood) => $deliveryGood->delivered >= $deliveryGood->qty);
+
+                        if ($allDelivered) {
+                            $delivery->update(['status' => 'selesai']);
+                            $transaction->update(['status' => 'selesai']);
+                        } else {
+                            $delivery->update(['status' => 'pengiriman']);
+                            $transaction->update(['status' => 'pengiriman']);
+                        }
+                    } else {
+                        // Jika tidak ada data pengiriman, tetap set status pengiriman
                         $transaction->update(['status' => 'pengiriman']);
                     }
-                } else {
-                    // Tidak ada data pengiriman, set status selesai jika hutang lunas
-                    $transaction->update(['status' => 'selesai']);
-                }
-            } else if ($transaction->return > 0) {
-                // Jika ada kelebihan pembayaran, cek pengiriman
-                if ($delivery) {
-                    $allDelivered = DeliveryGoods::where('delivery_id', $delivery->id)
-                        ->get()
-                        ->every(fn($deliveryGood) => $deliveryGood->delivered >= $deliveryGood->qty);
-
-                    if ($allDelivered) {
-                        $delivery->update(['status' => 'selesai']);
-                        $transaction->update(['status' => 'selesai']);
-                    } else {
-                        $delivery->update(['status' => 'pengiriman']);
-                        $transaction->update(['status' => 'pengiriman']);
-                    }
-                } else {
-                    // Jika tidak ada data pengiriman, tetap set status pengiriman
-                    $transaction->update(['status' => 'pengiriman']);
                 }
             }
+
+            // Catat pembayaran ke tabel ActDebt
+            ActDebt::create([
+                'transaction_id' => $this->transactionId,
+                'user_id' => Auth::user()->id,
+                'pay' => $this->input['bill'],
+            ]);
+
+            // Reset input bill dan beri notifikasi keberhasilan
+            $this->input['bill'] = 0;
+            $this->dispatchBrowserEvent('success', ['message' => 'Berhasil membayar']);
+        } else {
+            // Jika nominal tidak diisi, beri notifikasi error
+            $this->dispatchBrowserEvent('error', ['message' => 'Input nominal']);
         }
-
-        // Catat pembayaran ke tabel ActDebt
-        ActDebt::create([
-            'transaction_id' => $this->transactionId,
-            'user_id' => Auth::user()->id,
-            'pay' => $this->input['bill'],
-        ]);
-
-        // Reset input bill dan beri notifikasi keberhasilan
-        $this->input['bill'] = 0;
-        $this->dispatchBrowserEvent('success', ['message' => 'Berhasil membayar']);
-    } else {
-        // Jika nominal tidak diisi, beri notifikasi error
-        $this->dispatchBrowserEvent('error', ['message' => 'Input nominal']);
     }
-}
 
 
 
@@ -284,6 +284,36 @@ class Detail extends Component
     public function render()
     {
         $transaction = Transaction::findOrFail($this->transactionId);
+        $delivery = Delivery::where('transaction_id', $transaction->id)->first();
+
+        // Cek apakah transaksi memiliki hutang
+        if ($transaction->return < 0) {
+            // Jika ada hutang, status transaksi adalah "hutang"
+            $transaction->update(['status' => 'hutang']);
+        } elseif ($transaction->return >= 0) {
+            // Jika tidak ada hutang
+            if ($delivery) {
+                // Jika ada pengiriman
+                $allDelivered = DeliveryGoods::where('delivery_id', $delivery->id)
+                    ->get()
+                    ->every(fn($deliveryGood) => $deliveryGood->delivered >= $deliveryGood->qty);
+
+                if ($allDelivered) {
+                    // Jika semua barang sudah terkirim, statusnya "selesai"
+                    $transaction->update(['status' => 'selesai']);
+                    $delivery->update(['status' => 'selesai']);
+                } else {
+                    // Jika masih ada barang yang belum terkirim, statusnya "pengiriman"
+                    $transaction->update(['status' => 'pengiriman']);
+                    $delivery->update(['status' => 'pengiriman']);
+                }
+            } else {
+                // Jika tidak ada pengiriman, statusnya "selesai"
+                $transaction->update(['status' => 'selesai']);
+            }
+        }
+
+        // Ambil data retur transaksi untuk ditampilkan di view
         $returTransactions = ReturTransaction::where('transaction_id', $this->transactionId)->get();
 
         return view('livewire.transaction.detail', [
