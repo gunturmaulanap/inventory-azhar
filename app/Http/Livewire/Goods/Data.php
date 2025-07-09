@@ -45,11 +45,11 @@ class Data extends Component
 
     public function render()
     {
-        // Mendapatkan daftar semua kategori
-        $categories = Category::all();
+        // Mendapatkan daftar semua kategori dan mengurutkan berdasarkan nama
+        $categories = Category::orderBy('name', 'asc')->get();
 
-        // Mendapatkan daftar semua Brand
-        $brands = Brand::all();
+        // Mendapatkan daftar semua Brand dan mengurutkan berdasarkan nama
+        $brands = Brand::orderBy('name', 'asc')->get();
 
         // Query data berdasarkan pencarian dan filter
         $data = Goods::when($this->search, function ($query) {
@@ -60,10 +60,8 @@ class Data extends Component
             })
 
             ->when($this->byBrand, function ($query) {
-                $query->where('brand_id', $this->byBrand); // Menjalankan query filter berdasarkan kategori
+                $query->where('brand_id', $this->byBrand); // Menjalankan query filter berdasarkan brand
             })
-
-
             ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);
 
