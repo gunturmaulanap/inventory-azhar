@@ -8,6 +8,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h2 class="text-lg font-semibold">{{ $title }}</h2>
+                    <p class="">{{ $description }}</p>
                 </div>
                 <a href="{{ $actionUrl }}"
                     class="inline-flex items-center gap-x-2 px-2 py-1.5 text-xs bg-sky-500 text-white font-extrabold rounded-md shadow-md">
