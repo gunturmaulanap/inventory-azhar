@@ -294,11 +294,11 @@
                         <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all w-auto">
                             <div class="flex items-center justify-center p-6">
                                 <img src="{{ url('storage/images/products/' . $transaction->image) }}"
-                                    alt="Image Preview" class="mt-2 w-80 object-contain object-center">
+                                    alt="Image Preview" class="mt-2 w-full max-w-2xl object-contain object-center">
                             </div>
                         </div>
                     </div>
-                @endif
+                @endifg
                 @if ($transaction->actDebts->count() > 0)
                     <h3 class="font-medium text-gray-900">Riwayat pelunasan</h3>
                     <ol class="flex flex-col mt-2 items-start gap-2 text-sm font-medium text-gray-500">
