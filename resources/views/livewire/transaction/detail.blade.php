@@ -293,7 +293,7 @@
                         <div class="fixed inset-0 bg-gray-500 opacity-75" @click="open = false"></div>
                         <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all w-auto">
                             <div class="flex items-center justify-center p-6">
-                                <img src="{{ asset('storage/images/products/' . $transaction->image) }}"
+                                <img src="{{ url('storage/images/products/' . $transaction->image) }}"
                                     alt="Image Preview" class="mt-2 w-80 object-contain object-center">
                             </div>
                         </div>
