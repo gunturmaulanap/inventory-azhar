@@ -117,7 +117,7 @@
                                             <th class="h-10 px-4 text-left">
                                                 <span
                                                     class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
-                                                    Nama Kategori
+                                                    Nama Brand
                                                 </span>
                                             </th>
                                             <th class="h-10 px-2 text-left">
@@ -136,9 +136,11 @@
                                                     {{ $brand->name }}
                                                 </td>
                                                 <td class="p-2 truncate">
-                                                    @foreach ($brand->goods as $good)
-                                                        {{ $good->name . ',' }}
-                                                    @endforeach
+                                                    <div class="grid grid-cols-3 gap-2 w-full overflow-x-auto">
+                                                        @foreach ($brand->goods as $good)
+                                                            <div class="text-xs truncate">{{ $good->name }}</div>
+                                                        @endforeach
+                                                    </div>
                                                 </td>
                                                 <td class="py-2">
                                                     <div class="flex items-center gap-x-4 justify-center">
@@ -253,9 +255,11 @@
                                                 {{ $category->name }}
                                             </td>
                                             <td class="p-2 truncate">
-                                                @foreach ($category->goods as $good)
-                                                    {{ $good->name . ',' }}
-                                                @endforeach
+                                                <div class="grid grid-cols-3 gap-2 w-full overflow-x-auto">
+                                                    @foreach ($category->goods as $good)
+                                                        <div class="text-xs truncate">{{ $good->name }}</div>
+                                                    @endforeach
+                                                </div>
                                             </td>
                                             <td class="py-2">
                                                 <div class="flex items-center gap-x-4 justify-center">

@@ -18,7 +18,7 @@
 
 <body class="font-sans text-gray-900 antialiased">
     <div id="page" class="min-h-screen flex items-center justify-center bg-cover bg-no-repeat bg-center relative"
-        style="background-image: url('{{ asset('img/logo-azhar.png') }}')">
+        style="background-image: url('/img/logo-azhar.png')">
 
         <!-- Overlay Putih Transparan (optional) -->
         <div class="absolute inset-0 bg-white opacity-70"></div>
