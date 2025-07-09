@@ -26,8 +26,7 @@ class ActDeliveryDetails extends Model
     protected $guarded = [];
 
     public function delivery()
-{
-    return $this->belongsTo(Delivery::class, 'delivery_id');
-}
-
+    {
+        return $this->belongsTo(Delivery::class, 'delivery_id');
+    }
 }

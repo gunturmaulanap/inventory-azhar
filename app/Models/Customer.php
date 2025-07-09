@@ -23,7 +23,7 @@ class Customer extends Authenticatable
         'password',
         'member'
     ];
-      /**
+    /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
@@ -33,7 +33,7 @@ class Customer extends Authenticatable
         'remember_token',
     ];
 
-     /**
+    /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
@@ -42,7 +42,7 @@ class Customer extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    
+
     public function topups()
     {
         return $this->hasMany(Topup::class);
@@ -58,7 +58,7 @@ class Customer extends Authenticatable
         $term = "%$term%";
         $query->where(function ($query) use ($term) {
             $query->where('name', 'like', $term)
-            ->orWhere('username', 'like', $term)
+                ->orWhere('username', 'like', $term)
                 ->orWhere('phone', 'like', $term);
         });
     }
