@@ -45,10 +45,10 @@ class Data extends Component
 
     public function render()
     {
-        // Mendapatkan daftar semua kategori dan mengurutkan berdasarkan nama
+        // Mendapatkan daftar semua kategori dan mengurutkan berdasarkan nama A-Z
         $categories = Category::orderBy('name', 'asc')->get();
 
-        // Mendapatkan daftar semua Brand dan mengurutkan berdasarkan nama
+        // Mendapatkan daftar semua Brand dan mengurutkan berdasarkan nama A-Z
         $brands = Brand::orderBy('name', 'asc')->get();
 
         // Query data berdasarkan pencarian dan filter
@@ -58,7 +58,6 @@ class Data extends Component
             ->when($this->byCategory, function ($query) {
                 $query->where('category_id', $this->byCategory); // Menjalankan query filter berdasarkan kategori
             })
-
             ->when($this->byBrand, function ($query) {
                 $query->where('brand_id', $this->byBrand); // Menjalankan query filter berdasarkan brand
             })
