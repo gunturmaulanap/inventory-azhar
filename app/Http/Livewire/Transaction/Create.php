@@ -239,14 +239,14 @@ class Create extends Component
         }
 
         // Proses pengunggahan gambar (jika ada)
-        if (!empty($this->transaction['image'])) {
+        if (isset($this->transaction['image']) && !empty($this->transaction['image'])) {
             $extension = $this->transaction['image']->getClientOriginalExtension();
 
             // Nama file unik
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
             // Path tujuan langsung ke public_html
-            $destinationPath = base_path('public_html/storage/images/products');
+            $destinationPath = base_path('../public_html/storage/images/products');
 
             // Buat folder jika belum ada
             if (!file_exists($destinationPath)) {
@@ -255,13 +255,15 @@ class Create extends Component
 
             // Simpan sementara lalu pindah ke public_html
             $this->transaction['image']->storeAs('temp', $uniqueFileName);
-            rename(
-                storage_path("app/temp/{$uniqueFileName}"),
-                $destinationPath . '/' . $uniqueFileName
-            );
+            $tempPath = storage_path("app/temp/{$uniqueFileName}");
 
-            // Simpan nama file di database
-            $this->transaction['image'] = "images/products/{$uniqueFileName}";
+            if (file_exists($tempPath)) {
+                // Pindahkan file dari folder temporary ke public_html/storage/images/products
+                rename($tempPath, $destinationPath . '/' . $uniqueFileName);
+
+                // Simpan nama file di database dengan path yang sesuai
+                $this->transaction['image'] = "images/products/{$uniqueFileName}";
+            }
         }
         return true; // Kembali true jika semua validasi lolos
     }
