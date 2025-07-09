@@ -245,8 +245,8 @@ class Create extends Component
             // Nama file unik
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
-            // Path tujuan langsung ke public_html
-            $destinationPath = base_path('../public_html/storage/images/products');
+            // Path tujuan langsung ke public_html di dalam folder /home/azha3438
+            $destinationPath = '/home/azha3438/public_html/storage/images/products';
 
             // Buat folder jika belum ada
             if (!file_exists($destinationPath)) {
@@ -258,7 +258,7 @@ class Create extends Component
             $tempPath = storage_path("app/temp/{$uniqueFileName}");
 
             if (file_exists($tempPath)) {
-                // Pindahkan file dari folder temporary ke public_html/storage/images/products
+                // Pindahkan file dari folder temporary ke /home/azha3438/public_html/storage/images/products
                 rename($tempPath, $destinationPath . '/' . $uniqueFileName);
 
                 // Simpan nama file di database dengan path yang sesuai
@@ -267,7 +267,6 @@ class Create extends Component
         }
         return true; // Kembali true jika semua validasi lolos
     }
-
 
 
     public function decrementBalance()
