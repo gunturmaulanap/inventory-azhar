@@ -298,7 +298,7 @@
                             </div>
                         </div>
                     </div>
-                @endifg
+                @endif
                 @if ($transaction->actDebts->count() > 0)
                     <h3 class="font-medium text-gray-900">Riwayat pelunasan</h3>
                     <ol class="flex flex-col mt-2 items-start gap-2 text-sm font-medium text-gray-500">
