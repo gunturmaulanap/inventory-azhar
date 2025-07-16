@@ -19,6 +19,12 @@ class Index extends Component
         $this->currentYear = Carbon::now()->year; // Set tahun saat ini
     }
 
+    public function updatedPerMounth()
+    {
+        $this->startDate = null;
+        $this->endDate = null;
+    }
+
     public function render()
     {
         $data = $this->filterData();

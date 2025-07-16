@@ -20,6 +20,11 @@ class Goods extends Component
         // Panggil filter data berdasarkan bulan saat ini
         $this->filterData();
     }
+    public function updatedPerMounth()
+    {
+        $this->startDate = null;
+        $this->endDate = null;
+    }
 
     public function filterData()
     {

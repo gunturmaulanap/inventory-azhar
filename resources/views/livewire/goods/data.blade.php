@@ -42,7 +42,7 @@
             </div>
             <select wire:model="byCategory"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-full sm:w-18 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-                <option value="">Semua</option>
+                <option value="">Semua Kategori</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
@@ -50,7 +50,7 @@
 
             <select wire:model="byBrand"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-full sm:w-18 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
-                <option value="">Semua</option>
+                <option value="">Semua Merk</option>
                 @foreach ($brands as $brand)
                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                 @endforeach

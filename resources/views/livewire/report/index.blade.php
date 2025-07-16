@@ -67,10 +67,12 @@
                 </h2>
                 <div class="relative w-full overflow-auto h-[500px]">
                     <table class="w-full text-sm border border-gray-300">
-                        <thead class="sticky top-0 inset-x-0">
-                            <tr class="border-b ">
-                                <th class="h-10 px-4 text-left border-r border-gray-300">Tanggal</th>
-                                <th class="h-10 px-4 text-left">Nominal</th>
+                        <thead class="sticky top-0 inset-x-0 bg-gray-50"> <!-- Background di sini -->
+                            <tr class="border-b">
+                                <th class="h-10 px-4 text-left border-r border-gray-300 bg-white">Tanggal</th>
+                                <!-- Border dan bg untuk header -->
+                                <th class="h-10 px-4 text-left bg-white">Nominal</th>
+                                <!-- Border dan bg untuk header -->
                             </tr>
                         </thead>
 
@@ -101,7 +103,7 @@
                                         class="p-2 px-4 border-r whitespace-nowrap border-gray-300 text-lg font-bold text-gray-800 bg-gray-100">
                                         Total Pemasukan
                                     </td>
-                                    <td class="p-2 px-4 text-lg font-bold text-green-600 bg-gray-100 whitespace-nowrap">
+                                    <td class="p-2 px-4 text-lg font-bold text-green-500 bg-gray-100 whitespace-nowrap">
                                         @currency($data->sum('total'))
                                     </td>
                                 </tr>
@@ -113,18 +115,73 @@
             </div>
         </div>
 
+        <!-- Tabel Pengeluaran -->
+        <div class="sm:w-1/3">
+            <div class="border border-gray-300 rounded-md">
+                <h2 class="text-lg font-semibold mb-0 p-3 text-center bg-red-50 border-b border-gray-300">
+                    Tabel Pengeluaran
+                </h2>
+                <div class="relative w-full overflow-auto h-[500px]">
+                    <table class="w-full text-sm border border-gray-300">
+                        <thead class="sticky top-0 inset-x-0 bg-gray-50"> <!-- Background di sini -->
+                            <tr class="border-b">
+                                <th class="h-10 px-4 text-left border-r border-gray-300 bg-white">Tanggal</th>
+                                <!-- Border dan bg untuk header -->
+                                <th class="h-10 px-4 text-left bg-white">Nominal</th>
+                                <!-- Border dan bg untuk header -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($orders as $item)
+                                <!-- Loop untuk data pengeluaran -->
+                                <tr class="border-b transition-colors hover:bg-gray-50">
+                                    <td class="p-2 px-4 border-r whitespace-nowrap border-gray-300">
+                                        {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}
+                                    </td>
+                                    <td class="p-2 px-4">
+                                        <a href="{{ route('order.detail', ['id' => $item->id]) }}"
+                                            class="text-blue-500 hover:underline whitespace-nowrap">@currency($item->total)</a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="2" class="py-2 text-red-500 text-center">Data tidak ditemukan
+                                    </td>
+                                </tr>
+                            @endforelse
+
+                            @if ($orders->isNotEmpty())
+                                <tr class="border-t">
+                                    <td
+                                        class="p-2 px-4 border-r whitespace-nowrap border-gray-300 text-lg font-bold text-gray-800 bg-gray-100">
+                                        Total Pengeluaran
+                                    </td>
+                                    <td class="p-2 px-4 text-lg font-bold text-red-500 bg-gray-100 whitespace-nowrap">
+                                        @currency($orders->sum('total'))
+                                    </td>
+                                </tr>
+                            @endif
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <!-- Tabel Hutang -->
         <div class="sm:w-1/3">
             <div class="border border-gray-300 rounded-md">
-                <h2 class="text-lg font-semibold mb-0 p-3 text-center bg-green-50 border-b border-gray-300">
+                <h2 class="text-lg font-semibold mb-0 p-3 text-center bg-indigo-50 border-b border-gray-300">
                     Tabel Hutang
                 </h2>
                 <div class="relative w-full overflow-auto h-[500px]">
                     <table class="w-full text-sm border border-gray-300">
-                        <thead class="sticky top-0 inset-x-0">
-                            <tr class="border-b ">
-                                <th class="h-10 px-4 text-left border-r border-gray-300">Tanggal</th>
-                                <th class="h-10 px-4 text-left">Nominal</th>
+                        <thead class="sticky top-0 inset-x-0 bg-gray-50"> <!-- Background di sini -->
+                            <tr class="border-b">
+                                <th class="h-10 px-4 text-left border-r border-gray-300 bg-white">Tanggal</th>
+                                <!-- Border dan bg untuk header -->
+                                <th class="h-10 px-4 text-left bg-white">Nominal</th>
+                                <!-- Border dan bg untuk header -->
                             </tr>
                         </thead>
 
@@ -155,7 +212,8 @@
                                         class="p-2 px-4 border-r whitespace-nowrap border-gray-300 text-lg font-bold text-gray-800 bg-gray-100">
                                         Total Hutang
                                     </td>
-                                    <td class="p-2 px-4 text-lg font-bold text-green-600 bg-gray-100 whitespace-nowrap">
+                                    <td
+                                        class="p-2 px-4 text-lg font-bold text-indigo-500 bg-gray-100 whitespace-nowrap">
                                         @currency($debt->sum('total'))
                                     </td>
                                 </tr>
@@ -167,56 +225,7 @@
             </div>
         </div>
 
-        <!-- Tabel Pengeluaran -->
-        <div class="sm:w-1/3">
-            <div class="border border-gray-300 rounded-md">
-                <h2 class="text-lg font-semibold mb-0 p-3 text-center bg-red-50 border-b border-gray-300">
-                    Tabel Pengeluaran
-                </h2>
-                <div class="relative w-full overflow-auto h-[500px]">
-                    <table class="w-full text-sm border border-gray-300">
-                        <thead class="sticky top-0 inset-x-0">
-                            <tr class="border-b ">
-                                <th class="h-10 px-4 text-left border-r border-gray-300">Tanggal</th>
-                                <th class="h-10 px-4 text-left">Nominal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($orders as $item)
-                                <!-- Loop untuk data pengeluaran -->
-                                <tr class="border-b transition-colors hover:bg-gray-50">
-                                    <td class="p-2 px-4 border-r whitespace-nowrap border-gray-300">
-                                        {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}
-                                    </td>
-                                    <td class="p-2 px-4">
-                                        <a href="{{ route('order.detail', ['id' => $item->id]) }}"
-                                            class="text-blue-500 hover:underline whitespace-nowrap">@currency($item->total)</a>
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="2" class="py-2 text-red-500 text-center">Data tidak ditemukan
-                                    </td>
-                                </tr>
-                            @endforelse
 
-                            @if ($orders->isNotEmpty())
-                                <tr class="border-t">
-                                    <td
-                                        class="p-2 px-4 border-r whitespace-nowrap border-gray-300 text-lg font-bold text-gray-800 bg-gray-100">
-                                        Total Pemasukan
-                                    </td>
-                                    <td class="p-2 px-4 text-lg font-bold text-green-600 bg-gray-100 whitespace-nowrap">
-                                        @currency($orders->sum('total'))
-                                    </td>
-                                </tr>
-                            @endif
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </div>
 
 </div>
