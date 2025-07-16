@@ -7,10 +7,16 @@ export default defineConfig({
         laravel({
             input: ["resources/css/app.css", "resources/js/app.js"],
             refresh: true,
-            buildDirectory: "build", // Laravel akan cari manifest di public/build
+            buildDirectory: "build", // Laravel akan mencari manifest di public/build
         }),
     ],
     build: {
-        outDir: path.resolve(__dirname, "../public_html/build"), // ini memastikan file build ditempatkan di public_html/build
+        outDir: "public/build",
+        manifest: true,
+    },
+    server: {
+        proxy: {
+            "/": "http://yourproductiondomain.com", // Ganti dengan domain produksi Anda
+        },
     },
 });
