@@ -1,5 +1,4 @@
-import { defineConfig } from "vite";
-import laravel from "laravel-vite-plugin";
+import fs from "fs";
 import path from "path";
 
 export default defineConfig({
@@ -7,15 +6,20 @@ export default defineConfig({
         laravel({
             input: ["resources/css/app.css", "resources/js/app.js"],
             refresh: true,
-            buildDirectory: "build", // Laravel akan cari manifest di public/build
         }),
     ],
     build: {
         manifest: true,
-        outDir: path.resolve(__dirname, "/home/azha3438/public_html/build"), // Tempatkan hasil build di /home/azha3438/public_html/build
+        outDir: path.resolve(__dirname, "public/build"), // Tempatkan hasil build sementara
         rollupOptions: {
             input: "resources/js/app.js",
         },
-        emptyOutDir: true, // Bersihkan isi folder build sebelum build baru
+        emptyOutDir: true, // Bersihkan folder build sebelumnya
+        afterBuild: () => {
+            fs.renameSync(
+                path.resolve(__dirname, "public/build"),
+                path.resolve(__dirname, "public_html/build")
+            );
+        },
     },
 });
