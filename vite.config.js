@@ -10,16 +10,10 @@ export default defineConfig({
     ],
     build: {
         manifest: true,
-        outDir: path.resolve(__dirname, "public/build"), // Tempatkan hasil build sementara
+        outDir: path.resolve(__dirname, "../public_html/build"), // Pastikan path ini menuju ke folder public_html/build
         rollupOptions: {
             input: "resources/js/app.js",
         },
         emptyOutDir: true, // Bersihkan folder build sebelumnya
-        afterBuild: () => {
-            fs.renameSync(
-                path.resolve(__dirname, "public/build"),
-                path.resolve(__dirname, "public_html/build")
-            );
-        },
     },
 });
