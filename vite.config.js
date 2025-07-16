@@ -12,10 +12,10 @@ export default defineConfig({
     ],
     build: {
         manifest: true,
-        outDir: path.resolve(__dirname, "public_html/build"), // arahkan hasil build ke public_html
+        outDir: path.resolve(__dirname, "/home/azha3438/public_html/build"), // Tempatkan hasil build di /home/azha3438/public_html/build
         rollupOptions: {
             input: "resources/js/app.js",
         },
-        emptyOutDir: true, // bersihkan isi folder build sebelum build baru
+        emptyOutDir: true, // Bersihkan isi folder build sebelum build baru
     },
 });
