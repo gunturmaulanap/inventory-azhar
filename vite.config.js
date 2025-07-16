@@ -9,11 +9,7 @@ export default defineConfig({
         }),
     ],
     build: {
-        manifest: true,
-        outDir: path.resolve(__dirname, "../public_html/build"), // Pastikan path ini menuju ke folder public_html/build
-        rollupOptions: {
-            input: "resources/js/app.js",
-        },
-        emptyOutDir: true, // Bersihkan folder build sebelumnya
+        outDir: path.resolve(__dirname, "../public_html/build"), // ke public_html/build
+        emptyOutDir: true, // Bersihkan folder build sebelum build baru
     },
 });
