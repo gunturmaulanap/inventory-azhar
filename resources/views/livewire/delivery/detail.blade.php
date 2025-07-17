@@ -138,7 +138,7 @@
                             </div>
 
                             <div class="grid p-3 grid-cols-3 gap-4">
-                                <dt class="font-medium text-gray-900">Terikirim</dt>
+                                <dt class="font-medium text-gray-900">Terkirim</dt>
                                 <dd class="text-gray-700 col-span-2">{{ $detail['delivered'] ?? '' }}
                                     {{ $detail['unit'] ?? '' }}</dd>
                             </div>
@@ -147,8 +147,25 @@
                                 <dt class="font-medium text-gray-900">Baru terkirim</dt>
                                 <dd class="text-gray-700 col-span-2">
                                     <div class="flex items-center gap-x-2">
+                                        {{-- Untuk tampilan desktop --}}
                                         <input type="number" value="0" wire:model="detail.input"
-                                            class="block w-20 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            class="hidden sm:block w-20 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+
+                                        {{-- Untuk tampilan mobile --}}
+                                        <div class="flex items-center sm:hidden gap-x-1">
+                                            <button type="button" class="px-2 py-1 bg-gray-200 text-black rounded"
+                                                wire:click="decrementInput">-
+                                            </button>
+
+                                            <input type="number" wire:model="detailInput.input"
+                                                class="w-14 text-center rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                min="0" />
+
+                                            <button type="button" class="px-2 py-1 bg-gray-200 text-black rounded"
+                                                wire:click="incrementInput">+
+                                            </button>
+                                        </div>
+
                                         {{ $detail['unit'] ?? '' }}
                                     </div>
                                 </dd>
@@ -220,7 +237,8 @@
 
                                 // Cari detail terkait berdasarkan waktu (sampai detik)
                                 $relatedDetail = $details->first(function ($detail) use ($dateTimeFormatted) {
-                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i:s') === $dateTimeFormatted;
+                                    return \Carbon\Carbon::parse($detail->created_at)->format('Y-m-d H:i:s') ===
+                                        $dateTimeFormatted;
                                 });
                             @endphp
 
@@ -259,7 +277,9 @@
                                                     @click="openDetail = null"></div>
                                                 <button class="absolute inset-x right-64 top-32 rounded-full bg-white"
                                                     type="button" @click="openDetail = null">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-red-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-10 text-red-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                                     </svg>

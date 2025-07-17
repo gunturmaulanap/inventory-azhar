@@ -186,7 +186,7 @@ class Create extends Component
     public function deleteGood($index)
     {
         unset($this->goodOrders[$index]);
-        array_values($this->goodOrders);
+        $this->goodOrders = array_values($this->goodOrders); // <-- reset index biar berurutan lagi
         $this->calculateTotal();
     }
 
@@ -290,7 +290,10 @@ class Create extends Component
             })
             ->orderByRaw("CAST(name AS UNSIGNED), name ASC") // ⬅️ urut angka lalu huruf
             ->get();
-
+        \Log::debug('Rendering Order Create Component', [
+            'goodOrders' => $this->goodOrders,
+            'order' => $this->order,
+        ]);
         $categories = Category::orderBy('name', 'asc')->get();
         $brands = Brand::orderBy('name', 'asc')->get();
 

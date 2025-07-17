@@ -27,9 +27,19 @@ class Detail extends Component
     public $detail = [
         'images' => [],
     ];
+    public $detailInput = ['input' => 0];
+
 
     protected $table = 'act_deliveries_details';
 
+    public function incrementInput()
+    {
+        $this->detailInput['input'] = ($this->detailInput['input'] ?? 0) + 1;
+    }
+    public function decrementInput()
+    {
+        $this->detailInput['input'] = max(0, ($this->detailInput['input'] ?? 0) - 1);
+    }
     public function updatedDetailImage()
     {
         if ($this->detail['image']) {
@@ -50,24 +60,24 @@ class Detail extends Component
             $extension = $this->detail['image']->getClientOriginalExtension();
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
-            // Tujuan upload: ke folder luar repositories
-            $destinationPath = '/home/azha3438/public_html/storage/images/products';
+            // Buat path untuk menyimpan gambar di public_html/storage/images/products
+            $destinationPath = base_path('../public_html/storage/images/products');
 
-            // Buat folder jika belum ada
+            // Cek jika folder belum ada, buat folder baru
             if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
 
-            // Upload sementara dulu
+            // Simpan sementara di folder temp
             $this->detail['image']->storeAs('temp', $uniqueFileName);
 
-            // Pindahkan dari temp ke public_html/storage/images/products
+            // Pindahkan gambar dari temp ke direktori tujuan
             rename(
                 storage_path("app/temp/{$uniqueFileName}"),
                 $destinationPath . '/' . $uniqueFileName
             );
 
-            // Simpan path yang akan diakses dari browser
+            // Simpan path gambar yang bisa diakses dari browser
             $this->detail['image'] = "images/products/{$uniqueFileName}";
         }
     }
@@ -119,20 +129,26 @@ class Detail extends Component
 
     public function submit()
     {
-
-
+        // Pastikan detail['input'] tetap ada, dan menggunakan detailInput['input']
         $this->actDeliveries[$this->detail['index']] = $this->actDeliveries[$this->detail['index']] ?? [
             'user_id' => Auth::user()->id,
             'goods_id' => $this->deliveryGoods[$this->detail['index']]['goods_id'],
-            'qty' => $this->detail['input'],
+            'qty' => $this->detailInput['input'], // Gunakan detailInput['input']
             'name' => $this->deliveryGoods[$this->detail['index']]['name'],
             'unit' => $this->deliveryGoods[$this->detail['index']]['unit'],
             'created_at' => $this->today,
         ];
 
+        // Pastikan detail['input'] digunakan
         if ($this->detail['input'] >= 1) {
             $this->actDeliveries[$this->detail['index']]['qty'] = $this->detail['input'];
         }
+
+        // Pastikan detailInput['input'] digunakan juga
+        if ($this->detailInput['input'] >= 1) {
+            $this->actDeliveries[$this->detail['index']]['qty'] = $this->detailInput['input'];
+        }
+
         $this->isUploading = true;
     }
 
@@ -175,7 +191,7 @@ class Detail extends Component
                     $extension = $image->getClientOriginalExtension();
                     $uniqueFileName = uniqid() . '.' . $extension;
 
-                    $destinationPath = base_path('../public_html/storage/images/products');
+                    $destinationPath = '/home/azha3438/public_html/storage/images/products';
                     if (!file_exists($destinationPath)) {
                         mkdir($destinationPath, 0755, true);
                     }

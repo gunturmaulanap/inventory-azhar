@@ -304,20 +304,19 @@
                                     <td class="p-4 px-2 text-center">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <div class="flex items-center rounded border border-gray-200">
-                                                <!-- Tombol Decrement -->
                                                 <button type="button" wire:click="decrement({{ $index }})"
-                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75 focus:outline-none">
+                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75">
                                                     &minus;
                                                 </button>
 
-                                                <!-- Input Jumlah -->
                                                 <input type="number" id="qty-{{ $index }}"
-                                                    wire:model.lazy="goodOrders.{{ $index }}.qty"
-                                                    class="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
+                                                    wire:model="goodOrders.{{ $index }}.qty" min="0"
+                                                    onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+                                                    oninput="if (this.value === '') this.value = 1"
+                                                    class="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
 
-                                                <!-- Tombol Increment -->
                                                 <button type="button" wire:click="increment({{ $index }})"
-                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75 focus:outline-none">
+                                                    class="size-10 leading-10 text-gray-600 transition hover:opacity-75">
                                                     &plus;
                                                 </button>
                                             </div>
@@ -369,7 +368,9 @@
                                         </button>
 
                                         <input type="number" id="qty-{{ $index }}"
-                                            wire:model="goodOrders.{{ $index }}.qty"
+                                            wire:model="goodOrders.{{ $index }}.qty" min="0"
+                                            onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 187"
+                                            oninput="if (this.value === '') this.value = 1"
                                             class="h-10 w-full border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
 
                                         <button type="button" wire:click="increment({{ $index }})"
