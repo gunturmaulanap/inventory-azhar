@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Supplier;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache; // ⬅️ tambahkan baris ini
 
 class Create extends Component
 {
@@ -277,7 +278,7 @@ class Create extends Component
             $query->search($this->searchSupplier);
         })
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(10);
 
         $goods = Goods::when($this->search, function ($query) {
             $query->search($this->search);
@@ -288,20 +289,21 @@ class Create extends Component
             ->when($this->byBrand, function ($query) {
                 $query->where('brand_id', $this->byBrand);
             })
-            ->orderByRaw("CAST(name AS UNSIGNED), name ASC") // ⬅️ urut angka lalu huruf
-            ->get();
-        \Log::debug('Rendering Order Create Component', [
-            'goodOrders' => $this->goodOrders,
-            'order' => $this->order,
-        ]);
-        $categories = Category::orderBy('name', 'asc')->get();
-        $brands = Brand::orderBy('name', 'asc')->get();
+            ->orderByRaw("CAST(name AS UNSIGNED), name ASC")
+            ->paginate(10);
+
+        $categories = Cache::remember('categories', 3600, function () {
+            return Category::orderBy('name', 'asc')->get();
+        });
+        $brands = Cache::remember('brands', 3600, function () {
+            return Brand::orderBy('name', 'asc')->get();
+        });
 
         return view('livewire.order.create', [
             'suppliers' => $suppliers,
             'goods' => $goods,
-            'brands' => Brand::orderBy('name', 'asc')->get(),
-            'categories' => Category::orderBy('name', 'asc')->get(),
+            'brands' => $brands,
+            'categories' => $categories,
         ]);
     }
 }

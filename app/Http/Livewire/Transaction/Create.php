@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Goods;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Cache;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Delivery;
@@ -391,39 +392,37 @@ class Create extends Component
 
     public function render()
     {
-
         $this->transaction['customer_id'] = $this->transaction['customer_id'] ?? 1;
         $customers = Customer::where('id', '!=', 1)
             ->when($this->searchCustomer, function ($query) {
                 $query->search($this->searchCustomer); // menjalankan query search
             })
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(10);
 
         $goods = Goods::when($this->search, function ($query) {
             $query->search($this->search); // menjalankan query search
-
-
         })->when($this->byCategory, function ($query) {
             $query->where('category_id', $this->byCategory); // menjalankan query by Category
         })
             ->when($this->byBrand, function ($query) {
                 $query->where('brand_id', $this->byBrand); // menjalankan query by Category
             })
+            ->orderByRaw("CAST(name AS UNSIGNED), name ASC")
+            ->paginate(10);
 
-            ->orderByRaw("CAST(name AS UNSIGNED), name ASC") // ⬅️ urut angka lalu huruf
-            ->get();
-
-        $categories = Category::all();
-        $brands = Brand::all();
-
+        $categories = Cache::remember('categories', 3600, function () {
+            return Category::orderBy('name', 'asc')->get();
+        });
+        $brands = Cache::remember('brands', 3600, function () {
+            return Brand::orderBy('name', 'asc')->get();
+        });
 
         return view('livewire.transaction.create', [
             'customers' => $customers,
             'goods' => $goods,
-            'brands' => Brand::orderBy('name', 'asc')->get(),
-            'categories' => Category::orderBy('name', 'asc')->get(),
-
+            'brands' => $brands,
+            'categories' => $categories,
         ]);
     }
 }
