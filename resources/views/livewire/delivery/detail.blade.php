@@ -157,7 +157,7 @@
                                                 wire:click="decrementInput">-
                                             </button>
 
-                                            <input type="number" wire:model="detailInput.input"
+                                            <input type="number" value="0" wire:model="detail.input"
                                                 class="w-14 text-center rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                 min="0" />
 

@@ -34,11 +34,31 @@ class Detail extends Component
 
     public function incrementInput()
     {
-        $this->detailInput['input'] = ($this->detailInput['input'] ?? 0) + 1;
+        // Default nilai awal
+        $currentInput = $this->detail['input'] ?? 0;
+        $newInput = $currentInput + 1;
+
+        // Cek apakah index tersedia
+        if (isset($this->detail['index']) && isset($this->deliveryGoods[$this->detail['index']])) {
+            $maxQty = $this->deliveryGoods[$this->detail['index']]['qty'] - $this->detail['delivered'];
+
+            if ($newInput > $maxQty) {
+                $this->dispatchBrowserEvent('error', ['message' => 'Melebihi jumlah barang yang harus dikirim']);
+                $this->detail['input'] = $maxQty;
+            } elseif ($newInput <= 0) {
+                $this->dispatchBrowserEvent('error', ['message' => 'Input barang tidak boleh kurang dari 1']);
+                $this->detail['input'] = 1;
+            } else {
+                $this->detail['input'] = $newInput;
+            }
+        } else {
+            // Fallback jika index tidak valid
+            $this->dispatchBrowserEvent('error', ['message' => 'Data barang tidak ditemukan']);
+        }
     }
     public function decrementInput()
     {
-        $this->detailInput['input'] = max(0, ($this->detailInput['input'] ?? 0) - 1);
+        $this->detail['input'] = max(0, ($this->detail['input'] ?? 0) - 1);
     }
     public function updatedDetailImage()
     {
