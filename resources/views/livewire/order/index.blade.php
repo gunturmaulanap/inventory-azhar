@@ -24,7 +24,7 @@
     </x-slot>
 
     {{-- Header Table (Filter Search, Per Page, Date Filter) --}}
-    <div class="flex flex-col xl:flex-row items-center justify-between mb-4 gap-y-3 xl:gap-y-0">
+    <div class="flex flex-col xl:flex-row items-center justify-between mb-4 gap-y-3 gap-x-4 xl:gap-y-0">
         <div class="flex items-center gap-x-2 sm:gap-x-4 w-full xl:w-fit">
             <input wire:model="search"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-full sm:w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
@@ -38,8 +38,8 @@
                 <option value="250">250</option>
             </select>
         </div>
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-y-3 xl:gap-y-0 w-full xl:w-fit gap-x-6">
-            <div class="flex items-center gap-x-4 sm:gap-x-6 w-full xl:w-fit">
+        <div class="flex flex-wrap items-center justify-start sm:justify-between gap-2 sm:gap-4 w-full ">
+            <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4 ml-auto">
                 <label for="startDate" class="flex items-center gap-x-2 bg-gradient-to-r from-gray-200 rounded-s-md">
                     <span class="text-xs ps-2">Dari</span>
                     <input wire:model="startDate" type="date" id="startDate"
@@ -50,16 +50,17 @@
                     <input wire:model="endDate" type="date" id="endDate"
                         class="flex rounded-r-md bg-white border-gray-300 px-3 py-1 text-xs sm:text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
                 </label>
+                <a href="{{ route('order.create') }}"
+                    class="inline-flex whitespace-nowrap items-center gap-x-2 px-2 py-1.5 text-xs bg-sky-500 text-white font-extrabold rounded-md shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd"
+                            d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Tambah Data
+                </a>
             </div>
-            <a href="{{ route('order.create') }}"
-                class="inline-flex whitespace-nowrap items-center gap-x-2 px-2 py-1.5 text-xs bg-sky-500 text-white font-extrabold rounded-md shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                Tambah Data
-            </a>
+
         </div>
     </div>
 
