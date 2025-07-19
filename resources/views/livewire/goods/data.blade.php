@@ -94,8 +94,8 @@
                     <div class="p-6">
                         <div class="flex items-center justify-between">
                             <div>
-                                <h2 class="text-lg font-semibold">Daftar Brand</h2>
-                                <p class="">Setiap brand dimiliki beberapa barang.</p>
+                                <h2 class="text-lg font-semibold">Daftar Merk</h2>
+                                <p class="">Setiap merk dimiliki beberapa barang.</p>
                             </div>
                             <a href="{{ route('goods.brand-create') }}"
                                 class="inline-flex items-center gap-x-2 px-2 py-1.5 text-xs bg-sky-500 text-white font-extrabold rounded-md shadow-md">
@@ -117,7 +117,7 @@
                                             <th class="h-10 px-4 text-left">
                                                 <span
                                                     class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
-                                                    Nama Brand
+                                                    Nama Merk
                                                 </span>
                                             </th>
                                             <th class="h-10 px-2 text-left">
@@ -323,7 +323,7 @@
                         </th>
                         <th class="h-10 px-2 text-left">
                             <span class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
-                                Brand
+                                Merk
                             </span>
                         </th>
                         <th class="h-10 px-2 text-center">
@@ -434,7 +434,7 @@
                                     <div class="col-span-2">: {{ $item->category->name }}</div>
                                 </div>
                                 <div class="grid grid-cols-3">
-                                    <div class="col-span-1 mr-4">Brand</div>
+                                    <div class="col-span-1 mr-4">Merk</div>
                                     <div class="col-span-2">: {{ $item->brand->name }}</div>
                                 </div>
                                 <div class="grid grid-cols-3">

@@ -505,7 +505,7 @@
                                                 <th class="h-10 px-2 text-left">
                                                     <span
                                                         class="inline-flex font-medium items-center justify-center px-3 text-sm -ml-3">
-                                                        Brand
+                                                        Merk
                                                     </span>
                                                 </th>
                                                 <th class="h-10 px-2 text-left">
@@ -539,7 +539,7 @@
                                                         @isset($item->brand)
                                                             {{ $item->brand->name }}
                                                         @else
-                                                            Tidak ada brand
+                                                            Tidak ada merk
                                                         @endisset </td>
                                                     <td class="p-2">
                                                         {{ $item->category->name }}
