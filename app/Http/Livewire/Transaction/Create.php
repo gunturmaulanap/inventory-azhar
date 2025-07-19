@@ -409,7 +409,7 @@ class Create extends Component
                 $query->where('brand_id', $this->byBrand); // menjalankan query by Category
             })
             ->orderByRaw("CAST(name AS UNSIGNED), name ASC")
-            ->paginate(10);
+            ->paginate(20);
 
         $categories = Cache::remember('categories', 3600, function () {
             return Category::orderBy('name', 'asc')->get();
