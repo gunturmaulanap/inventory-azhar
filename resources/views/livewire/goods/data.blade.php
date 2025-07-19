@@ -364,7 +364,7 @@
                                 @isset($item->brand)
                                     {{ $item->brand->name }}
                                 @else
-                                    Tidak ada brand
+                                    Tidak ada merk
                                 @endisset
                             </td>
                             <td class="p-2 text-center">
