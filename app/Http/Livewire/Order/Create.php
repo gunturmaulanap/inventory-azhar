@@ -274,6 +274,9 @@ class Create extends Component
 
     public function render()
     {
+        $categories = Category::all();
+        $brands = Brand::all();
+
         $suppliers = Supplier::when($this->searchSupplier, function ($query) {
             $query->search($this->searchSupplier);
         })
@@ -302,8 +305,8 @@ class Create extends Component
         return view('livewire.order.create', [
             'suppliers' => $suppliers,
             'goods' => $goods,
-            'brands' => $brands,
-            'categories' => $categories,
+            'brands' => Brand::orderBy('name', 'asc')->get(),
+            'categories' => Category::orderBy('name', 'asc')->get(),
         ]);
     }
 }

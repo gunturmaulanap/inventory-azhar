@@ -536,11 +536,9 @@
                                                         {{ $item->name }}
                                                     </td>
                                                     <td class="p-2">
-                                                        @isset($item->brand)
-                                                            {{ $item->brand->name }}
-                                                        @else
-                                                            Tidak ada merk
-                                                        @endisset </td>
+
+                                                        {{ $item->brand->name }}
+                                                    </td>
                                                     <td class="p-2">
                                                         {{ $item->category->name }}
                                                     </td>
