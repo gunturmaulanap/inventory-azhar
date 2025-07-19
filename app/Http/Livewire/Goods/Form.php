@@ -72,7 +72,7 @@ class Form extends Component
         $this->good = [
             'name' => $data->name,
             'category_id' => $data->category_id,
-            'brand_id' => $data->category_id,
+            'brand_id' => $data->brand_id,
 
             'unit' => $data->unit,
             'cost' => $data->cost,
