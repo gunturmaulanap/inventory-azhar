@@ -199,9 +199,25 @@ class Create extends Component
             // Membuat nama file yang unik
             $uniqueFileName = date('dmyHis') . '.' . $extension;
 
-            // Upload gambar dan simpan path ke dalam database
-            $imagePath = $this->order['image']->storeAs('images/products', $uniqueFileName, 'public');
-            $this->order['image'] = $imagePath;
+            // Path tujuan langsung ke public_html di dalam folder /home/azha3438
+            $destinationPath = '/home/azha3438/public_html/storage/images/products';
+
+            // Buat folder jika belum ada
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+
+            // Simpan sementara lalu pindah ke public_html
+            $this->transaction['image']->storeAs('temp', $uniqueFileName);
+            $tempPath = storage_path("app/temp/{$uniqueFileName}");
+
+            if (file_exists($tempPath)) {
+                // Pindahkan file dari folder temporary ke /home/azha3438/public_html/storage/images/products
+                rename($tempPath, $destinationPath . '/' . $uniqueFileName);
+
+                // Simpan nama file di database dengan path yang sesuai
+                $this->transaction['image'] = "images/products/{$uniqueFileName}";
+            }
         }
     }
     public function resetInput()
