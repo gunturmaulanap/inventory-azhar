@@ -208,7 +208,7 @@ class Create extends Component
             }
 
             // Simpan sementara lalu pindah ke public_html
-            $this->transaction['image']->storeAs('temp', $uniqueFileName);
+            $this->order['image']->storeAs('temp', $uniqueFileName);
             $tempPath = storage_path("app/temp/{$uniqueFileName}");
 
             if (file_exists($tempPath)) {
@@ -216,7 +216,7 @@ class Create extends Component
                 rename($tempPath, $destinationPath . '/' . $uniqueFileName);
 
                 // Simpan nama file di database dengan path yang sesuai
-                $this->transaction['image'] = "images/products/{$uniqueFileName}";
+                $this->order['image'] = "images/products/{$uniqueFileName}";
             }
         }
     }
