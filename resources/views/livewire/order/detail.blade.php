@@ -215,7 +215,7 @@
                             <div class="flex items-center justify-center p-6">
 
 
-                                <img src="{{ asset('images/products/' . $order->image) }}" alt="Image Preview"
+                                <img src="{{ asset('storage/' . $order->image) }}" alt="Image Preview"
                                     class="mt-2 w-80 object-contain object-center">
                             </div>
                         </div>
