@@ -28,7 +28,7 @@
         <div class="flex items-center gap-x-2 sm:gap-x-4 w-full xl:w-fit">
             <input wire:model="search"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-full sm:w-64 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600"
-                placeholder="Cari customer...">
+                placeholder="Cari supplier...">
             <select wire:model="perPage"
                 class="flex rounded-md bg-white border-gray-300 px-3 py-1 w-20 text-sm text-gray-800 shadow-sm transition-colors focus:ring-1 h-8 placeholder:text-xs placeholder:text-slate-600">
                 <option value="2">2</option>
