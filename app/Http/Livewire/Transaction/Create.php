@@ -165,8 +165,9 @@ class Create extends Component
 
     public function updatedTransactionDiscount($value)
     {
+        $balance = $this->transaction['balance'] ?? 0;
         $bill = $this->transaction['bill'] ?? 0;
-        $this->transaction['grand_total'] = $this->transaction['total'] - $value - $this->transaction['balance'];
+        $this->transaction['grand_total'] = $this->transaction['total'] - $value - $balance;
         if ($this->transaction['grand_total'] < 0) {
             $this->transaction['grand_total'] = 0;
         }
