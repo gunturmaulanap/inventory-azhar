@@ -27,7 +27,7 @@
 
     <form wire:submit.prevent="save">
         <div class="border-b border-gray-900/10 pb-12">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Formulir data Brand</h2>
+            <h2 class="text-base font-semibold leading-7 text-gray-900">Formulir data Merk</h2>
             <p class="mt-1 mb-6 text-sm leading-6 text-gray-600">
                 Lengkapi data berikut ini untuk {{ $form === 'create' ? ' membuat data baru' : ' mengubah data' }}
             </p>
@@ -35,7 +35,7 @@
             <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 
                 <div class="col-span-3">
-                    <label for="brand.name" class="block text-sm font-medium leading-6 text-gray-900">Nama Brand
+                    <label for="brand.name" class="block text-sm font-medium leading-6 text-gray-900">Nama Merk
                         <span class="text-xs text-red-500">*</span></label>
                     <div class="mt-2">
                         <input wire:model="brand.name" id="brand.name" type="text"

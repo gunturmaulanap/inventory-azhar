@@ -60,7 +60,6 @@ Route::middleware('auth')->group(function () {
         Route::get('ubah-data-customer/{id}', App\Http\Livewire\Master\CustomerForm::class)->name('master.update-customer');
         Route::get('detail-data-customer/{id}', App\Http\Livewire\Master\CustomerDetail::class)->name('master.detail-customer');
 
-
         // Data Laporan
         Route::get('laporan-penjualan', App\Http\Livewire\Report\Index::class)->name('report.index');
         Route::get('laporan-barang', App\Http\Livewire\Report\Goods::class)->name('report.goods');

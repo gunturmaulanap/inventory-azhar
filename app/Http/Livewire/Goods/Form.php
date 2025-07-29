@@ -91,14 +91,15 @@ class Form extends Component
 
     public function render()
     {
-        $categories = Category::all();
-        $brands = Brand::all();
+        $brands = Brand::orderByRaw("id = 60 DESC") // ID 60 = "Tidak Ada Brand" muncul paling atas
+            ->orderBy('name', 'asc')     // sisanya tetap diurutkan berdasarkan nama
+            ->get();
 
+        $categories = Category::orderBy('name', 'asc')->get();
 
         return view('livewire.goods.form', [
-            'brands' => Brand::orderBy('name', 'asc')->get(),
-            'categories' => Category::orderBy('name', 'asc')->get(),
-
+            'brands' => $brands,
+            'categories' => $categories,
         ]);
     }
 }

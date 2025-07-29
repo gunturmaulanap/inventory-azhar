@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-span-3">
                     <label for="good.brand_id" class="block text-sm font-medium leading-6 text-gray-900">
-                        Brand <span class="text-xs text-red-500">*</span>
+                        Merk <span class="text-xs text-red-500">*</span>
                     </label>
                     <div class="mt-2">
                         <select wire:model="good.brand_id" id="good.brand_id"
